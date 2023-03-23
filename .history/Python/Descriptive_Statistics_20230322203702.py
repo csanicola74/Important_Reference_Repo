@@ -145,15 +145,17 @@ df["Age"].describe()
 
 df.describe()
 
-# describe()
-# 25 % → Q1-Lower quartile
-# 50 % → Median
-# 75 % → Q3-Upper quartile
+describe()
+25 % → Q1-Lower quartile
+50 % → Median
+75 % → Q3-Upper quartile
 
 # 3. include =”all”
 # All columns of the input will be included in the output.
 
 df.describe(include="all")
+
+df.describe(include=”all”)
 
 # Five-point summary
 # The five-point summary consists of five values
@@ -195,7 +197,7 @@ print("Q1 :", q1)
 q3 = df2.quantile(0.75)
 print("Q3 :", q3)
 IQR = q3-q1
-print("IQR :", IQR)
+print("IQR :", IQR
 
 # Output:
 Q1: 27.0
