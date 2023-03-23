@@ -1,0 +1,16 @@
+# Python
+
+1. [How to do Exploratory Data Analysis (EDA) of crime using python?](https://medium.datadriveninvestor.com/exploratory-data-analysis-of-crime-against-women-in-india-using-python-38a997753b7a)
+2. [Exploring Descriptive Statistics Using Pandas and Seaborn](https://pub.towardsai.net/exploring-descriptive-statistics-using-pandas-and-seaborn-1b8501e1f27f)
+3. [Dealing with Imbalanced Data: A Beginner&#39;s Guide](https://medium.com/@irfanalghani11/dealing-with-imbalanced-data-a-beginners-guide-262e6255a396)
+4. [Pivot tables in Pandas and Handling Multi-Index Data with Hands-On Examples in Python](https://towardsdatascience.com/pivot-tables-in-pandas-with-hands-on-examples-in-python-9f29a48796f2)
+5. [Compare Dependency of Categorical Variables with Chi-Square Test(Stat-12)](https://towardsdatascience.com/pivot-tables-in-pandas-with-hands-on-examples-in-python-9f29a48796f2)
+
+# SQL
+
+1. [13 SQL Statements for 90% of Your Data Science Tasks](https://levelup.gitconnected.com/13-sql-statements-for-90-of-your-data-science-tasks-27902996dc2b)
+
+# General Resources
+
+1. [AIgents](https://aigents.co/learn)
+2. [How to Create an Entire Website Using AI: A Step-by-Step Guide](https://medium.com/dare-to-be-better/how-to-create-an-entire-website-using-ai-a-step-by-step-guide-aecc3eb30be2)
