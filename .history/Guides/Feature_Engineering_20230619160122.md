@@ -55,20 +55,3 @@ df = df.drop(columns=cat_cols)
 ## Step 5: Dealing with Date and Time Features (If any)
 
 If there are date and time features, you can derive a lot of information such as year, month, day, weekday/weekend, etc. This depends on the dataset and the problem statement.
-
-```python
-# Assume 'date_column' is the date column in your dataframe
-df['date_column'] = pd.to_datetime(df['date_column'])
-
-# Create features based on date column
-df['Year'] = df['date_column'].dt.year
-df['Month'] = df['date_column'].dt.month
-df['Day'] = df['date_column'].dt.day
-df['DayOfWeek'] = df['date_column'].dt.dayofweek  # Monday=0, Sunday=6
-```
-
-## Step 6: Feature Selection
-
-```python
-Sometimes, not all of the features are useful for prediction. Feature selection methods can be used to identify and remove unneeded, irrelevant and redundant attributes from data.
-```

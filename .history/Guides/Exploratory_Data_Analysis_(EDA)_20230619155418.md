@@ -75,25 +75,3 @@ for col in df.select_dtypes(include=['object']):
 pd.crosstab(df['categorical_column1'], df['categorical_column2'])  # Replace 'categorical_column1' and 'categorical_column2' with your column names
 
 ```
-
-## Step 6: Correlation Matrix
-
-A #correlation_matrix is a table showing correlation coefficients between many variables. Each cell in the table shows the correlation between two variables.
-
-```python
-corr = df.corr()
-sns.heatmap(corr, annot=True)
-```
-
-## Step 7: Checking for Outliers
-
-Outliers are extreme values that deviate from other observations on data, they may indicate a variability in a measurement, experimental errors or a novelty. In other words, an outlier is an observation that diverges from an overall pattern on a sample.
-
-```python
-# For each numeric feature, plot a boxplot
-for col in df.select_dtypes(include=['int64', 'float64']):
-    plt.figure(figsize=(10,5))
-    sns.boxplot(df[col])
-    plt.show()
-
-```

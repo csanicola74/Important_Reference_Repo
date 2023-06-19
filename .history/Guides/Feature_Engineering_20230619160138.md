@@ -65,10 +65,5 @@ df['Year'] = df['date_column'].dt.year
 df['Month'] = df['date_column'].dt.month
 df['Day'] = df['date_column'].dt.day
 df['DayOfWeek'] = df['date_column'].dt.dayofweek  # Monday=0, Sunday=6
-```
 
-## Step 6: Feature Selection
-
-```python
-Sometimes, not all of the features are useful for prediction. Feature selection methods can be used to identify and remove unneeded, irrelevant and redundant attributes from data.
 ```
