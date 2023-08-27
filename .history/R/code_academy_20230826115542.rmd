@@ -1,0 +1,176 @@
+---
+title: "R Notebook"
+author: Caroline Sanicola
+date: August 26, 2023
+output: 
+    html_notebook:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: true
+    theme: slate
+    highlight: default
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsci)
+library(ggthemes)
+library(ggExtra)
+library(ggcorrplot)
+library(ggfortify)
+library(ggrepel)
+```
+
+# 1. Calculations
+```{r}
+25 * 4 + 9 / 3
+```
+
+# 2. Comments
+```{r}
+# this is how to comment in an R code
+3 * 3 * 3
+```
+
+# 3. Data Types
+```{r}
+class(2) # numeric
+class("hello") # character
+class("23") # character
+class(FALSE) # logical
+class(NA) # logical
+```
+
+# 4. Variables
+We assign a value to a variable using the assignment operator `<-`
+```{r}
+x <- 3
+x
+
+full_name <- "Caroline Sanicola"
+print(full_name)
+
+# Greeting
+message_string <- "Hello there"
+print(message_string)
+
+# Farewell
+message_string <- "Hasta la vista"
+print(message_string)
+```
+
+# 5. Vectors
+List-like structure that contain items of the same data type.
+```{r}
+spring_months <- c("March", "April", "May", "June")
+spring_months
+
+# Vector of numbers
+numbers <- c(1, 2, 3, 4, 5)
+numbers
+```
+
+# 6. Conditionals
+```{r}
+if (TRUE) {
+    print("Hello")
+}
+
+if (FALSE) {
+    print("Hello")
+}
+
+# if else
+if (TRUE) {
+    print("Hello")
+} else {
+    print("Goodbye")
+}
+
+# if else if
+if (TRUE) {
+    print("Hello")
+} else if (FALSE) {
+    print("Goodbye")
+} else {
+    print("See you later")
+}
+```
+```{r}
+# if statement
+x <- 5
+if (x > 3) {
+    print("x is greater than 3")
+}
+
+# if else statement
+x <- 2
+if (x > 3) {
+    print("x is greater than 3")
+} else {
+    print("x is less than or equal to 3")
+}
+
+# if else if statement
+x <- 3
+if (x > 3) {
+    print("x is greater than 3")
+} else if (x < 3) {
+    print("x is less than 3")
+} else {
+    print("x is equal to 3")
+}
+```
+```{r}
+message <- "I change based on a condition."
+if (TRUE) {
+    message <- "I execute this when true!"
+} else {
+    message <- "I execute this when false!"
+}
+
+print(message)
+```
+
+# 7. Comparison Operators
+Here is a list of some handy comparison operators and their syntax:
+
+- Less than: <
+- Greater than: >
+- Less than or equal to: <=
+- Greater than or equal to: >=
+- Is equal to: ==
+- Is NOT equal to: !=
+
+Comparison operators compare the value on the left with the value on the right. 
+```{r}
+56 >= 129
+56 != 129
+```
+
+# 8. Logical Operators
+There are three logical operators:
+
+the AND operator (&)
+the OR operator (|)
+the NOT operator, otherwise known as the bang operator (!)
+When we use the & operator, we are checking that two things are true
+```{r}
+# AND
+TRUE & TRUE
+TRUE & FALSE
+FALSE & FALSE
+
+# OR
+TRUE | TRUE
+TRUE | FALSE
+FALSE | FALSE
+
+# NOT
+!TRUE
+!FALSE
+```

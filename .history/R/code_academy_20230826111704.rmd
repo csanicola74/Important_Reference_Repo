@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+author: Caroline Sanicola
+date: August 26, 2023
+output: 
+    html_notebook:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: true
+    theme: slate
+    highlight: default
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsci)
+library(ggthemes)
+library(ggExtra)
+library(ggcorrplot)
+library(ggfortify)
+library(ggrepel)
+```
+
+# 1. Calculations
+```{r}
+25 * 4 + 9 / 3
+```
+
+# 2. Comments
+```{r}
+# this is how to comment in an R code
+3 * 3 * 3
+```
+
+# 3. Data Types
+```{r}
+
+```

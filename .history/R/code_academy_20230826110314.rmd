@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+author: Caroline SAnicola
+date: August 26, 2023
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsci)
+library(ggthemes)
+library(ggExtra)
+library(ggcorrplot)
+library(ggfortify)
+library(ggrepel)
+```

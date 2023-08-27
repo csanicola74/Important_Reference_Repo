@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+author: Caroline SAnicola
+date: August 26, 2023
+output: 
+    html_notebook:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: true
+    theme: united
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsci)
+library(ggthemes)
+library(ggExtra)
+library(ggcorrplot)
+library(ggfortify)
+library(ggrepel)
+```
