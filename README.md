@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/csanicola74/Important_Reference_Repo">
-    <img src="[Images/IMPORTANT REFERENCES REPOSITORY.png)" alt="Logo">
+    <img src="Images/IMPORTANT REFERENCES REPOSITORY.png" alt="Logo">
   </a>
 
 <h1 align="center">Caroline Sanicola's Important Reference Repository</h1>
