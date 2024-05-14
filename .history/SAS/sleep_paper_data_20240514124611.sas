@@ -39,7 +39,7 @@ data BARI.data_recoded;
         BSI11_1_13 BSI11_1_14 BSI11_1_15 BSI11_1_16 BSI11_1_17 BSI11_1_18
         BSI11_1_19 BSI11_1_20 BSI11_1_21 BSI11_1_22 BSI11_1_23 BSI11_1_24
         BSI11_1_25 BSI11_1_26 BSI11_1_27 BSI11_1_28 BSI11_1_29 BSI11_1_30;
-    /* Columns to be recoded */
+        /* Columns to be recoded */
     array bsi_recoded(*) BSI11_1_1_SCORE BSI11_1_2_SCORE BSI11_1_3_SCORE
         BSI11_1_4_SCORE BSI11_1_5_SCORE BSI11_1_6_SCORE BSI11_1_7_SCORE
         BSI11_1_8_SCORE BSI11_1_9_SCORE BSI11_1_10_SCORE BSI11_1_11_SCORE
@@ -48,7 +48,7 @@ data BARI.data_recoded;
         BSI11_1_20_SCORE BSI11_1_21_SCORE BSI11_1_22_SCORE BSI11_1_23_SCORE
         BSI11_1_24_SCORE BSI11_1_25_SCORE BSI11_1_26_SCORE BSI11_1_27_SCORE
         BSI11_1_28_SCORE BSI11_1_29_SCORE BSI11_1_30_SCORE;
-    /* New Columns made from recoding */
+        /* New Columns made from recoding */
     /* Loop through each element in the array */
     do i=1 to dim(bsi_to_recode);
         /* Apply specific recoding logic */
@@ -60,7 +60,7 @@ data BARI.data_recoded;
     end;
 
     drop i;
-    /* Optional: drop the loop index variable from the resulting dataset */
+        /* Optional: drop the loop index variable from the resulting dataset */
 run;
 
 /* Step 2b: Reverse Coding BSI11_1 */
@@ -188,7 +188,7 @@ data BARI.data_recoded;
     else if WALI_NES_1_1='Moderately' then WALI_NES_1_1_SCORE=3;
     else if WALI_NES_1_1='Very' then WALI_NES_1_1_SCORE=4;
     else WALI_NES_1_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -204,7 +204,7 @@ data BARI.data_recoded;
         WALI_NES_2_1_SCORE=3;
     else if WALI_NES_2_1='6:01 pm or later' then WALI_NES_2_1_SCORE=4;
     else WALI_NES_2_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -217,7 +217,7 @@ data BARI.data_recoded;
     else if WALI_NES_3_1='Very Much' then WALI_NES_3_1_SCORE=3;
     else if WALI_NES_3_1='Extremely' then WALI_NES_3_1_SCORE=4;
     else WALI_NES_3_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -232,7 +232,7 @@ data BARI.data_recoded;
     else if WALI_NES_4_1='Complete' or WALI_NES_4_1='Extremely' then
         WALI_NES_4_1_SCORE=4;
     else WALI_NES_4_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -245,7 +245,7 @@ data BARI.data_recoded;
     else if WALI_NES_5_1='51-75%' then WALI_NES_5_1_SCORE=3;
     else if WALI_NES_5_1='76-100%' then WALI_NES_5_1_SCORE=4;
     else WALI_NES_5_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -258,7 +258,7 @@ data BARI.data_recoded;
     else if WALI_NES_6_1='Very much' then WALI_NES_6_1_SCORE=3;
     else if WALI_NES_6_1='Extremely' then WALI_NES_6_1_SCORE=4;
     else WALI_NES_6_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -275,7 +275,7 @@ data BARI.data_recoded;
     else if WALI_NES_7_1='Night/Late Evening' or WALI_NES_7_1=
         'Night/Late evening' then WALI_NES_7_1_SCORE=4;
     else WALI_NES_7_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -288,7 +288,7 @@ data BARI.data_recoded;
     else if WALI_NES_8_1='Usually' then WALI_NES_8_1_SCORE=3;
     else if WALI_NES_8_1='Always' then WALI_NES_8_1_SCORE=4;
     else WALI_NES_8_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -301,7 +301,7 @@ data BARI.data_recoded;
     else if WALI_NES_9_1='More than once per week' then WALI_NES_9_1_SCORE=3;
     else if WALI_NES_9_1='Every night' then WALI_NES_9_1_SCORE=4;
     else WALI_NES_9_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -314,7 +314,7 @@ data BARI.data_recoded;
     else if WALI_NES_10_1='Very much' then WALI_NES_10_1_SCORE=3;
     else if WALI_NES_10_1='Extremely' then WALI_NES_10_1_SCORE=4;
     else WALI_NES_10_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -327,7 +327,7 @@ data BARI.data_recoded;
     else if WALI_NES_11_1='Very much' then WALI_NES_11_1_SCORE=3;
     else if WALI_NES_11_1='Extremely' then WALI_NES_11_1_SCORE=4;
     else WALI_NES_11_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -340,7 +340,7 @@ data BARI.data_recoded;
     else if WALI_NES_12_1='Usually' then WALI_NES_12_1_SCORE=3;
     else if WALI_NES_12_1='Always' then WALI_NES_12_1_SCORE=4;
     else WALI_NES_12_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -353,7 +353,7 @@ data BARI.data_recoded;
     else if WALI_NES_13_1='Very much' then WALI_NES_13_1_SCORE=3;
     else if WALI_NES_13_1='Completely' then WALI_NES_13_1_SCORE=4;
     else WALI_NES_13_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -366,7 +366,7 @@ data BARI.data_recoded;
     else if WALI_NES_14_1='Very much' then WALI_NES_14_1_SCORE=3;
     else if WALI_NES_14_1='Complete' then WALI_NES_14_1_SCORE=4;
     else WALI_NES_14_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -379,7 +379,7 @@ data BARI.data_recoded;
     else if WALI_NES_16_1='Very much' then WALI_NES_16_1_SCORE=3;
     else if WALI_NES_16_1='Completely' then WALI_NES_16_1_SCORE=4;
     else WALI_NES_16_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -392,7 +392,7 @@ data BARI.data_recoded;
     else if WALI_NES_17_1='Very much' then WALI_NES_17_1_SCORE=3;
     else if WALI_NES_17_1='Completely' then WALI_NES_17_1_SCORE=4;
     else WALI_NES_17_1_SCORE=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 /* Step 2b: Reverse Coding for WALI_NES */
@@ -406,7 +406,7 @@ data BARI.data_recoded;
     else if WALI_NES_1_1_SCORE=3 then WALI_NES_1_1_REVERSED=1;
     else if WALI_NES_1_1_SCORE=4 then WALI_NES_1_1_REVERSED=0;
     else WALI_NES_1_1_REVERSED=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -419,7 +419,7 @@ data BARI.data_recoded;
     else if WALI_NES_4_1_SCORE=3 then WALI_NES_4_1_REVERSED=1;
     else if WALI_NES_4_1_SCORE=4 then WALI_NES_4_1_REVERSED=0;
     else WALI_NES_4_1_REVERSED=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 data BARI.data_recoded;
@@ -432,7 +432,7 @@ data BARI.data_recoded;
     else if WALI_NES_14_1_SCORE=3 then WALI_NES_14_1_REVERSED=1;
     else if WALI_NES_14_1_SCORE=4 then WALI_NES_14_1_REVERSED=0;
     else WALI_NES_14_1_REVERSED=.;
-    /* Assign missing value if none of the conditions are met */
+        /* Assign missing value if none of the conditions are met */
 run;
 
 /* Step 5: Check the new columns match the frequency count of the old columns */
