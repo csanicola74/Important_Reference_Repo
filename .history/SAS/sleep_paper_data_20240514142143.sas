@@ -520,31 +520,3 @@ proc freq data=BARI.data_recoded;
     tables ISI_123_1 ISI_123_2 ISI_123_3 ISI_4_1 ISI_5_1 ISI_6_1 ISI_7_1 / nocum
         nopercent;
 run;
-
-/* Step 1: Recode all columns to numeric score */
-data BARI.data_recoded;
-    set BARI.data_recoded;
-
-    /* Define an array for the columns we are recoding */
-    array isi_to_recode(*) ISI_123_1 ISI_123_2 ISI_123_3 ISI_4_1 ISI_5_1 ISI_6_1
-        ISI_7_1;
-    /* Columns to be recoded */
-    array isi_recoded(*) ISI_123_1_SCORE ISI_123_2_SCORE ISI_123_3_SCORE
-        ISI_4_1_SCORE ISI_5_1_SCORE ISI_6_1_SCORE ISI_7_1_SCORE;
-    /* New Columns made from recoding */
-    /* Loop through each element in the array */
-    do i=1 to dim(isi_to_recode);
-        /* Use compress function to keep only digits */
-        isi_recoded(i)=input(compress(isi_to_recode(i), , 'kd'), best.);
-    end;
-
-    drop i;
-        /* Optional: drop the loop index variable from the resulting dataset */
-run;
-
-/* Step 3: Check to see if the the frequencies match */
-proc freq data=BARI.data_recoded;
-    tables ISI_123_1 ISI_123_1_SCORE ISI_123_2 ISI_123_2_SCORE ISI_123_3
-        ISI_123_3_SCORE ISI_4_1 ISI_4_1_SCORE ISI_5_1 ISI_5_1_SCORE ISI_6_1
-        ISI_6_1_SCORE ISI_7_1 ISI_7_1_SCORE / nocum nopercent;
-run;
