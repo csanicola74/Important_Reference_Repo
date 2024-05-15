@@ -4,7 +4,7 @@
 /* Complex Logic Explanation:  */
 /* Parameter and Return Value Descriptions: */
 /* References or Links:  */
-/* TODOs and FIXMEs: Completed scoring for BIS-11, WALI-NES, Brief Cope (Q367), ISI, YFAS. Still need to complete rest of scoring */
+/* TODOs and FIXMEs:  */
 /* Date and Authorship: Created on 5/14/2024 by Caroline Sanicola  */
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Step 1: Define the library reference where the file will be stored */
@@ -570,7 +570,7 @@ data BARI.data_recoded;
     else if isi_total_score <= 28 then insomnia_category=
         'Clinical insomnia (severe)';
     else insomnia_category='Unknown';
-    /* In case total exceeds 28 or other edge cases */
+        /* In case total exceeds 28 or other edge cases */
 run;
 
 /* Step 5: Print the new columns to check */
@@ -817,7 +817,7 @@ data BARI.data_recoded;
     end;
 
     drop i;
-    /* Optional: drop the loop index variable from the resulting dataset */
+        /* Optional: drop the loop index variable from the resulting dataset */
 run;
 
 proc freq data=BARI.data_recoded;
