@@ -1135,7 +1135,3 @@ bar <- ggplot(data = mpg, aes(x = class)) +
     )
 bar
 ```
-
-# Aggregates in R 
-# - an aggregate statistic is a way of creating a single number that describes a group of numbers.
-# - common aggregate statistics include the mean, median, mode, and range.

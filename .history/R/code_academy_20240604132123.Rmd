@@ -1107,35 +1107,3 @@ viz
 
 ```{r message=FALSE}
 ```
-
----
-title: "Intro To GGPlot2"
-output: html_notebook
----
-
-```{r message=FALSE, warning=FALSE}
-# load libraries and data
-library(readr)
-library(dplyr)
-library(ggplot2)
-```
-
-```{r}
-# Inspect the mpg builtin dataset
-head(mpg)
-```
-
-```{r message=FALSE}
-# Create a bar chart
-bar <- ggplot(data = mpg, aes(x = class)) +
-    geom_bar(aes(fill = class)) +
-    labs(
-        title = "Types of Vehicles",
-        subtitle = "From fuel economy data for popular car models (1999-2008)"
-    )
-bar
-```
-
-# Aggregates in R 
-# - an aggregate statistic is a way of creating a single number that describes a group of numbers.
-# - common aggregate statistics include the mean, median, mode, and range.
