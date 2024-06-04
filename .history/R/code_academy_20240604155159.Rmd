@@ -1533,4 +1533,3 @@ products_orders <- products %>%
 products_orders
 ```
 
-# 5. Mismatched Joins 
