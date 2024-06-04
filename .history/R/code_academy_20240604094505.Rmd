@@ -397,35 +397,4 @@ df_cols_removed <- artists %>%
 df_cols_removed
 ```
 
-# 7. Filtering Rows with Logic I
----
-title: "Introduction to Data Frames in R"
-output: html_notebook
----
-
-```{r message=FALSE, warning=FALSE}
-# load libraries
-library(readr)
-library(dplyr)
-```
-
-```{r message=FALSE}
-# load data frame
-artists <- read_csv("artists.csv")
-```
-
-```{r}
-# filter rows one condition
-rock_groups <- artists %>%
-    filter(genre == "Rock")
-
-rock_groups
-```
-
-```{r}
-# filter rows multiple conditions
-popular_rock_groups <- artists %>%
-    filter(genre == "Rock", spotify_monthly_listeners > 20000000)
-
-popular_rock_groups
-```
+# 7. 
