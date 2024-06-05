@@ -1798,25 +1798,3 @@ hist <- qplot(greatest_books$Ages,
 
 hist
 ```
-
-# Mode in R 
----
-title: "Mode in R"
-output: html_notebook
----
-```{r message=FALSE, warning=FALSE}
-# import libraries
-library(readr)
-library(dplyr)
-library(DescTools)
-
-# Read author data
-greatest_books <- read_csv("top-hundred-books.csv")
-
-# Set author ages to
-author_ages <- greatest_books$Ages
-
-mode_age <- Mode(author_ages) # be careful because 'Mode' needs to be capitalized
-
-print(paste("The mode age of authors from Le Monde's 100 greatest books is: ", mode_age[1]))
-```
