@@ -1,0 +1,2469 @@
+---
+title: "R Notebook"
+author: Caroline Sanicola
+date: August 26, 2023
+output: 
+    html_notebook:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: true
+    theme: slate
+    highlight: default
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+library(ggsci)
+library(ggthemes)
+library(ggExtra)
+library(ggcorrplot)
+library(ggfortify)
+library(ggrepel)
+```
+
+# Introduction to R
+# 1. Calculations
+```{r}
+25 * 4 + 9 / 3
+```
+
+# 2. Comments
+```{r}
+# this is how to comment in an R code
+3 * 3 * 3
+```
+
+# 3. Data Types
+```{r}
+class(2) # numeric
+class("hello") # character
+class("23") # character
+class(FALSE) # logical
+class(NA) # logical
+```
+
+# 4. Variables
+We assign a value to a variable using the assignment operator `<-`
+```{r}
+x <- 3
+x
+
+full_name <- "Caroline Sanicola"
+print(full_name)
+
+# Greeting
+message_string <- "Hello there"
+print(message_string)
+
+# Farewell
+message_string <- "Hasta la vista"
+print(message_string)
+```
+
+# 5. Vectors
+List-like structure that contain items of the same data type.
+```{r}
+spring_months <- c("March", "April", "May", "June")
+spring_months
+
+# Vector of numbers
+numbers <- c(1, 2, 3, 4, 5)
+numbers
+```
+
+# 6. Conditionals
+```{r}
+if (TRUE) {
+    print("Hello")
+}
+
+if (FALSE) {
+    print("Hello")
+}
+
+# if else
+if (TRUE) {
+    print("Hello")
+} else {
+    print("Goodbye")
+}
+
+# if else if
+if (TRUE) {
+    print("Hello")
+} else if (FALSE) {
+    print("Goodbye")
+} else {
+    print("See you later")
+}
+```
+```{r}
+# if statement
+x <- 5
+if (x > 3) {
+    print("x is greater than 3")
+}
+
+# if else statement
+x <- 2
+if (x > 3) {
+    print("x is greater than 3")
+} else {
+    print("x is less than or equal to 3")
+}
+
+# if else if statement
+x <- 3
+if (x > 3) {
+    print("x is greater than 3")
+} else if (x < 3) {
+    print("x is less than 3")
+} else {
+    print("x is equal to 3")
+}
+```
+```{r}
+message <- "I change based on a condition."
+if (TRUE) {
+    message <- "I execute this when true!"
+} else {
+    message <- "I execute this when false!"
+}
+
+print(message)
+```
+
+# 7. Comparison Operators
+Here is a list of some handy comparison operators and their syntax:
+
+- Less than: <
+- Greater than: >
+- Less than or equal to: <=
+- Greater than or equal to: >=
+- Is equal to: ==
+- Is NOT equal to: !=
+
+Comparison operators compare the value on the left with the value on the right. 
+```{r}
+56 >= 129
+56 != 129
+```
+
+# 8. Logical Operators
+There are three logical operators:
+
+1. the AND operator (&)
+2. the OR operator (|)
+3. the NOT operator, otherwise known as the bang operator (!)
+4. 
+When we use the & operator, we are checking that two things are true
+When using the & operator, both conditions must evaluate to true for the entire condition to evaluate to true and execute. Otherwise, if either condition is false, the & condition will evaluate to false and the else block will execute.
+If we only care about either condition being true, we can use the | operator
+When using the | operator, only one of the conditions must evaluate to true for the overall statement to evaluate to true. In the code example above, if either day == 'Saturday' or day == 'Sunday' evaluates to true the if’s condition will evaluate to true and its code block will execute. If the first condition in an | statement evaluates to true, the second condition won’t even be checked.
+The ! NOT operator reverses, or negates, the value of a TRUE value.
+Essentially, the ! operator will either take a true value and pass back false, or it will take a false value and pass back true.
+
+```{r}
+# AND
+TRUE & TRUE
+TRUE & FALSE
+FALSE & FALSE
+
+# OR
+TRUE | TRUE
+TRUE | FALSE
+FALSE | FALSE
+
+# NOT
+!TRUE
+!FALSE
+```
+```{r}
+message <- "Should I pack an umbrella?"
+weather <- "cloudy"
+high_chance_of_rain <- TRUE
+
+if (weather == "cloudy" & high_chance_of_rain == TRUE) {
+    message <- "Pack umbrella!"
+} else {
+    message <- "No need for umbrella!"
+}
+```
+
+# 9. Calling a Function
+```{r}
+sort(c(2, 4, 10, 5, 1))
+# Outputs c(1,2,4,5,10)
+length(c(2, 4, 10, 5, 1))
+# Outputs 5
+sum(5, 15, 10)
+# Outputs 30
+
+data <- c(120, 22, 22, 31, 15, 120)
+# assigning the values to the vector data
+unique_vals <- unique(data)
+# returns a vector with only the unique elements in that vector (removing all duplicates); calls this function and pass in the argument data; saves the results inside the variable named unique_vals
+print(unique_vals)
+# prints the variable to see what is inside
+
+solution <- sqrt(49)
+# gets the square root of 49 and saves it as the variable 'solution'
+print(solution)
+round_down <- floor(3.14) # rounds a decimal down to the next integer
+round_up <- ceiling(3.14) # rounds up to the next integer
+print(round_down)
+print(round_up)
+```
+
+# 10. Importing Packages
+```{r}
+# load libraries
+library(dplyr)
+library(readr)
+```
+```{r}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+```{r}
+# inspect data frame
+artists
+head(artists)
+summary(artists)
+```
+```{r}
+artists %>%
+    select(-country, -year_founded, -albums) %>%
+    filter(spotify_monthly_listeners > 20000000, genre != "Hip Hop") %>%
+    arrange(desc(youtube_subscribers))
+```
+
+# Introduction to Data Frames R 
+# 1. What is a Data Frame 
+# - a data frame is an R object that that stores tabular data in a table structure made up of rows and columns
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r}
+# load data frame
+songs <- read_csv("songs.csv")
+```
+# OUTPUT:
+# ── Column specification ────────────────────────────────────────────────────────
+# cols(
+  # song = col_character(),
+  # artist = col_character(),
+  # streams = col_double(),
+  # genre = col_character()
+# )
+```{r}
+songs
+```
+
+column1,column2,column3
+value1,value2,value3
+value4,value5,value6
+
+# 2. Loading and Saving CSVs
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r}
+# load data frame
+artists <- read_csv("artists.csv") # reads a csv file and returns the column specifications
+artists
+
+# write_csv(df,'new_csv_file.csv') # saves data from a data frame to a csv file
+```
+
+# 3. Inspecting Data Frames
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# inspect data frame
+artists # returns the entire data frame
+
+head(artists) # returns only the first 6 rows of the data frame
+
+summary(artists) # gives a summary statistics of the data frame such as mean, median, minimum, and maximum for each numeric column and class and length for non-numeric columns
+```
+
+# 4. Piping
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# inspect data frame with pipe
+artists %>% # this is called piping and it helps increase readability of the data frame by piping the value on its left into the first argument of the function that follows it
+    head()
+# so this becomes 'head(df)'
+# this is mostly important for its ability to link multiple function calls together
+```
+
+# 5. Selecting Columns
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# select one column
+artist_groups <- select(artists, group)
+print(artist_groups)
+```
+
+```{r}
+# select multiple columns
+# first method
+group_info <- select(artists, group, spotify_monthly_listeners, year_founded)
+
+# second method - piping
+artists %>%
+    select(group, spotify_monthly_listeners, year_founded)
+```
+
+# 6. Excluding Columns
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# select all columns except one
+no_albums <- artists %>%
+    select(-albums) # putting a minus will remove the column
+no_albums
+```
+
+```{r}
+# select all columns except a set
+df_cols_removed <- artists %>%
+    select(-genre, -spotify_monthly_listeners, -year_founded)
+df_cols_removed
+```
+
+# 7. Filtering Rows with Logic I
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# filter rows one condition
+rock_groups <- artists %>%
+    filter(genre == "Rock")
+
+rock_groups
+```
+
+```{r}
+# filter rows multiple conditions
+popular_rock_groups <- artists %>%
+    filter(genre == "Rock", spotify_monthly_listeners > 20000000)
+
+popular_rock_groups
+```
+
+# 8. Filtering Rows with Logic II
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# filter rows with or
+korea_or_before_2000 <- artists %>%
+    filter(country == "South Korea" | year_founded < 2000) # using the OR operator
+
+korea_or_before_2000
+```
+
+```{r}
+# filter rows with not !
+not_rock_groups <- artists %>%
+    filter(!(genre == "Rock")) # the not operator needs to be in paranthesis before the filter argument
+
+not_rock_groups
+```
+
+# 9. Arranging Rows
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# arrange rows in ascending order
+group_asc <- artists %>%
+    arrange(group) # by default the arrange will sort in ascending order
+
+group_asc
+```
+
+```{r}
+# arrange rows in descending order
+youtube_desc <- artists %>%
+    arrange(desc(youtube_subscribers)) # to sort by descending, it needs to be specified
+
+youtube_desc
+```
+
+# 10. Review
+---
+title: "Introduction to Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+artists <- read_csv("artists.csv")
+```
+
+```{r}
+# select columns
+chosen_cols <- artists %>%
+    select(-country, -year_founded, -albums)
+head(chosen_cols)
+```
+
+```{r}
+# filter rows
+popular_not_hip_hop <- chosen_cols %>%
+    filter(spotify_monthly_listeners > 20000000, genre != "Hip Hop")
+head(popular_not_hip_hop)
+```
+
+```{r}
+# arrange rows
+youtube_desc <- popular_not_hip_hop %>%
+    arrange(desc(youtube_subscribers))
+head(youtube_desc)
+```
+
+```{r}
+# select columns, filter and arrange rows
+# this code does all the above in one code block
+artists <- artists %>%
+    select(-country, -year_founded, -albums) %>%
+    filter(spotify_monthly_listeners > 20000000 & !(genre == "Hip Hop")) %>%
+    arrange(desc(youtube_subscribers))
+head(artists)
+```
+
+# Modifying Data Frames in R
+# 1. Adding a Column
+---
+title: "Modifying Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+dogs <- read_csv("dogs.csv")
+```
+
+```{r}
+# inspect data frame
+head(dogs)
+```
+
+```{r}
+# add average height column
+dogs <- dogs %>%
+    mutate(avg_height = (height_low_inches + height_high_inches) / 2) # the mutate function takes a name-value pair as an argument and will add a new column depending on the argument you are creating
+head(dogs)
+```
+
+# 2. Adding Multiple Columns
+---
+title: "Modifying Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+dogs <- read_csv("dogs.csv")
+```
+
+```{r}
+# inspect data frame
+head(dogs)
+```
+
+```{r}
+# add average height, average weight and rank change columns
+dogs <- dogs %>%
+    mutate(
+        avg_height = (height_low_inches + height_high_inches) / 2,
+        avg_weight = (weight_low_lbs + weight_high_lbs) / 2,
+        rank_change_13_to_16 = rank_2016 - rank_2013
+    )
+head(dogs)
+```
+
+# 3. Transmute Columns
+---
+title: "Modifying Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+dogs <- read_csv("dogs.csv")
+```
+
+```{r}
+# inspect data frame
+head(dogs)
+```
+
+```{r}
+# update the function call to drop all existing columns
+dogs <- dogs %>%
+    # transmute will add the new created columns while dropping all of the rest of the columns
+    transmute(
+        breed = breed, # by saying this, it will keep the column from being dropped with transmute
+        avg_height = (height_low_inches + height_high_inches) / 2,
+        avg_weight = (weight_low_lbs + weight_high_lbs) / 2,
+        rank_change_13_to_16 = rank_2016 - rank_2013
+    )
+head(dogs)
+```
+
+# 4. Renaming Columns
+---
+title: "Modifying Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+dogs <- read_csv("dogs.csv")
+```
+
+```{r message=FALSE}
+# add columns and remove existing columns
+dogs <- dogs %>%
+    transmute(
+        breed = breed,
+        avg_height = (height_low_inches + height_high_inches) / 2,
+        avg_weight = (weight_low_lbs + weight_high_lbs) / 2,
+        rank_change_13_to_16 = rank_2016 - rank_2013
+    )
+```
+
+```{r}
+# check column names
+original_col_names <- colnames(dogs)
+print(original_col_names)
+```
+
+```{r}
+# rename data frame columns
+dogs <- dogs %>%
+    rename(
+        avg_height_inches = avg_height,
+        avg_weight_lbs = avg_weight,
+        popularity_change_13_to_16 = rank_change_13_to_16
+    )
+head(dogs)
+```
+
+```{r}
+# check column names
+new_col_names <- colnames(dogs)
+print(new_col_names)
+```
+
+# 5. Review
+---
+title: "Modifying Data Frames in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r message=FALSE}
+# load data frame
+dogs <- read_csv("dogs.csv")
+```
+
+```{r}
+# inspect data frame
+head(dogs)
+```
+
+```{r}
+# add new columns, drop existing columns and arrange
+dogs <- dogs %>%
+    transmute(
+        breed = breed,
+        height_average_feet = ((height_low_inches + height_high_inches) / 2) / 12,
+        popularity_change_15_to_16 = rank_2016 - rank_2015
+    ) %>%
+    arrange(desc(popularity_change_15_to_16))
+head(dogs)
+```
+
+# Data Cleaning in R
+# 1. Dealing with Multiple Files
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+```
+
+```{r}
+# list files
+student_files <- list.files(pattern = "exams_.*csv") # since all of the files start with 'exams_' we will create a pattern to look for all the files that match it
+print(student_files)
+```
+
+```{r message=FALSE}
+# read files
+df_list <- lapply(student_files, read_csv) # reads each file and applites it to a dataframe
+```
+
+```{r}
+# concatenate data frames
+students <- bind_rows(df_list) # concates all the data frames into one dataframe
+head(students)
+```
+
+```{r}
+# number of rows in students
+nrow_students <- nrow(students) # counts the number of rows in the dataframe
+print(nrow_students)
+```
+
+# 2. Reshaping your Data
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# original column names
+original_col_names <- colnames(students)
+print(original_col_names)
+```
+
+```{r}
+# gather columns
+students <- students %>%
+    gather("fractions", "probability", key = "exam", value = "score")
+# students: the data frame that I want to gather, which can be piped into gather()
+# 'fractions' and 'probability': the columns of the old data frame that I want to turn into variables
+# key: what to call the column of the new data frame that stores the variables
+# value: what to call the column of the new data frame that stores the values
+head(students)
+```
+
+```{r}
+# updated column names
+gathered_col_names <- colnames(students)
+print(gathered_col_names)
+```
+
+```{r}
+# unique value counts of exam
+exam_counts <- count(students, exam) # takes a data frame and a column as arguments and returns a table with counts of the unique values in the named column
+print(exam_counts)
+```
+
+# 3. Dealing with Duplicates
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# drop id column
+students <- students %>%
+    select(-id)
+head(students)
+```
+
+```{r}
+# find duplicated rows
+duplicates <- students %>% duplicated() # this function checks for any duplicates in the rows (this is for rows with all the same values as another row but you can also specify a subset by doing 'distinct(item,.keep_all=TRUE)'
+```
+
+```{r}
+# count duplicated rows
+duplicate_counts <- duplicates %>% # this counts the amount of rows that are duplicates
+    table() # this returns the results in a table format
+print(duplicate_counts)
+```
+
+```{r}
+# remove duplicated rows, keep only unique rows
+unique_students <- students %>%
+    distinct() # function to only keep the unique rows in the data frame
+head(unique_students)
+```
+
+```{r}
+# find and count duplicated rows in updated data frame
+updated_duplicates <- unique_students %>%
+    duplicated() %>%
+    table()
+print(updated_duplicates)
+```
+
+# 4. Splitting By Index
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(stringr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# print columns of students
+print(colnames(students))
+```
+
+```{r}
+# view head of students
+head(students)
+```
+
+```{r}
+# add gender and age columns
+students <- students %>%
+    mutate(
+        gender = str_sub(gender_age, 1, 1), # this is a way to extract parts of the text in the column to create a new column; the characters start at index 1 so this is saying to only take the first character
+        age = str_sub(gender_age, 2)
+    ) # this is saying take the characters started from index 2 until the last character
+head(students)
+```
+
+```{r}
+# drop gender_age column
+students <- students %>%
+    select(-gender_age)
+head(students)
+```
+
+# 5. Splitting By Character
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# view the head of students
+head(students)
+```
+
+```{r}
+# separate the full_name column
+students <- students %>%
+    separate(full_name, c("first_name", "last_name"), " ", extra = "merge") # takes the values in a column and splits them into new columns depending on the character
+# separate(col_to_separate, c('new_col_name_1','new_col_name_2'), 'character_to_split_on', extra ='merge')
+head(students)
+```
+
+# 6. Looking at Data Types
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# print structure of students
+str(students) # gets the data types of the table
+```
+
+```{r}
+# mean of age column
+students %>%
+    summarise(mean_score = mean(score)) # without converting the scores to numeric values (currently string values), it will return an error that the arument is not numeric or logical
+```
+
+# 7. String Parsing
+---
+title: "Data Cleaning in R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+```
+
+```{r}
+# load students data frame
+load("students.Rda")
+```
+
+```{r}
+# view head of students
+head(students)
+```
+
+```{r}
+# remove % from score column
+students <- students %>%
+    mutate(score = gsub("\\%", "", score)) # the column currently has the scores formatted as '69%' so the gsub() argument removes the characters from the column
+head(students)
+```
+
+```{r}
+# change score column to numeric
+students <- students %>%
+    mutate(score = as.numeric(score)) # transforms the column from character to numeric
+head(students)
+```
+
+# Visualization with R 
+# - the data or the actual information you wish to visualize
+# - the geometries, shortened to "geoms", describe the shapes that represent our data. Whether it be dots on a scatter plot, bars on a bar chart, or lines on a line graph. The list goes on. Geoms are the shapes that "map" our data.
+# - the aesthetics, or the visual attributes of the plot, including the scales on the axes, the color, the fill, and other attributes concerning appearance.
+
+# EX:
+---
+title: "Intro To GGPlot2"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+movies <- read_csv("imdb.csv")
+```
+
+```{r}
+# Observe layers being added with the + sign
+viz <- ggplot(data = movies, aes(x = imdbRating, y = nrOfWins)) +
+    geom_point(aes(color = nrOfGenre), alpha = 0.5) +
+    labs(title = "Movie Ratings Vs Award Wins", subtitle = "From IMDB dataset", y = "Number of Award Wins", x = "Movie Rating", color = "Number of Genre")
+
+
+# Prints the plot
+viz
+```
+
+# - the ggplot() function is the that creates the object that you are representing in a Visualization
+
+# 1. Associating the Data 
+---
+title: "Intro To GGPlot2"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+movies <- read_csv("imdb.csv")
+```
+
+```{r}
+# Define variable and print it
+viz <- ggplot(data = movies)
+viz
+```
+
+```{r message=FALSE}
+```
+
+# 2. What are aesthetics?
+# Here are more aesthetics for the geom_point() layer: x, y, alpha, color, fill, group, shape, size, stroke. The alpha aesthetic describes opacity of the points, and the shape of the dots could be different than a dot.
+---
+title: "Intro To GGPlot2"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+movies <- read_csv("imdb.csv")
+```
+
+```{r}
+# Add manual alpha aesthetic mapping
+viz <- ggplot(data = movies, aes(x = imdbRating, y = nrOfWins)) +
+    geom_point(aes(color = nrOfGenre)) # displays the dots in the plot in different colors based on the number of genres
+# Prints the plot
+viz
+```
+
+```{r message=FALSE}
+```
+
+---
+title: "Intro To GGPlot2"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+movies <- read_csv("imdb.csv")
+```
+
+```{r}
+# Add labels as specified
+viz <- ggplot(data = movies, aes(x = imdbRating, y = nrOfWins)) +
+    geom_point(aes(color = nrOfGenre), alpha = 0.5) +
+    labs(
+        title = "Movie Ratings Vs Award Wins",
+        subtitle = "From IMDB dataset",
+        x = "Movie Rating",
+        y = "Number of Award Wins",
+        color = "Number of Genre"
+    )
+# Prints the plot
+viz
+```
+
+```{r message=FALSE}
+```
+
+---
+title: "Intro To GGPlot2"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries and data
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+# Inspect the mpg builtin dataset
+head(mpg)
+```
+
+```{r message=FALSE}
+# Create a bar chart
+bar <- ggplot(data = mpg, aes(x = class)) +
+    geom_bar(aes(fill = class)) +
+    labs(
+        title = "Types of Vehicles",
+        subtitle = "From fuel economy data for popular car models (1999-2008)"
+    )
+bar
+```
+
+# Aggregates in R 
+# - an aggregate statistic is a way of creating a single number that describes a group of numbers.
+# - common aggregate statistics include the mean, median, mode, and range.3
+
+# 1. Calculating Column statistics
+# df is the data frame you are working with
+# summarize is a dplyr function that reduces multiple values to a single value
+# var_name is the name you assign to the column that stores the results of the summary function in the returned data frame
+# command is the summary function that is applied to the column by summarize()
+# column_name is the name of the column of df that is being summarized
+
+# Command	Description
+# mean()	Average of all values in column
+# median()	Median value of column
+# sd()	Standard deviation of column
+# var()	Variance of column
+# min()	Minimum value in column
+# max()	Maximum value in column
+# IQR()	Interquartile range of column
+# n_distinct()	Number of unique values in column
+# sum()	Sum values of column
+
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load order data
+orders <- read_csv("orders.csv")
+
+# inspect orders here:
+head(orders, 10)
+```
+
+```{r}
+# define most_expensive here:
+most_expensive <- orders %>%
+    summarize(max_price = max(price, na.rm = TRUE)) # if there are missing values in your column the 'na.rm=TRUE' will remove all NA
+most_expensive
+```
+
+```{r}
+# define num_colors here:
+num_colors <- orders %>%
+    summarize(n_distinct_colors = n_distinct(shoe_color)) # counts the distinct number of values in a column
+num_colors
+```
+
+# 2. Calculating Aggregate Functions I 
+# df %>%
+  # group_by(column_1) %>%
+  # summarize(aggregate_name = command(column_2))
+
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders data
+orders <- read_csv("orders.csv")
+
+# inspect orders
+head(orders)
+```
+
+```{r}
+# define pricey_shoes here:
+pricey_shoes <- orders %>%
+    group_by(shoe_type) %>%
+    summarize(max_price = max(price, na.rm = TRUE))
+pricey_shoes
+```
+
+```{r}
+# define shoes_sold here:
+shoes_sold <- orders %>%
+    group_by(shoe_type) %>%
+    summarize(count = n()) # using just n() will return the count of the rows within a group and does not require a column as an argument
+shoes_sold
+```
+
+# 3. Calculating Aggregate Functions II
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders data
+orders <- read_csv("orders.csv")
+
+# inspect orders
+head(orders)
+```
+
+```{r}
+# define shoe_counts here:
+shoe_counts <- orders %>%
+    group_by(shoe_type, shoe_color) %>%
+    summarize(count = n())
+shoe_counts
+```
+
+```{r}
+# define shoe_prices here:
+shoe_prices <- orders %>%
+    group_by(shoe_type, shoe_material) %>%
+    summarize(mean_price = mean(price, na.rm = TRUE))
+shoe_prices
+```
+
+# 4. Combining Grouping with Filter 
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders data
+orders <- read_csv("orders.csv")
+
+# inspect orders
+head(orders)
+```
+
+```{r}
+# define most_pop_orders here:
+most_pop_orders <- orders %>%
+    group_by(shoe_type) %>%
+    filter(n() > 16)
+most_pop_orders
+```
+
+# 5. Combining Grouping with mutate
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders data
+orders <- read_csv("orders.csv")
+
+# inspect orders
+head(orders)
+```
+
+```{r}
+# define diff_from_mean here:
+diff_from_mean <- orders %>%
+    group_by(shoe_type) %>%
+    mutate(diff_from_shoe_type_mean = price - mean(price, na.rm = TRUE)) # this will add a new column which is calculated as the difference between a row's individual price and the mean(price) for that row's group(shoe_type)
+diff_from_mean
+```
+
+# 6. Review
+---
+title: "Aggregates in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load data
+orders <- read_csv("orders.csv")
+page_visits <- read_csv("page_visits.csv")
+```
+
+```{r}
+# inspect data frames
+head(orders)
+head(page_visits)
+```
+
+```{r}
+# define average_price here:
+average_price <- orders %>%
+    summarize(mean_price = mean(price, na.rm = TRUE))
+average_price
+```
+
+```{r}
+# define click_source here:
+click_source <- page_visits %>%
+    group_by(utm_source) %>%
+    summarize(count = n())
+click_source
+```
+
+```{r}
+# define click_source_by_month here:
+click_source_by_month <- page_visits %>%
+    group_by(utm_source, month) %>%
+    summarize(count = n())
+click_source_by_month
+```
+
+# Joining Tables in R
+# 1. Inner Join I 
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load sales and targets data
+sales <- read_csv("sales.csv")
+targets <- read_csv("targets.csv")
+```
+
+```{r}
+# inspect orders, customers and products
+head(sales)
+head(targets)
+```
+
+```{r}
+# define sales_vs_targets here:
+sales_vs_targets <- sales %>%
+    inner_join(targets)
+sales_vs_targets
+```
+
+```{r}
+# define crushing_it here:
+crushing_it <- sales_vs_targets %>%
+    filter(revenue > target)
+crushing_it
+```
+
+# 2. Inner Join II
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load and inspect sales and targets data
+sales <- read_csv("sales.csv")
+targets <- read_csv("targets.csv")
+head(sales)
+head(targets)
+```
+
+```{r}
+# load men_women data here:
+men_women <- read_csv("men_women_sales.csv")
+# inspect men_women here:
+head(men_women)
+```
+
+```{r}
+# define all_data here:
+all_data <- sales %>%
+    inner_join(targets) %>%
+    inner_join(men_women)
+all_data
+```
+
+```{r}
+# define results here:
+results <- all_data %>%
+    filter(revenue > target & women > men)
+results
+```
+
+# 3. Join on Specific Columns I 
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders and products data
+orders <- read_csv("orders.csv")
+products <- read_csv("products.csv")
+```
+
+```{r}
+# inspect orders and products
+head(orders)
+head(products)
+```
+
+```{r}
+# rename the id column of products here:
+products <- products %>%
+    rename(product_id = id)
+head(products)
+```
+
+```{r}
+# define orders_products here:
+orders_products <- orders %>%
+    inner_join(products)
+orders_products
+```
+
+# 4. Join on Specific Columns II
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load orders and products data
+orders <- read_csv("orders.csv")
+products <- read_csv("products.csv")
+```
+
+```{r}
+# inspect orders and products
+head(orders)
+head(products)
+```
+
+```{r}
+# define orders_products here:
+orders_products <- orders %>%
+    inner_join(products,
+        by = c("product_id" = "id"),
+        suffix = c("_order", "_product")
+    )
+orders_products
+```
+
+```{r}
+# define products_orders here:
+products_orders <- products %>%
+    inner_join(orders,
+        by = c("id" = "product_id"),
+        suffix = c("_product", "_order")
+    )
+products_orders
+```
+
+# 5. Full Join
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load store_a and store_b data
+store_a <- read_csv("store_a.csv")
+store_b <- read_csv("store_b.csv")
+```
+
+```{r}
+# inspect store_a and store_b
+head(store_a)
+head(store_b)
+```
+
+```{r}
+# define store_a_b_full here:
+store_a_b_full <- store_a %>%
+    full_join(store_b) # this join method will prevent any lost data for rows that don't match from one table to the other
+store_a_b_full
+```
+
+# 6. Left and Right Joins
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load store_a and store_b data
+store_a <- read_csv("store_a.csv")
+store_b <- read_csv("store_b.csv")
+```
+
+```{r}
+# inspect store_a and store_b
+head(store_a)
+head(store_b)
+```
+
+```{r}
+# define left_a_b here:
+left_a_b <- store_a %>%
+    left_join(store_b) # the left join will include everything from the first table (store_a) and only the matching rows from the second table (store_b)
+left_a_b
+```
+
+```{r}
+# define left_b_a here:
+left_b_a <- store_b %>%
+    left_join(store_a)
+left_b_a
+```
+
+# 7. Concatenate Data Frames
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load bakery and ice_cream data
+bakery <- read_csv("bakery.csv")
+ice_cream <- read_csv("ice_cream.csv")
+```
+
+```{r}
+# inspect bakery and ice_cream
+head(bakery)
+head(ice_cream)
+```
+
+```{r}
+# define menu here:
+menu <- bakery %>%
+    bind_rows(ice_cream) # this function will concatenate the two data frames together but only if there is the same number if columns in each data frame
+menu
+```
+
+# 8. Review 
+---
+title: "Joining Tables in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load packages
+library(readr)
+library(dplyr)
+```
+
+```{r message = FALSE}
+# load visits and checkouts data
+visits <- read_csv("visits.csv")
+checkouts <- read_csv("checkouts.csv")
+```
+
+```{r}
+# inspect visits and checkouts here:
+head(visits)
+head(checkouts)
+```
+
+```{r}
+# define v_to_c here:
+v_to_c <- visits %>%
+    inner_join(checkouts)
+v_to_c
+```
+
+```{r}
+# define avg_time_to_check here:
+v_to_c <- v_to_c %>%
+    mutate(time = checkout_time - visit_time)
+v_to_c
+
+avg_time_to_check <- v_to_c %>%
+    summarize(mean_time = mean(time))
+avg_time_to_check
+```
+
+# Mean in R 
+---
+title: "Mean in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# import libraries
+library(readr)
+library(dplyr)
+# Read author data
+greatest_books <- read_csv("top-hundred-books.csv")
+
+# Set author ages to a vector
+author_ages <- greatest_books$Ages
+
+# Use R to calculate mean
+average_age <- mean(author_ages)
+print(average_age)
+```
+
+---
+title: "Mean in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# load data frame
+greatest_books <- read_csv("top-hundred-books.csv")
+
+# plot data
+hist <- qplot(greatest_books$Ages,
+    geom = "histogram",
+    binwidth = 3,
+    main = "Age of Top 100 Novel Authors at Publication",
+    xlab = "Publication Age",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = mean(greatest_books$Ages),
+            color = "mean"
+        ),
+        linetype = "solid",
+        size = 1
+    ) +
+    scale_color_manual(name = "statistics", values = c(mean = "red"))
+
+hist
+```
+
+# Median in R
+---
+title: "Median in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+
+# Load data frame
+greatest_books <- read_csv("top-hundred-books.csv")
+
+
+# Save author ages to author_ages
+author_ages <- greatest_books$Ages
+
+# Use R to calculate the median age of the top 100 authors
+median_age <- median(author_ages)
+
+print(paste("The median age of the 100 greatest authors, according to a survey by Le Monde is: ", median_age))
+```
+---
+title: "Median in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# load data frame
+greatest_books <- read_csv("top-hundred-books.csv")
+
+# plot data
+hist <- qplot(greatest_books$Ages,
+    geom = "histogram",
+    binwidth = 3,
+    main = "Age of Top 100 Novel Authors at Publication",
+    xlab = "Publication Age",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = median(greatest_books$Ages),
+            color = "median"
+        ),
+        linetype = "dashed",
+        size = 1
+    ) +
+    geom_vline(
+        aes(
+            xintercept = mean(greatest_books$Ages),
+            color = "mean"
+        ),
+        linetype = "solid",
+        size = 1
+    ) +
+    scale_color_manual(name = "statistics", values = c(median = "blue", mean = "red"))
+
+hist
+```
+
+# Mode in R 
+---
+title: "Mode in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# import libraries
+library(readr)
+library(dplyr)
+library(DescTools)
+
+# Read author data
+greatest_books <- read_csv("top-hundred-books.csv")
+
+# Set author ages to
+author_ages <- greatest_books$Ages
+
+mode_age <- Mode(author_ages) # be careful because 'Mode' needs to be capitalized
+
+print(paste("The mode age of authors from Le Monde's 100 greatest books is: ", mode_age[1]))
+```
+---
+title: "Mode in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# load data frame
+greatest_books <- read_csv("top-hundred-books.csv")
+
+# plot data
+hist <- qplot(greatest_books$Ages,
+    geom = "histogram",
+    binwidth = 3,
+    main = "Age of Top 100 Novel Authors at Publication",
+    xlab = "Publication Age",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = median(greatest_books$Ages),
+            color = "median"
+        ),
+        linetype = "dashed",
+        size = 1
+    ) +
+    geom_vline(
+        aes(
+            xintercept = mean(greatest_books$Ages),
+            color = "mean"
+        ),
+        linetype = "solid",
+        size = 1
+    ) +
+    geom_vline(
+        aes(
+            xintercept = 38,
+            color = "mode"
+        ),
+        linetype = "solid",
+        size = 1
+    ) +
+    scale_color_manual(name = "statistics", values = c(median = "blue", mean = "red", mode = "green"))
+
+hist
+```
+
+# Variance in R
+# The variance() function takes a list of numbers as a parameter and returns the variance of that dataset.
+---
+title: "Variance in R"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# defining the variance of the population mean
+variance <- function(x) mean((x - mean(x))^2)
+
+teacher_one_grades <- c(80.24, 81.15, 81.29, 82.12, 82.52, 82.54, 82.76, 83.37, 83.42, 83.45, 83.47, 83.79, 83.91, 83.98, 84.03, 84.69, 84.74, 84.89, 84.95, 84.95, 85.02, 85.18, 85.53, 86.29, 86.83, 87.29, 87.47, 87.62, 88.04, 88.5)
+teacher_two_grades <- c(65.82, 70.77, 71.46, 73.63, 74.62, 76.53, 76.86, 77.06, 78.46, 79.81, 80.64, 81.61, 81.84, 83.67, 84.44, 84.73, 84.74, 85.15, 86.55, 88.06, 88.53, 90.12, 91.27, 91.62, 92.86, 94.37, 95.64, 95.99, 97.69, 104.4)
+
+# Set these two variables equal to the variance of each dataset using NumPy
+teacher_one_variance <- variance(teacher_one_grades)
+teacher_two_variance <- variance(teacher_two_grades)
+
+
+# IGNORE THE CODE BELOW HERE
+
+hist(teacher_one_grades, col = rgb(0, 0, 1, 1 / 4), xlim = c(65, 105), main = "Teacher Grades One and Two", breaks = 15)
+hist(teacher_two_grades, col = rgb(1, 0, 0, 1 / 4), add = T, breaks = 15)
+legend("topright", c("Teacher 1", "Teacher 2"), fill = c("blue", "red"))
+box()
+
+print(paste("The mean of the test scores in teacher one's class is ", mean(teacher_one_grades)))
+print(paste("The mean of the test scores in teacher two's class is ", mean(teacher_two_grades)))
+
+print(paste("The variance of the test scores in teacher one's class is ", teacher_one_variance))
+print(paste("The variance of the test scores in teacher two's class is ", teacher_two_variance))
+```
+
+# Standard Deviation in R
+---
+title: "Standard Deviation"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+# Importing data and calculating variance
+load("lesson_data.Rda")
+variance <- function(x) mean((x - mean(x))^2)
+
+nba_variance <- variance(nba_data)
+okcupid_variance <- variance(okcupid_data)
+```
+
+```{r}
+# Change these variables to be the standard deviation of each dataset.
+nba_standard_deviation <- nba_variance^0.5 # both of these ways can be used to calculate standard deviation
+okcupid_standard_deviation <- sqrt(okcupid_variance) # this is the easier way to do it thought
+
+# IGNORE CODE BELOW HERE
+print(paste("The standard deviation of the NBA dataset is ", nba_standard_deviation))
+print(paste("The standard deviation of the OkCupid dataset is ", okcupid_standard_deviation))
+```
+
+---
+title: "Standard Deviation"
+output: html_notebook
+---
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+# Import data
+load("lesson_data.Rda")
+```
+
+```{r}
+# Change these variables to be the standard deviation of each dataset.
+nba_standard_deviation <- sd(nba_data) # this, however, is the quickest way to calculate standard deviation by skipping the variance calculation
+okcupid_standard_deviation <- sd(okcupid_data)
+
+# IGNORE CODE BELOW HERE
+print(paste("The standard deviation of the NBA dataset is ", nba_standard_deviation))
+print(paste("The standard deviation of the OkCupid dataset is ", okcupid_standard_deviation))
+```
+
+# Qaurtiles in R
+---
+title: "Quartiles"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(ggplot2)
+```
+
+```{r}
+# load song data
+load("songs.Rda")
+```
+
+```{r message=FALSE}
+# plot histogram
+hist <- qplot(songs,
+    geom = "histogram",
+    main = "Histogram of Song Lengths",
+    xlab = "Song Length (Seconds)",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = 364,
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    scale_colour_manual(
+        name = "",
+        labels = c("Chicago"),
+        values = c("blue")
+    )
+
+hist
+```
+
+---
+title: "Quartiles"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(ggplot2)
+```
+
+```{r}
+# load song data
+load("songs.Rda")
+```
+
+```{r message=FALSE}
+# plot histogram
+hist <- qplot(songs,
+    geom = "histogram",
+    main = "Histogram of Song Lengths",
+    xlab = "Song Length (Seconds)",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = quantile(songs, 0.25),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(songs, 0.5),
+            color = I("purple")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(songs, 0.75),
+            color = I("yellow")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    scale_colour_manual(
+        name = "",
+        labels = c("Q1", "Q2", "Q3"),
+        values = c("blue", "purple", "yellow")
+    )
+
+hist
+```
+
+---
+title: "Quantiles"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+# load libraries
+library(ggplot2)
+```
+
+```{r}
+# load school data
+load("school_one.Rda")
+load("school_two.Rda")
+load("school_three.Rda")
+```
+
+```{r message=FALSE, echo=FALSE}
+# plot histogram and deciles for school one
+hist <- qplot(school_one,
+    geom = "histogram",
+    main = "School One",
+    xlab = "SAT Score",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.1),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.2),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.3),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.4),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.5),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.6),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.7),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.8),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_one, 0.9),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    )
+
+hist
+```
+
+```{r message=FALSE, echo=FALSE}
+# plot histogram and deciles for school two
+hist <- qplot(school_two,
+    geom = "histogram",
+    main = "School Two",
+    xlab = "SAT Score",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.1),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.2),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.3),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.4),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.5),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.6),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.7),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.8),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_two, 0.9),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    )
+
+hist
+```
+
+```{r message=FALSE, echo=FALSE}
+# plot histogram and deciles for school three
+hist <- qplot(school_three,
+    geom = "histogram",
+    main = "School Three",
+    xlab = "SAT Score",
+    ylab = "Count",
+    fill = I("blue"),
+    col = I("red"),
+    alpha = I(.2)
+) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.1),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.2),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.3),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.4),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.5),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.6),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.7),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.8),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    ) +
+    geom_vline(
+        aes(
+            xintercept = quantile(school_three, 0.9),
+            color = I("blue")
+        ),
+        linetype = "solid",
+        size = 1,
+        show.legend = T
+    )
+
+hist
+```
+
+# Interquartile Range (IQR) in R
+---
+title: "Interquartile Range"
+output: html_notebook
+---
+
+```{r}
+# load song data
+load("songs.Rda")
+```
+
+```{r}
+# create the variable interquartile_range here
+interquartile_range <- IQR(songs)
+```
+
+```{r}
+# ignore the code below here:
+
+tryCatch(print(paste("The IQR of the dataset is", interquartile_range)), error = function(e) {
+    print("You haven't defined interquartile_range yet")
+})
+```
+
+# Hypothesis Testing with R 
+# 1. One Sample T-Test
+# A One Sample T-Test compares a sample mean to a hypothetical population mean. 
+# It answers the question "What is the probability that the sample came from a distribution with the desired mean?"
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load and view data
+load("ages.Rda")
+ages
+```
+
+```{r}
+# calculate ages_mean here:
+ages_mean <- mean(ages)
+ages_mean
+```
+
+```{r}
+# perform t-test here:
+results <- t.test(ages, mu = 30)
+results
+```
+# OUTPUT:  
+#    One Sample t-test
+# data:  ages
+# t = 0.59738, df = 13, p-value = 0.5605
+# alternative hypothesis: true mean is not equal to 30
+# 95 percent confidence interval:
+#  27.38359 34.61641
+# sample estimates:
+# mean of x 
+#        31 
+
+# Two Sample T-Test
+# A Two Sample T-Test compares two sets of data, which are both approximately normally distributed.
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load data
+load("week_1.Rda")
+week_1
+load("week_2.Rda")
+week_2
+```
+
+```{r}
+# calculate week_1_mean and week_2_mean here:
+week_1_mean <- mean(week_1)
+week_2_mean <- mean(week_2)
+```
+
+```{r}
+# calculate week_1_sd and week_2_sd here:
+week_1_sd <- sd(week_1)
+week_2_sd <- sd(week_2)
+```
+
+```{r}
+# run two sample t-test here:
+results <- t.test(week_1, week_2)
+results
+```
+
+

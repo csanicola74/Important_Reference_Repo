@@ -2397,4 +2397,153 @@ tryCatch(print(paste("The IQR of the dataset is", interquartile_range)), error =
 ```
 
 # Hypothesis Testing with R 
+# 1. One Sample T-Test
+# A One Sample T-Test compares a sample mean to a hypothetical population mean. 
+# It answers the question "What is the probability that the sample came from a distribution with the desired mean?"
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
 
+```{r message = FALSE}
+# load and view data
+load("ages.Rda")
+ages
+```
+
+```{r}
+# calculate ages_mean here:
+ages_mean <- mean(ages)
+ages_mean
+```
+
+```{r}
+# perform t-test here:
+results <- t.test(ages, mu = 30)
+results
+```
+# OUTPUT:  
+#    One Sample t-test
+# data:  ages
+# t = 0.59738, df = 13, p-value = 0.5605
+# alternative hypothesis: true mean is not equal to 30
+# 95 percent confidence interval:
+#  27.38359 34.61641
+# sample estimates:
+# mean of x 
+#        31 
+
+# Two Sample T-Test
+# A Two Sample T-Test compares two sets of data, which are both approximately normally distributed.
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load data
+load("week_1.Rda")
+week_1
+load("week_2.Rda")
+week_2
+```
+
+```{r}
+# calculate week_1_mean and week_2_mean here:
+week_1_mean <- mean(week_1)
+week_2_mean <- mean(week_2)
+```
+
+```{r}
+# calculate week_1_sd and week_2_sd here:
+week_1_sd <- sd(week_1)
+week_2_sd <- sd(week_2)
+```
+
+```{r}
+# run two sample t-test here:
+results <- t.test(week_1, week_2)
+results
+```
+
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load data
+load("store_a.Rda")
+load("store_b.Rda")
+load("store_c.Rda")
+```
+
+```{r}
+# calculate means here:
+store_a_mean <- mean(store_a)
+store_b_mean <- mean(store_b)
+store_c_mean <- mean(store_c)
+```
+
+```{r}
+# calculate standard deviations here:
+store_a_sd <- sd(store_a)
+store_b_sd <- sd(store_b)
+store_c_sd <- sd(store_c)
+```
+
+```{r}
+# perform two sample t-test here:
+a_b_results <- t.test(store_a, store_b) # results <- t.test(dist_a,dist_b)
+a_b_results
+a_c_results <- t.test(store_a, store_c)
+a_c_results
+b_c_results <- t.test(store_b, store_c)
+b_c_results
+```
+
+```{r}
+# calculate error_prob here:
+error_prob <- (1 - (0.95**3)) # prob_error <- (1-(0.95**number_of_t_tests))
+error_prob
+```
+
+
+# ANOVA in R 
+# ANOVA (Analysis of Variance) tests the null hypothesis that all of the datasets you are considering have the same mean. 
+# If you reject the null hypothesis with ANOVA, you're saying that at least one fo the sets has a different mean. 
+---
+title: "Hypothesis Testing in R"
+output: html_notebook
+---
+
+```{r message = FALSE}
+# load libraries
+library(tidyr)
+```
+
+```{r message = FALSE}
+# load data
+load("stores.Rda")
+load("stores_new.Rda")
+```
+
+```{r}
+# inspect stores here:
+head(stores)
+head(stores_new)
+```
+
+```{r}
+# perform anova on stores here:
+results <- aov(sales ~ store, data = stores) # results <- aov(vals ~ group, data = df)
+results
+summary(results)
+```
+
+```{r}
+# perform anova on stores_new here:
+results_new <- aov(sales ~ store, data = stores_new)
+results_new
+summary(results_new)
+```
