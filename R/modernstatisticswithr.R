@@ -86,3 +86,51 @@ ggplot(msleep, aes(log(brainwt), sleep_total, color = vore)) + # using the log t
   xlab("log(Brain Weight)") +
   ylab("Total sleep time")
 
+ggplot(msleep, aes(brainwt, sleep_total, color = vore)) +
+  geom_point() +
+  xlab("Brain Weight (logarithmic scale)") +
+  ylab("Total sleep time") +
+  scale_x_log10() # this changes the scale of the x-axis to a log10 scale (which increases interpretability because the values shown at the ticks still are on the original x-scale).
+
+# Comparing Groups
+ggplot(msleep, aes(brainwt, sleep_total)) +
+  geom_point() +
+  xlab("Brain weight (logarithmic scale)") +
+  ylab("Total sleep time") +
+  scale_x_log10() +
+  facet_wrap(~ vore) # this uses 'facetting' which is to create a grid of plots corresponding to the different groups
+# this makes it easier to compare the different groups all at one glance
+
+# Boxplots
+# Base R: 
+boxplot(sleep_total ~ vore, data = msleep)
+# ggplot2: 
+ggplot(msleep, aes(vore, sleep_total)) +
+  geom_boxplot()
+
+# Histograms
+# Base R: 
+hist(msleep$sleep_total)
+# ggplot2:
+ggplot(msleep, aes(sleep_total)) +
+  geom_histogram()
+
+### Plotting Categorical Data ###
+# Bar charts
+# Base R: 
+barplot(table(msleep$vore))
+# ggplot2:
+ggplot(msleep, aes(vore)) +
+  geom_bar()
+
+ggplot(msleep, aes(factor(1), fill = vore)) + # the fill adds different colors depending on the categories
+  geom_bar()
+
+### Saving Your Plot ###
+library(ggplot2)
+myPlot <- ggplot(msleep, aes(sleep_total, sleep_rem)) +
+  geom_point()
+myPlot # now just to plot the object, you would just have to call its name
+myPlot + xlab("I forgot to add a label!") # you can also still add things once its been named
+
+ggsave("filename.pdf", myPlot, width = 5, height = 5) # this is to save the plot as a file and to specify the size
