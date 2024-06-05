@@ -2395,6 +2395,3 @@ tryCatch(print(paste("The IQR of the dataset is", interquartile_range)), error =
     print("You haven't defined interquartile_range yet")
 })
 ```
-
-# Hypothesis Testing with R 
-

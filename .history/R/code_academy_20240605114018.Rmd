@@ -2372,29 +2372,3 @@ hist <- qplot(school_three,
 hist
 ```
 
-# Interquartile Range (IQR) in R
----
-title: "Interquartile Range"
-output: html_notebook
----
-
-```{r}
-# load song data
-load("songs.Rda")
-```
-
-```{r}
-# create the variable interquartile_range here
-interquartile_range <- IQR(songs)
-```
-
-```{r}
-# ignore the code below here:
-
-tryCatch(print(paste("The IQR of the dataset is", interquartile_range)), error = function(e) {
-    print("You haven't defined interquartile_range yet")
-})
-```
-
-# Hypothesis Testing with R 
-
