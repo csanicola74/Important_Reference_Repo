@@ -26,6 +26,21 @@ sd(msleep$sleep_total)        # Standard Deviation
 var(msleep$sleep_total)       # Variance
 quantile(msleep$sleep_total)  # Various quantiles
 
+# Additional arithmetic operators
+abs(x) # computes the absolute value |x|.
+sqrt(x) # computes √x.
+log(x) # computes the logarithm of x with the natural number e as the base.
+log(x, base = a) # computes the logarithm of x with the number a as the base.
+a^x # computes ax.
+exp(x) # computes ex.
+sin(x) # computes sin(x).
+sum(x) # when x is a vector x = (x1, x2, x3, …, xn), computes the sum of the elements of x: ∑ni= 1xi.
+prod(x) # when x is a vector x = (x1, x2, x3, …, xn), computes the product of the elements of x: ∏ni= 1xi.
+pi # a built-in variable with value π, the ratio of the circumference of a circle to its diameter.
+x %% a # computes x modulo a.
+factorial(x) # computes x!.
+choose(n,k) # computes (nk).
+
 cor(msleep$sleep_total, msleep$sleep_rem, use = "complete.obs") # calculates the correlation between the two variables
 # "complete.obs" tells it to compute the correlation using only observations with complete data (i.e. no missing values)
 
