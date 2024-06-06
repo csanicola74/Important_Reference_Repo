@@ -288,6 +288,216 @@ a == 4 | a == 5 # FALSE
 # I.e. is one and only one of these satisfied?
 xor(a < b, a == 4) # TRUE
 
+# Importing Data
+imported_data <- read.csv("philosophers.csv") # this will only work if the file is in your working directory
+imported_data2 <- read.csv(file.choose()) # this will allow you to select a file not in your working directory
+
+# File Paths
+# or you can specify a file path and use that
+# Windows example 1:
+file_path <- "C:/Users/Mans/Desktop/MyData/philosophers.csv"
+# Windows example 2:
+file_path <- "C:\\Users\\Mans\\Desktop\\MyData\\philosophers.csv"
+imported_data <- read.csv(file.path) # then you would call the variable 'file_path' when you want to import it
+
+# Importing Excel Files
+install.packages("openxlsx")
+library(openxlsx)
+imported_from_Excel <- read.xlsx(file_path)
+
+# Exporting Data
+# Bookstore example
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
+bookstore <- data.frame(age, purchase)
+
+# Export to .csv:
+write.csv(bookstore, "bookstore.csv")
+
+# Export to .xlsx (Excel):
+library(openxlsx)
+write.xlsx(bookstore, "bookstore.xlsx")
+
+# Saving and Loading R Data
+save(bookstore, age, file = "myData.RData") # saves just the objects bookstore and age
+save.image(file = "allMyData.RData") # to save all objects in your environment
+load(file = "myData.RData") # loading the stored objects
+
+# Running a t-test
+library(ggplot2)
+carnivores <- msleep[msleep$vore == "carni",]
+herbivores <- msleep[msleep$vore == "herbi",]
+t.test(carnivores$sleep_total, herbivores$sleep_total)
+
+t.test(carnivores$sleep_total, herbivores$sleep_total,
+       conf.level = 0.90, # this sets the confidence level to 90%
+       alternative = "greater", # to use a one-sided alternative hypothesis
+       var.equal = TRUE) # performs the test under the assumption of equal variances in the two samples
+
+# Fitting a linear regression model
+?mtcars
+View(mtcars)
+
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg)) + # to see the relationship between horsepower (hp) and fuel consumption (mpg)
+  geom_point()
+
+m <- lm(mpg ~ hp, data = mtcars) # using linear regression to fit the model
+summary(m)
+# OUTPUT:
+# Call:
+#   lm(formula = mpg ~ hp, data = mtcars)
+# 
+# Residuals:
+#   Min      1Q  Median      3Q     Max 
+# -5.7121 -2.1122 -0.8854  1.5819  8.2360 
+# 
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept) 30.09886    1.63392  18.421  < 2e-16 ***
+#   hp          -0.06823    0.01012  -6.742 1.79e-07 ***
+#   ---
+#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# 
+# Residual standard error: 3.863 on 30 degrees of freedom
+# Multiple R-squared:  0.6024,	Adjusted R-squared:  0.5892 
+# F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07
+
+# Check model coefficients:
+coef(m)
+
+# Add regression line to plot:
+ggplot(mtcars, aes(hp, mpg)) +
+  geom_point() +
+  geom_abline(aes(intercept = coef(m)[1], slope = coef(m)[2]), # to add a straight line with a given intercept and slope
+              color = "red")
+plot(m) # to see the diagnostic plots for the residuals
+
+m2 <- lm(mpg ~ hp + wt, data = mtcars)
+summary(m2)
+
+# Grouped Summaries
+aggregate(Temp ~ Month, data = airquality, FUN = mean) # the aggregate function creates a grouped summary; this is getting the mean temperature for each month
+
+aggregate(Ozone ~ Month, data = airquality, FUN = mean) # even though the Ozone column contains NA, by default aggregate removes NA before computing the grouped summaries
+
+aggregate(cbind(Temp, Wind) ~ Month, data = airquality, FUN = sd) # this way you can compute multiple variables at the same time; for this its the standard deviation of Temp and Wind
+
+aggregate(Temp ~ Month, data = airquality, FUN = length) # this counts the number of observations in the groups; this for example is counting the number of days in each month
+
+by(airquality$Temp, airquality$Month, mean) # another method to get grouped summaries but with a nicer output format:
+# airquality$Month: 5
+# [1] 65.54839
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 6
+# [1] 79.1
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 7
+# [1] 83.90323
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 8
+# [1] 83.96774
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 9
+# [1] 76.9
+
+names(airquality) # Check that Wind and Temp are in columns 3 and 4
+by(airquality[, 3:4], airquality$Month, cor)
+# OUTPUT:
+ # airquality$Month: 5
+# Wind      Temp
+# Wind  1.000000 -0.373276
+# Temp -0.373276  1.000000
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 6
+# Wind       Temp
+# Wind  1.0000000 -0.1210353
+# Temp -0.1210353  1.0000000
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 7
+# Wind       Temp
+# Wind  1.0000000 -0.3052355
+# Temp -0.3052355  1.0000000
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 8
+# Wind       Temp
+# Wind  1.0000000 -0.5076146
+# Temp -0.5076146  1.0000000
+# -------------------------------------------------------------------------------------------------------------------------- 
+#   airquality$Month: 9
+# Wind       Temp
+# Wind  1.0000000 -0.5704701
+# Temp -0.5704701  1.0000000
+
+# Using %>% Pipes
+# The 'magrittr' package adds a set of tools called pipes to R
+install.packages("magrittr")
+library(magrittr)
+
+# Extract hot days:
+airquality2 <- airquality[airquality$Temp > 80, ]
+# Convert wind speed to m/s:
+airquality2$Wind <- airquality2$Wind * 0.44704
+# Compute mean wind speed for each month:
+hot_wind_means <- aggregate(Wind ~ Month, data = airquality2, FUN = mean)
+# More compact:
+hot_wind_means <- aggregate(Wind*0.44704 ~ Month,
+                            data = airquality[airquality$Temp > 80, ],
+                            FUN = mean)
+
+# magrittr introduces a new operator, %>%, called a pipe, which can be used to chain functions together
+# new_variable <- function_2(function_1(your_data))
+# can instead be written as:
+# your_data %>% function_1 %>% function_2 -> new_variable
+
+subset(airquality, Temp > 80) # subset is a function that lets us extract the values that match the criteria
+library(magrittr)
+inset(airquality, "Wind", value = airquality$Wind * 0.44704) # inset lets us convert the wind speed
+
+# So you can take these steps:
+# Extract hot days:
+airquality2 <- subset(airquality, Temp > 80)
+# Convert wind speed to m/s
+airquality2 <- inset(airquality2, "Wind", 
+                     value = airquality2$Wind * 0.44704)
+# Compute mean wind speed for each month:
+hot_wind_means <- aggregate(Wind ~ Month, data = airquality2, 
+                            FUN = mean)
+
+# Can now be put into one code block
+airquality %>%
+  subset(Temp > 80) %>%
+  inset("Wind", value = .$Wind * 0.44704) %>%
+  aggregate(Wind ~ Month, data = ., FUN = mean) ->
+  hot_wind_means
+
+# Aliases and placeholders
+# Standard solution:
+exp(log(2))
+# magrittr solution:
+2 %>% log %>% exp
+
+x <- 2
+exp(x + 2)
+x %>% add(2) %>% exp
+
+# more examples:
+x <- 2
+# Base solution;          magrittr solution
+exp(x - 2);               x %>% subtract(2) %>% exp
+exp(x * 2);               x %>% multiply_by(2) %>% exp
+exp(x / 2);               x %>% divide_by(2) %>% exp
+exp(x^2);                 x %>% raise_to_power(2) %>% exp
+head(airquality[,1:4]);   airquality %>% extract(,1:4) %>% head
+airquality$Temp[1:5];     airquality %>%
+  use_series(Temp) %>% extract(1:5)
+
+cat(paste("The current time is ", Sys.time()))
+Sys.time() %>% paste("The current time is", .) %>% cat
+
+
+
+
 
 
 

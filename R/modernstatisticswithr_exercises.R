@@ -342,8 +342,32 @@ airquality$TempCat <- cut(airquality$Temp,
                           breaks = c(50, 70, 90, 110))
 airquality
 
+# Exercise 3.8 - 3.10 skipped due to data files to download being unavailable
 
-
+# Exercise 3.11 Fit a linear regression model to the mtcars data, using mpg as the response variable and hp, wt, cyl, and am as explanatory variables. Are all four explanatory variables significant?
+m3 <- lm(mpg ~ hp + wt + cyl + am, data = mtcars)
+summary(m3)
+# OUTPUT:
+# Call:
+#   lm(formula = mpg ~ hp + wt + cyl + am, data = mtcars)
+# 
+# Residuals:
+#   Min      1Q  Median      3Q     Max 
+# -3.4765 -1.8471 -0.5544  1.2758  5.6608 
+# 
+# Coefficients:
+#   Estimate Std. Error t value Pr(>|t|)    
+# (Intercept) 36.14654    3.10478  11.642 4.94e-12 ***
+#   hp          -0.02495    0.01365  -1.828   0.0786 .  
+# wt          -2.60648    0.91984  -2.834   0.0086 ** 
+#   cyl         -0.74516    0.58279  -1.279   0.2119    
+# am           1.47805    1.44115   1.026   0.3142    
+# ---
+#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# 
+# Residual standard error: 2.509 on 27 degrees of freedom
+# Multiple R-squared:  0.849,	Adjusted R-squared:  0.8267 
+# F-statistic: 37.96 on 4 and 27 DF,  p-value: 1.025e-10
 
 
 
