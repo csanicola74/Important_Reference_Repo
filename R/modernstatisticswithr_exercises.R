@@ -295,3 +295,55 @@ matrix(x, nrow = 3, ncol = 2, byrow = FALSE)
 # [2,]    2    5
 # [3,]    3    6
 
+# Exercise 3.4 The following tasks all involve using the [i, j] notation for extracting data from data frames: 
+# 1. Why does airquality[,3] not return the third row of airquality?
+airquality[,3] # this will instead return the 3rd column of data
+# 2. Extract the first five rows from airquality. Hint: a fast way of creating the vector c(1, 2, 3, 4, 5) is to write 1:5
+airquality[c(1:5),]
+# 3. Compute the correlation between the Temp and Wind vectors of airquality without referring to them using $
+names(airquality) # Wind is the 3rd column and Temp is the 4th columns
+cor(airquality[,4],airquality[,3])
+cor(airquality[,"Wind"], airquality[,"Temp"]) # can also use the actual names of the columns too
+# 4. Extract all columns from airquality except Temp and Wind.
+airquality[,c(-3,-4)]
+
+# Exercise 3.5 Use the bookstore data frame to do the following:
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
+bookstore <- data.frame(age, purchase)
+bookstore$visit_length <- c(5, 2, 20, 22, 12, 31, 9, 10, 11)
+bookstore
+# 1. Add a new variable 'rev_per_minute' which is the ratio between purchase and the visit length
+bookstore$rev_per_minute <- (bookstore$purchase / bookstore$visit_length)
+bookstore
+# 2. Oh no, there's been an error in the data entry! Replace the purchase amount for the 80-year old customer with 16
+bookstore$purchase[6] <- 16
+bookstore
+
+# Exercise 3.6 The following tasks all involve checking conditions for the airquality data:
+?airquality
+# 1. Which was the coldest day during the period?
+airquality[which.min(airquality$Temp),] 
+# returns:   Ozone Solar.R Wind Temp Month Day
+#         5   NA    NA    14.3   56   5     5
+
+# 2. How many days was the wind speed greater than 17 mph?
+sum(airquality$Wind > 17) # returns: 3
+
+# 3. How many missing values are there in the 'Ozone' vector?
+sum(is.na(airquality$Ozone)) # returns: 37
+
+# 4. How many days are there for which the temperature was below 70 and the wind speed was above 10?
+sum(airquality$Temp < 70 & airquality$Wind > 10) # returns: 22
+
+# Exercise 3.7 The function 'cut' can be used to create a categorical variable from a numerical variable, by dividing it into categories corresponding to different intervals. Read its documentation and then create a new categorical variable in the airquality data, TempCat, which divides Temp into the three intervals (50, 70], (70, 90], (90, 110].
+?cut
+airquality$TempCat <- cut(airquality$Temp,
+                          breaks = c(50, 70, 90, 110))
+airquality
+
+
+
+
+
+
