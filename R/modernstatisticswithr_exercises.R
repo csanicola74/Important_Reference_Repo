@@ -2,6 +2,10 @@
 
 library(ggplot2)
 
+###############################
+#########  CHAPTER 2  #########
+###############################
+
 # Exercise 2.1
 # Exercise 2.1 Use R to compute the product of the first ten integers: 1,2,3,4,5,6,7,8,9,10
 1+2+3+4+5+6+7+8+9+10
@@ -244,8 +248,50 @@ ggsave("diamond_cut_by_clarity.png", diamond_cuts_by_clarity, width = 4, height 
 ggsave("diamond_cuts_by_clarity.png", diamond_cuts_by_clarity, width = 4, height = 4, dpi = 600)
 
 
+###############################
+#########  CHAPTER 3  #########
+###############################
 
+# Exercise 3.1 The following tasks are all related to data types and data structures:
+# 1. Create a text variable using e.g. a <- "A rainy day in Edinburgh". Check that it gets the correct type. What happens if you use single quotes markes instead of double quotes when you create the variable?
+a <- "A rainy day in Edinburgh"
+class(a) # result: character
+b <- 'A rainy day in Edinburgh' # single quotes don't make a difference
+class(b) # result: character
+# 2. What data types are the sums 1 + 2, 1L + 2 and 1L + 2L?
+c <- 1 + 2 # result: 3
+class(c) # numeric
+d <- 1L + 2 # result: 3
+class(d) # numeric
+e <- 1L + 2L # result: 3L
+class(d) # numeric
+# 3. What happens if you add a numeric to a character, e.g. "Hello" + 1?
+f <- "Hello" + 1 # Error: non-numeric argument to binary operator
+# 4. What happens if you perform mathematical operations involving a numeric and a logical, e.g. FALSE * 2 or TRUE + 1?
+g <- FALSE * 2
+print(g) # result: 0
+class(g) # result: numeric
+h <- TRUE + 1
+print(h) # result: 2
+class(h) # result: numeric
 
+# Exercise 3.2 What do the functions 'ncol', 'nrow', 'dim', 'names', and 'row.names' return when applied to a data frame?
+ncol(msleep) # result: 11; shows the number of columns in the data frame
+nrow(msleep) # result: 83: shows the number of rows in the data frame
+dim(msleep) # result: 83 11; shows the dimensions of the data frame so 83 rows and 11 columns
+names(msleep) # result: "name" "genus" "vore", etc.; shows the names of the columns
+row.names(msleep) # result: "1" "2" "3", etc.; shows the names of the rows (aka the first value of the row)
 
-
+# Exercise 3.3 'matrix' tables can be created from vectors using the function of the same name. Using the vector x <- 1:6 use matrix to create the following matrices:
+?matrix
+x <- 1:6
+matrix(x, nrow = 2, ncol = 3, byrow = TRUE)
+#     [,1] [,2] [,3]
+# [1,]  1    2    3
+# [2,]  4    5    6
+matrix(x, nrow = 3, ncol = 2, byrow = FALSE)
+#       [,1] [,2]
+# [1,]    1    4
+# [2,]    2    5
+# [3,]    3    6
 
