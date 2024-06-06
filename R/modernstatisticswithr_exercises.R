@@ -140,21 +140,108 @@ ggplot(diamonds, aes(carat, price, color = cut)) +
 # p + geom_point(shape = ".")
 # p + geom_point(shape = NA)
 # p + geom_point(aes(shape = factor(cyl)))
-ggplot(diamonds, aes(carat, price, color = cut, shape = cut)) +
-  geom_point(alpha = 0.5) + # this made the points smaller and changed their shape to diamond
-  xlab("Weight of the diamond (carat)") +
+ggplot(diamonds, aes(carat, price, colour = cut, shape = cut)) +
+  geom_point(alpha = 0.25) +
+  xlab("Weight of diamond (carat)") +
   ylab("Price (USD)")
 
 # 2. Then change it so that the size of each point is determined by the diamond's length, i.e. the variable x.
-ggplot(diamonds, aes(carat, price, color = cut, shape = cut, size = x)) +
+ggplot(diamonds, aes(carat, price, colour = cut,
+                     shape = cut, size = x)) +
   geom_point(alpha = 0.25) +
-  xlab("Weight of the diamond (carat)") +
+  xlab("Weight of diamond (carat)") +
   ylab("Price (USD)")
 
+# Exercise 2.14 Using the msleep data, create a plot of log-transformed body weight versus log-transformed brain weight. Use total sleep time to set the colors of the points. Change the text on the axes to something informative.
+ggplot(msleep, aes(bodywt, brainwt, color = sleep_total)) +
+  geom_point() +
+  xlab("Body Weight (logarithmic scale)") +
+  ylab("Brain Weight (logarithmic scale)") +
+  scale_x_log10() +
+  scale_y_log10()
 
+# Exercise 2.15 Using the diamonds data, do the following:
+# 1. Create a scatterplot with 'carat' along the x-axis and price along the y-axis, facetted by cut
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  xlab("Carat") +
+  ylab("Price (USD)") +
+  facet_wrap(~ cut)
+# 2. Read the documentation for facet_wrap (?facet_wrap). How can you change the number of rows in the grid plot? Create the same plot as in part 1, but with 5 rows.
+?facet_wrap
+# you can change the number of rows in the grid plot with the argument 'nrow = '
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  xlab("Carat") +
+  ylab("Price (USD)") +
+  facet_wrap(~ cut, nrow = 5)
 
+# Exercise 2.16 Using the 'diamonds' data, do the following:
+# 1. Create boxplots of diamond prices, grouped by 'cut'
+ggplot(diamonds, aes(cut, price)) +
+  geom_boxplot()
+# 2. Read the documentation for geom_boxplot. How can you change the colors of the boxes and their outlines?
+?geom_boxplot()
+# changing color is 'color = "red"' and changing the fill is 'fill = "blue"'
+ggplot(diamonds, aes(cut, price)) +
+  geom_boxplot(color = "blue", fill = "skyblue")
+# 3. Replace 'cut' by 'reorder(cut, price, median)' in the plot's aesthetics. What does 'reorder' do? What is the result?
+ggplot(diamonds, aes(reorder(cut, price, median), price)) + # changes the order of the 'cut' categories based on their median price values
+  geom_boxplot()
+# 4. Add 'geom_jitter(size = 0.1, alpha = 0.2)' to the plot. What happens?
+ggplot(diamonds, aes(cut, price)) +
+  geom_boxplot() +
+  geom_jitter(size = 0.1, alpha = 0.2) # it also plots the individual observations on top of the histogram (aka showing many individual dots too)
 
+# Exercise 2.17 Using the 'diamonds' data, do the following:
+# 1. Create a histogram of diamond prices
+ggplot(diamonds, aes(price)) +
+  geom_histogram()
+# 2. Create histograms of diamond prices for different cuts, using facetting
+ggplot(diamonds, aes(price)) +
+  geom_histogram() +
+  facet_wrap(~ cut)
+# 2. Add a suitable argument to 'geom_histogram' to add black outlines around the bars
+?geom_histogram
+ggplot(diamonds, aes(price)) +
+  geom_histogram(color = "black") # adding 'color' and/or 'linewidth' can change the outlines around the bars
 
+# Exercise 2.18 Using the 'diamonds' data, do the following:
+# 1. Create a bar chart of diamond cuts
+ggplot(diamonds, aes(cut)) +
+  geom_bar()
+# 2. Add different colors to the bars by adding a 'fill' argument to 'geom_bar'
+ggplot(diamonds, aes(cut)) +
+  geom_bar(fill = c("blue", "gold", "red", "green", "orange")) # this is to manually assign colors
+
+ggplot(diamonds, aes(cut, fill = cut)) + # this will auto assign the colors to the bars
+  geom_bar() 
+# 3. Check the documentation for 'geom_bar'. How can you decrease the width of the bars?
+?geom_bar
+# 'linewidth' changes the width of the bars
+ggplot(diamonds, aes(cut, fill = cut)) +
+  geom_bar(color = "black", linewidth = 1)
+# 4. Return to the code you used for part 1. Add fill = clarity to the aes. What happens?
+ggplot(diamonds, aes(cut, fill = clarity)) + # this changes the fill to break it down by the clarity category within each bar
+  geom_bar()
+# 5. Next, add 'position = "dodge" to 'geom_bar'. What happens?
+ggplot(diamonds, aes(cut, fill = clarity)) +
+  geom_bar(position = "dodge") # instead of stacking the 'clarity' by cut it creates different individual bar graphs for the clarity groups by cut
+# 6. Return to the code you used for part 1. Add coord_flip() to the plot. What happens?
+ggplot(diamonds, aes(cut)) +
+  geom_bar() +
+  coord_flip() # this flips the bar graphs from going vertical to horizontal
+
+# Exercise 2.19 Do the following:
+# 1. Create a plot object and save it as a 4 by 4 inch png file
+diamond_cuts_by_clarity <- ggplot(diamonds, aes(cut, fill = clarity)) +
+  geom_bar(position = "dodge")
+diamond_cuts_by_clarity
+ggsave("diamond_cut_by_clarity.png", diamond_cuts_by_clarity, width = 4, height = 4)
+# 2. When preparing images for print, you may want to increase their resolution. Check the documentation for ggsave. How can you increase the resolution of your png file for 600 dpi?
+?ggsave
+# changing the resolution is 'dpi'
+ggsave("diamond_cuts_by_clarity.png", diamond_cuts_by_clarity, width = 4, height = 4, dpi = 600)
 
 
 

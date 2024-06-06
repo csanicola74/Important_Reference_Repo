@@ -18,13 +18,13 @@ summary(msleep) # gives a descriptive statistics summary of each variable in the
 msleep$sleep_total # to access a particular vector inside a dataframe, use the dollar sign
 
 # examples of important functions that can be used to compute descriptive statistics
-mean(msleep$sleep_total) # Mean
-median(msleep$sleep_total) # Median
-max(msleep$sleep_total) # Max
-min(msleep$sleep_total) # Min
-sd(msleep$sleep_total) # Standard Deviation
-var(msleep$sleep_total) # Variance
-quantile(msleep$sleep_total) # Various quantiles
+mean(msleep$sleep_total)      # Mean
+median(msleep$sleep_total)    # Median
+max(msleep$sleep_total)       # Max
+min(msleep$sleep_total)       # Min
+sd(msleep$sleep_total)        # Standard Deviation
+var(msleep$sleep_total)       # Variance
+quantile(msleep$sleep_total)  # Various quantiles
 
 # Additional arithmetic operators
 abs(x) # computes the absolute value |x|.
@@ -39,35 +39,32 @@ prod(x) # when x is a vector x = (x1, x2, x3, …, xn), computes the product of 
 pi # a built-in variable with value π, the ratio of the circumference of a circle to its diameter.
 x %% a # computes x modulo a.
 factorial(x) # computes x!.
-choose(n, k) # computes (nk).
+choose(n,k) # computes (nk).
 
 cor(msleep$sleep_total, msleep$sleep_rem, use = "complete.obs") # calculates the correlation between the two variables
 # "complete.obs" tells it to compute the correlation using only observations with complete data (i.e. no missing values)
 
-na.rm <- TRUE # used in functions to ignore the NA or blank values
+na.rm = TRUE # used in functions to ignore the NA or blank values
 
 ### Categorical Data ###
 table(msleep$vore) # this shows the frequency count of the values in the column
 proportions(table(msleep$vore)) # this will show the proportion of the values in the column (ex: 0.25, 0.42, 0.06, 0.26 = 100%)
 
-# Counts:
+# Counts: 
 table(msleep$vore, msleep$conservation)
 
 # Proportions, per row:
 proportions(table(msleep$vore, msleep$conservation),
-  margin = 1
-)
+            margin = 1)
 
 # Proportions, per column:
 proportions(table(msleep$vore, msleep$conservation),
-  margin = 2
-)
+            margin = 2)
 
 ### Plotting Data ###
 plot(msleep$sleep_total, msleep$sleep_rem) # the most basic built in version of plotting data
 
-ggplot(msleep, aes(x = sleep_total, y = sleep_rem)) +
-  geom_point()
+ggplot(msleep, aes(x = sleep_total, y = sleep_rem)) + geom_point()
 # the three main components of this are:
 # - Data: given by the first argument in the call to ggplot: msleep
 # - Aesthetics: given by the second argument in the ggplot call: aes, where we map sleep_total to the x-axis and sleep_rem to the y-axis
@@ -75,8 +72,7 @@ ggplot(msleep, aes(x = sleep_total, y = sleep_rem)) +
 
 plot(msleep$sleep_total, msleep$sleep_rem, pch = 16)
 grid()
-ggplot(msleep, aes(sleep_total, sleep_rem)) +
-  geom_point()
+ggplot(msleep, aes(sleep_total,sleep_rem)) + geom_point()
 
 # Colors, shapes, and axis labels
 ggplot(msleep, aes(sleep_total, sleep_rem)) +
@@ -117,18 +113,18 @@ ggplot(msleep, aes(brainwt, sleep_total)) +
   xlab("Brain weight (logarithmic scale)") +
   ylab("Total sleep time") +
   scale_x_log10() +
-  facet_wrap(~vore) # this uses 'facetting' which is to create a grid of plots corresponding to the different groups
+  facet_wrap(~ vore) # this uses 'facetting' which is to create a grid of plots corresponding to the different groups
 # this makes it easier to compare the different groups all at one glance
 
 # Boxplots
-# Base R:
+# Base R: 
 boxplot(sleep_total ~ vore, data = msleep)
-# ggplot2:
+# ggplot2: 
 ggplot(msleep, aes(vore, sleep_total)) +
   geom_boxplot()
 
 # Histograms
-# Base R:
+# Base R: 
 hist(msleep$sleep_total)
 # ggplot2:
 ggplot(msleep, aes(sleep_total)) +
@@ -136,7 +132,7 @@ ggplot(msleep, aes(sleep_total)) +
 
 ### Plotting Categorical Data ###
 # Bar charts
-# Base R:
+# Base R: 
 barplot(table(msleep$vore))
 # ggplot2:
 ggplot(msleep, aes(vore)) +
