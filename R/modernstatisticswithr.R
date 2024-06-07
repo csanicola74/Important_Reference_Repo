@@ -499,24 +499,106 @@ airquality %>% cat("Number of rows in data:", nrow(.)) # Doesn't work
 airquality %>% {cat("Number of rows in data:", nrow(.))} # Works!
 # if the data only appears inside parentheses, you need to wrap the function in curly brackets {}, or otherwise %>% will try to pass it as the first arguement to the function
 
+###############################
+#########  CHAPTER 4  #########
+###############################
 
+# SKIPPIED THE MARKDOWN SECTION
 
+# Customizing ggplot2 plots
+library(ggplot2)
 
+ggplot(msleep, aes(brainwt, sleep_total)) +
+  geom_point() +
+  xlab("Brain weight (logarithmic scale)") +
+  ylab("Total sleep time") +
+  scale_x_log10() +
+  facet_wrap(~ vore)
 
+# Themes
+# ggplot2 comes with a number of basic themes
+p <- ggplot(msleep, aes(brainwt, sleep_total, color = vore)) +
+  geom_point() +
+  xlab("Brain weight (logarithmic scale)") +
+  ylab("Total sleep time") +
+  scale_x_log10() +
+  facet_wrap(~ vore)
 
+# Create plot with different themes:
+p + theme_grey() # the default theme
+p + theme_bw()
+p + theme_linedraw()
+p + theme_light()
+p + theme_dark()
+p + theme_minimal()
+p + theme_classic()
 
+# there are also several additional themes that can be downloaded
+install.packages("ggthemes")
+library(ggthemes)
+# create plot with different themes from ggthemes:
+p + theme_tufte() # Minimalist Tufte theme
+p + theme_wsj() # Wall Street Journal
+p + theme_solarized() + scale_color_solarized() # Solarized colors
 
+install.packages("hrbrthemes")
+library(hrbrthemes)
+# create plot with different themes from hrbrthemes:
+p + theme_ipsum() # Ipsum theme
+p + theme_ft_rc() # Suitable for use with dark RStudio themes
+p + theme_modern_rc() # Suitable for use with dark RStudio themes
 
+# Color palettes
+# you can change the color palette using scale_color_brewer
+# there are three types of color palettes available
+# 1. Sequential palettes: that range from a color to white. These are useful for representing ordinal (i.e. ordered) categorical variables and numerical variables
+# 2. Diverging palettes: these range from one color to another, with white in between. Diverging palettes are useful when there is a meaningful middle of 0 value (e.g. when your variables represent temperatures or profit/loss), which can be mapped to white
+# 3. Qualitative palettes: which contain multiple distinct colors. These are useful for nominal (i.e. with no natural ordering) categorical variables
+?scale_color_brewer # or http://www.colorbrewer2.org for the list of available palettes
+# Sequential palette:
+p + scale_color_brewer(palette = "OrRd")
+# Diverging palette:
+p + scale_color_brewer(palette = "RdBu")
+# Qualitative palette:
+p + scale_color_brewer(palette = "Set1")
 
+# You can also customize the Theme settings
+# No Legend: 
+p + theme(legend.position = "none")
+# Legend below figure:
+p + theme(legend.position = "bottom")
+# Legend inside plot:
+p + theme(legend.position = c(0.9, 0.7))
 
+p + theme(panel.grid.major = element_line(color = "black"),
+          panel.grid.minor = element_line(color = "purple",
+                                          linetype = "dotted"),
+          panel.background = element_rect(color = "red", size = 2),
+          plot.background = element_rect(fill = "yellow"),
+          axis.text = element_text(family = "mono", color = "blue"),
+          axis.title = element_text(family = "serif", size = 14))
 
+# Exploring distributions
+# Density plots and frequency polygons
+library(ggplot2)
+ggplot(diamonds, aes(carat)) +
+  geom_histogram(color = "black")
 
+ggplot(diamonds, aes(carat)) + 
+  geom_freqpoly() # this shows the frequency bars as lines instead
 
+ggplot(diamonds, aes(carat, color = cut)) + # this will now not only show it as lines but stacked by color and by cut
+  geom_freqpoly() 
 
+ggplot(diamonds, aes(carat, color = cut)) +
+  geom_density() # this will show the lines by density (so actually stacked)
 
-
-
-
+# Violin plots
+ggplot(diamonds, aes(cut, price)) +
+  geom_violin() # each group is represented by a "violin", given by a rotated and duplicated density plot
+# compared to boxplots, violin plots capture the entire distribution of the data rather than just a few numerical summaries. 
+ggplot(diamonds, aes(cut, price)) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) # if you want to add back in the median and quartiles, you do this
 
 
 

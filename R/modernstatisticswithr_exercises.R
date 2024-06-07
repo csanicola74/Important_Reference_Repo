@@ -404,8 +404,79 @@ bookstore <- data.frame(age, purchase, visit_length)
 bookstore %>% inset("rev_per_minute", 
                     value = .$purchase / .$visit_length)
 
+###############################
+#########  CHAPTER 4  #########
+###############################
 
+# Exercise 4.1 Use the documentation for theme and the element_... functions to change the plot object p created above as follows:
+library(ggplot2)
 
+p <- ggplot(msleep, aes(brainwt, sleep_total)) + 
+  geom_point() +
+  xlab("Brain weight (logarithmic scale)") +
+  ylab("Total sleep time") +
+  scale_x_log10() +
+  facet_wrap(~ vore)
+
+?theme
+?element_line
+# 1. Change the background color of the entire plot to lightblue
+p + theme(panel.background = element_rect(fill = "lightblue"),
+          plot.background = element_rect(fill = "lightblue"))
+# 2. Change the font of the legend to serif
+p + theme(panel.background = element_rect(fill = "lightblue"),
+          plot.background = element_rect(fill = "lightblue"),
+          legend.text = element_text(family = "serif"),
+          legend.title = element_text(family = "serif"))
+# 3. Remove the grid
+p + theme(panel.background = element_rect(fill = "lightblue"),
+          plot.background = element_rect(fill = "lightblue"),
+          legend.text = element_text(family = "serif"),
+          legend.title = element_text(family = "serif"),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+# 4. Change the color of the axis ticks to orange and make them thicker
+p + theme(panel.background = element_rect(fill = "lightblue"),
+          plot.background = element_rect(fill = "lightblue"),
+          legend.text = element_text(family = "serif"),
+          legend.title = element_text(family = "serif"),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          axis.ticks = element_line(color = "orange", size = 2))
+
+# Exercise 4.2 Using the density plot created above and the documentation for geom_density, do the following:
+?geom_density
+# 1. Increase the smoothness of the density curves
+ggplot(diamonds, aes(carat, colour = cut)) +
+  geom_density(bw = 0.2) # the smoothing is controlled by bandwidth (bw)
+# 2. Fill the area under the density curves with the same color as the curves themselves
+ggplot(diamonds, aes(carat, color = cut, fill = cut)) +
+  geom_density(bw = 0.2)
+# 3. Make the colors that fill the areas under the curves transparent
+ggplot(diamonds, aes(carat, color = cut, fill = cut)) +
+  geom_density(bw = 0.2, alpha = 0.2)
+# 4. The figure still isnt that easy to interpret. Install and load the ggridges package, an extension of ggplot2 that allows you to make so-called ridge plots (density plots that are separated along the y-axis, similar to facetting). Read the documentation for geom_density_ridges and use it to make a ridge plot of diamond prices for different cuts.
+install.packages("ggridges")
+library(ggridges)
+ggplot(diamonds, aes(carat, cut, fill = cut)) +
+  geom_density_ridges() # this will essentially stack the filled density line graphs but in different overlapping rows so you can easily see the trends between the groups
+
+# Exercise 4.3 Return to the histogram created by ggplot(diamonds, aes(carat)) + geom_histogram() above. As there are very few diamonds with carat greater than 3, cut the x-axis at 3. Then decrease the bin width to 0.01. Do any interesting patterns emerge?
+ggplot(diamonds, aes(carat)) + 
+  geom_histogram(binwidth = 0.01) +
+  xlim(0, 3)
+
+# Exercise 4.4 Using the first boxplot created above, i.e. ggplot(diamonds, aes(cut, price)) + geom_violin(draw_quartiles = c(0.25, 0.5, 0.75)), do the following:
+?geom_violin
+# 1. Add some color to the plot by giving different colors to each violin
+ggplot(diamonds, aes(cut, price, fill = cut)) +
+  geom_violin()
+# 2. Because the categories are shown along the x-axis, we don't really need the legend. Remove it. 
+ggplot(diamonds, aes(cut, price, fill = cut)) +
+  geom_violin
+# 3. Both boxplots and violin plots are useful. Maybe we can have the best of both worlds? Add the corresponding boxplot inside each violin. Hint: the width and alpha arguments in geom_boxplot are useful for creating a nice-looking figure here.
+
+# 4. Flip the coordinate system to create horizontal violins and boxes instead.
 
 
 
