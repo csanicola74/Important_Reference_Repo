@@ -493,7 +493,16 @@ airquality$Temp[1:5];     airquality %>%
   use_series(Temp) %>% extract(1:5)
 
 cat(paste("The current time is ", Sys.time()))
-Sys.time() %>% paste("The current time is", .) %>% cat
+Sys.time() %>% paste("The current time is", .) %>% cat # the '.' can be used as a placeholder
+
+airquality %>% cat("Number of rows in data:", nrow(.)) # Doesn't work
+airquality %>% {cat("Number of rows in data:", nrow(.))} # Works!
+# if the data only appears inside parentheses, you need to wrap the function in curly brackets {}, or otherwise %>% will try to pass it as the first arguement to the function
+
+
+
+
+
 
 
 

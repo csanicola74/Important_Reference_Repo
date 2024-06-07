@@ -369,5 +369,44 @@ summary(m3)
 # Multiple R-squared:  0.849,	Adjusted R-squared:  0.8267 
 # F-statistic: 37.96 on 4 and 27 DF,  p-value: 1.025e-10
 
+# Exercise 3.12 Unable to complete because data file not available
+
+# Exercise 3.13 Install the datasauRus package using install.packages("datasauRus") (not the capital R!). It contains the dataset datasaurus_dozen. Check its structure and then do the following:
+# 1. Compute the mean of x, mean of y, standard deviation of x, standard deviation of y, and correlation between x and y, grouped by dataset. Are there any differences between the 12 datasets?
+install.packages("datasauRus")
+library(datasauRus)
+?datasaurus_dozen
+aggregate(cbind(x, y) ~ dataset, data = datasaurus_dozen, FUN = mean)
+aggregate(cbind(x, y) ~ dataset, data = datasaurus_dozen, FUN = sd)
+by(datasaurus_dozen[,2:3], datasaurus_dozen$dataset, cor)
+
+# 2. Make a scatterplot of x against y for each dataset (use facetting!). Are there any differences between the 12 datasets?
+ggplot(datasaurus_dozen, aes(x, y, color = dataset)) + 
+  geom_point() +
+  facet_wrap(~ dataset, ncol = 3)
+
+# Exercise 3.14 Rewrite the following function calls using pipes, with x <- 1:8:
+library(magrittr)
+x <- 1:8
+# 1. sqrt(mean(x))
+x %>% mean %>% sqrt
+# 2. mean(sqrt(x))
+x %>% sqrt %>% mean
+# 3. sort(x^2-5)[1:2]
+x %>% raise_to_power(2) %>% subtract(5) %>% extract(1:2,)
+
+# Exercise 3.15 Using the bookstore data:
+age <- c(28, 48, 47, 71, 22, 80, 48, 30, 31)
+purchase <- c(20, 59, 2, 12, 22, 160, 34, 34, 29)
+visit_length <- c(5, 2, 20, 22, 12, 31, 9, 10, 11)
+bookstore <- data.frame(age, purchase, visit_length)
+# Add a new variable 'rev_per_minute' which is the ratio between purchase and the visit length, using a pipe
+bookstore %>% inset("rev_per_minute", 
+                    value = .$purchase / .$visit_length)
+
+
+
+
+
 
 

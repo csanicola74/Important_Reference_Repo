@@ -1,0 +1,14 @@
+---
+title: "R Notebook following ModernStatisticswithR.com"
+author: Caroline Sanicola
+date: June 5, 2024
+output: 
+  html_notebook:
+  toc: true
+  toc_float: true
+  toc_depth: 2
+  number_sections: true
+  theme: slate
+  highlight: default
+---
+
