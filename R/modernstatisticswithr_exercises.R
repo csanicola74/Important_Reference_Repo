@@ -475,8 +475,25 @@ ggplot(diamonds, aes(cut, price, fill = cut)) +
 ggplot(diamonds, aes(cut, price, fill = cut)) +
   geom_violin
 # 3. Both boxplots and violin plots are useful. Maybe we can have the best of both worlds? Add the corresponding boxplot inside each violin. Hint: the width and alpha arguments in geom_boxplot are useful for creating a nice-looking figure here.
-
+ggplot(diamonds, aes(cut, price)) +
+  geom_violin(aes(fill = cut), width = 1.25) +
+  geom_boxplot(width = 0.1, alpha = 0.5) +
+  theme(legend.position = "none")
 # 4. Flip the coordinate system to create horizontal violins and boxes instead.
+ggplot(diamonds, aes(cut, price)) +
+  geom_violin(aes(fill = cut), width = 1.25) +
+  geom_boxplot(width = 0.1, alpha = 0.5) +
+  theme(legend.position = "none") +
+  coord_flip()
+
+# Exercise 4.5 The variables x and y in the diamonds data describe the length and width of the diamonds (in mm). Use an interactive scatterplot to identify outliers in these variables. Check prices, carat and other information and think about if any of the outliers can be due to data errors.
+myPlot <- ggplot(diamonds, aes(x, y, 
+                               text = paste("Row:", rownames(diamonds)))) +
+  geom_point()
+
+ggplotly(myPlot)
+# there are 8 plots that are outliers with 7 of them being due to having x=0 y=0 plots which is impossible because diamonds cant have 0mm width
+# there are also extreme values too that seem too suspicious
 
 
 

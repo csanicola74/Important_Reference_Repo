@@ -214,12 +214,12 @@ class(msleep)
 View(msleep)
 
 WorldPhonesDF <- as.data.frame(WorldPhones) # sometimes you need to convert to other types so this is how you would do it
-class(WorldPhonesDF) 
+class(WorldPhonesDF)
 airqualityMatrix <- as.matrix(airquality)
 class(airqualityMatrix)
 
 # Accessing vectors and elements
-# Extract the Temp vector: 
+# Extract the Temp vector:
 airquality$Temp
 # Compute the mean temperature:
 mean(airquality$Temp)
@@ -246,19 +246,19 @@ bookstore
 max(airquality$Temp) # this will return the highest value just for that specific column of values
 which.max(airquality$Temp) # 'which.max' returns the index of the observation with the maximum value
 # if you want to see that entire row:
-airquality[120,]
-airquality[which.max(airquality$Temp),] # this is the way to do it all in one function without knowing which is the max index already
+airquality[120, ]
+airquality[which.max(airquality$Temp), ] # this is the way to do it all in one function without knowing which is the max index already
 
 # operators when stating conditions
 a <- 3
 b <- 8
 
-a == b   # check if a equals b
-a > b    # check if a is greater than b
-a < b    # check if a is less than b
-a >= b   # check if a is equal to or greater than b
-a <= b   # check if a is equal to or less than b
-a != b   # check if a is not equal to b
+a == b # check if a equals b
+a > b # check if a is greater than b
+a < b # check if a is less than b
+a >= b # check if a is equal to or greater than b
+a <= b # check if a is equal to or less than b
+a != b # check if a is not equal to b
 is.na(a) # check if a is NA
 A %in% c(1, 4, 9) # Check if a equals at least on of 1, 4, 9
 
@@ -268,7 +268,7 @@ any(airquality$Temp > 90) # 'any' is used to see if any elements in a vector ful
 sum(airquality$Temp > 90) # used to find out how many elements fulfill the condition
 mean(airquality$Temp > 90) # will return the mean for all the elements that fulfill the condition
 
-# Additional operators & (AND), | (OR), and, less frequently, xor (exclusively or, XOR). 
+# Additional operators & (AND), | (OR), and, less frequently, xor (exclusively or, XOR).
 a <- 3
 b <- 8
 
@@ -325,14 +325,15 @@ load(file = "myData.RData") # loading the stored objects
 
 # Running a t-test
 library(ggplot2)
-carnivores <- msleep[msleep$vore == "carni",]
-herbivores <- msleep[msleep$vore == "herbi",]
+carnivores <- msleep[msleep$vore == "carni", ]
+herbivores <- msleep[msleep$vore == "herbi", ]
 t.test(carnivores$sleep_total, herbivores$sleep_total)
 
 t.test(carnivores$sleep_total, herbivores$sleep_total,
-       conf.level = 0.90, # this sets the confidence level to 90%
-       alternative = "greater", # to use a one-sided alternative hypothesis
-       var.equal = TRUE) # performs the test under the assumption of equal variances in the two samples
+  conf.level = 0.90, # this sets the confidence level to 90%
+  alternative = "greater", # to use a one-sided alternative hypothesis
+  var.equal = TRUE
+) # performs the test under the assumption of equal variances in the two samples
 
 # Fitting a linear regression model
 ?mtcars
@@ -347,20 +348,20 @@ summary(m)
 # OUTPUT:
 # Call:
 #   lm(formula = mpg ~ hp, data = mtcars)
-# 
+#
 # Residuals:
-#   Min      1Q  Median      3Q     Max 
-# -5.7121 -2.1122 -0.8854  1.5819  8.2360 
-# 
+#   Min      1Q  Median      3Q     Max
+# -5.7121 -2.1122 -0.8854  1.5819  8.2360
+#
 # Coefficients:
-#   Estimate Std. Error t value Pr(>|t|)    
+#   Estimate Std. Error t value Pr(>|t|)
 # (Intercept) 30.09886    1.63392  18.421  < 2e-16 ***
 #   hp          -0.06823    0.01012  -6.742 1.79e-07 ***
 #   ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-# 
+#
 # Residual standard error: 3.863 on 30 degrees of freedom
-# Multiple R-squared:  0.6024,	Adjusted R-squared:  0.5892 
+# Multiple R-squared:  0.6024,	Adjusted R-squared:  0.5892
 # F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07
 
 # Check model coefficients:
@@ -370,7 +371,8 @@ coef(m)
 ggplot(mtcars, aes(hp, mpg)) +
   geom_point() +
   geom_abline(aes(intercept = coef(m)[1], slope = coef(m)[2]), # to add a straight line with a given intercept and slope
-              color = "red")
+    color = "red"
+  )
 plot(m) # to see the diagnostic plots for the residuals
 
 m2 <- lm(mpg ~ hp + wt, data = mtcars)
@@ -388,42 +390,42 @@ aggregate(Temp ~ Month, data = airquality, FUN = length) # this counts the numbe
 by(airquality$Temp, airquality$Month, mean) # another method to get grouped summaries but with a nicer output format:
 # airquality$Month: 5
 # [1] 65.54839
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 6
 # [1] 79.1
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 7
 # [1] 83.90323
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 8
 # [1] 83.96774
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 9
 # [1] 76.9
 
 names(airquality) # Check that Wind and Temp are in columns 3 and 4
 by(airquality[, 3:4], airquality$Month, cor)
 # OUTPUT:
- # airquality$Month: 5
+# airquality$Month: 5
 # Wind      Temp
 # Wind  1.000000 -0.373276
 # Temp -0.373276  1.000000
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 6
 # Wind       Temp
 # Wind  1.0000000 -0.1210353
 # Temp -0.1210353  1.0000000
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 7
 # Wind       Temp
 # Wind  1.0000000 -0.3052355
 # Temp -0.3052355  1.0000000
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 8
 # Wind       Temp
 # Wind  1.0000000 -0.5076146
 # Temp -0.5076146  1.0000000
-# -------------------------------------------------------------------------------------------------------------------------- 
+# --------------------------------------------------------------------------------------------------------------------------
 #   airquality$Month: 9
 # Wind       Temp
 # Wind  1.0000000 -0.5704701
@@ -441,9 +443,10 @@ airquality2$Wind <- airquality2$Wind * 0.44704
 # Compute mean wind speed for each month:
 hot_wind_means <- aggregate(Wind ~ Month, data = airquality2, FUN = mean)
 # More compact:
-hot_wind_means <- aggregate(Wind*0.44704 ~ Month,
-                            data = airquality[airquality$Temp > 80, ],
-                            FUN = mean)
+hot_wind_means <- aggregate(Wind * 0.44704 ~ Month,
+  data = airquality[airquality$Temp > 80, ],
+  FUN = mean
+)
 
 # magrittr introduces a new operator, %>%, called a pipe, which can be used to chain functions together
 # new_variable <- function_2(function_1(your_data))
@@ -458,45 +461,74 @@ inset(airquality, "Wind", value = airquality$Wind * 0.44704) # inset lets us con
 # Extract hot days:
 airquality2 <- subset(airquality, Temp > 80)
 # Convert wind speed to m/s
-airquality2 <- inset(airquality2, "Wind", 
-                     value = airquality2$Wind * 0.44704)
+airquality2 <- inset(airquality2, "Wind",
+  value = airquality2$Wind * 0.44704
+)
 # Compute mean wind speed for each month:
-hot_wind_means <- aggregate(Wind ~ Month, data = airquality2, 
-                            FUN = mean)
+hot_wind_means <- aggregate(Wind ~ Month,
+  data = airquality2,
+  FUN = mean
+)
 
 # Can now be put into one code block
 airquality %>%
   subset(Temp > 80) %>%
   inset("Wind", value = .$Wind * 0.44704) %>%
   aggregate(Wind ~ Month, data = ., FUN = mean) ->
-  hot_wind_means
+hot_wind_means
 
 # Aliases and placeholders
 # Standard solution:
 exp(log(2))
 # magrittr solution:
-2 %>% log %>% exp
+2 %>%
+  log() %>%
+  exp()
 
 x <- 2
 exp(x + 2)
-x %>% add(2) %>% exp
+x %>%
+  add(2) %>%
+  exp()
 
 # more examples:
 x <- 2
 # Base solution;          magrittr solution
-exp(x - 2);               x %>% subtract(2) %>% exp
-exp(x * 2);               x %>% multiply_by(2) %>% exp
-exp(x / 2);               x %>% divide_by(2) %>% exp
-exp(x^2);                 x %>% raise_to_power(2) %>% exp
-head(airquality[,1:4]);   airquality %>% extract(,1:4) %>% head
-airquality$Temp[1:5];     airquality %>%
-  use_series(Temp) %>% extract(1:5)
+exp(x - 2)
+x %>%
+  subtract(2) %>%
+  exp()
+exp(x * 2)
+x %>%
+  multiply_by(2) %>%
+  exp()
+exp(x / 2)
+x %>%
+  divide_by(2) %>%
+  exp()
+exp(x^2)
+x %>%
+  raise_to_power(2) %>%
+  exp()
+head(airquality[, 1:4])
+airquality %>%
+  extract(, 1:4) %>%
+  head()
+airquality$Temp[1:5]
+airquality %>%
+  use_series(Temp) %>%
+  extract(1:5)
 
 cat(paste("The current time is ", Sys.time()))
-Sys.time() %>% paste("The current time is", .) %>% cat # the '.' can be used as a placeholder
+Sys.time() %>%
+  paste("The current time is", .) %>%
+  cat() # the '.' can be used as a placeholder
 
 airquality %>% cat("Number of rows in data:", nrow(.)) # Doesn't work
-airquality %>% {cat("Number of rows in data:", nrow(.))} # Works!
+airquality %>%
+  {
+    cat("Number of rows in data:", nrow(.))
+  } # Works!
 # if the data only appears inside parentheses, you need to wrap the function in curly brackets {}, or otherwise %>% will try to pass it as the first arguement to the function
 
 ###############################
@@ -513,7 +545,7 @@ ggplot(msleep, aes(brainwt, sleep_total)) +
   xlab("Brain weight (logarithmic scale)") +
   ylab("Total sleep time") +
   scale_x_log10() +
-  facet_wrap(~ vore)
+  facet_wrap(~vore)
 
 # Themes
 # ggplot2 comes with a number of basic themes
@@ -522,7 +554,7 @@ p <- ggplot(msleep, aes(brainwt, sleep_total, color = vore)) +
   xlab("Brain weight (logarithmic scale)") +
   ylab("Total sleep time") +
   scale_x_log10() +
-  facet_wrap(~ vore)
+  facet_wrap(~vore)
 
 # Create plot with different themes:
 p + theme_grey() # the default theme
@@ -563,20 +595,24 @@ p + scale_color_brewer(palette = "RdBu")
 p + scale_color_brewer(palette = "Set1")
 
 # You can also customize the Theme settings
-# No Legend: 
+# No Legend:
 p + theme(legend.position = "none")
 # Legend below figure:
 p + theme(legend.position = "bottom")
 # Legend inside plot:
 p + theme(legend.position = c(0.9, 0.7))
 
-p + theme(panel.grid.major = element_line(color = "black"),
-          panel.grid.minor = element_line(color = "purple",
-                                          linetype = "dotted"),
-          panel.background = element_rect(color = "red", size = 2),
-          plot.background = element_rect(fill = "yellow"),
-          axis.text = element_text(family = "mono", color = "blue"),
-          axis.title = element_text(family = "serif", size = 14))
+p + theme(
+  panel.grid.major = element_line(color = "black"),
+  panel.grid.minor = element_line(
+    color = "purple",
+    linetype = "dotted"
+  ),
+  panel.background = element_rect(color = "red", size = 2),
+  plot.background = element_rect(fill = "yellow"),
+  axis.text = element_text(family = "mono", color = "blue"),
+  axis.title = element_text(family = "serif", size = 14)
+)
 
 # Exploring distributions
 # Density plots and frequency polygons
@@ -584,11 +620,11 @@ library(ggplot2)
 ggplot(diamonds, aes(carat)) +
   geom_histogram(color = "black")
 
-ggplot(diamonds, aes(carat)) + 
+ggplot(diamonds, aes(carat)) +
   geom_freqpoly() # this shows the frequency bars as lines instead
 
 ggplot(diamonds, aes(carat, color = cut)) + # this will now not only show it as lines but stacked by color and by cut
-  geom_freqpoly() 
+  geom_freqpoly()
 
 ggplot(diamonds, aes(carat, color = cut)) +
   geom_density() # this will show the lines by density (so actually stacked)
@@ -596,10 +632,72 @@ ggplot(diamonds, aes(carat, color = cut)) +
 # Violin plots
 ggplot(diamonds, aes(cut, price)) +
   geom_violin() # each group is represented by a "violin", given by a rotated and duplicated density plot
-# compared to boxplots, violin plots capture the entire distribution of the data rather than just a few numerical summaries. 
+# compared to boxplots, violin plots capture the entire distribution of the data rather than just a few numerical summaries.
 ggplot(diamonds, aes(cut, price)) +
   geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) # if you want to add back in the median and quartiles, you do this
 
+# Combine multiple plots into a single graphic
+install.packages("patchwork") # this package extends ggplot2
+# to use the package, you have to save each plot as an object and then add the object together
+plot1 <- ggplot(diamonds, aes(cut, carat, fill = cut)) +
+  geom_violin() +
+  theme(legend.position = "none")
+plot2 <- ggplot(diamonds, aes(cut, price, fill = cut)) +
+  geom_violin() +
+  theme(legend.position = "none")
 
+library(patchwork)
+plot1 + plot2
 
+# plots can also be arranged on multiple lines with a different number of plots on each line
+# separate plots that are the same line are marked by '|' and the beginning of a new line is marked with '/'
+# Create two more plot objects:
+plot3 <- ggplot(diamonds, aes(cut, depth, fill = cut)) +
+  geom_violin() +
+  theme(legend.position = "none")
+plot4 <- ggplot(diamonds, aes(carat, fill = cut)) +
+  geom_density(alpha = 0.5) +
+  theme(legend.position = c(0.9, 0.6))
 
+# One row with three plots and one row with a single plot:
+(plot1 | plot2 | plot3) / plot4
+
+# One column with three plots and one column with a single plot:
+(plot1 / plot2 / plot3) | plot4
+
+# Outliers and Missing Data
+install.packages("plotly") # the plotly package can be used to make an interactive version of the plot where you can hover over interesting points to see more info
+# this will make it easier to see where and what our outliers are
+myPlot <- ggplot(diamonds, aes(carat, price)) +
+  geom_point()
+
+library(plotly)
+ggplotly(myPlot)
+
+# Labelling outliers
+# Using the row number (the 5 carat diamond is on row 27,416)
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  geom_text(
+    aes(label = ifelse(rownames(diamonds) == 27416,
+      rownames(diamonds), ""
+    )),
+    hjust = 1.1
+  ) # hjust=1.1 shifts the text to the left of the point
+
+# Plot text next to all diamonds with carat > 4
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  geom_text(aes(label = ifelse(carat > 4, rownames(diamonds), "")),
+    hjust = 1.1
+  )
+
+# Plot text next to 3 carat diamonds with a price below 7500
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  geom_text(
+    aes(label = ifelse(carat == 3 & price < 7500,
+      rownames(diamonds), ""
+    )),
+    hjust = 1.1
+  )
