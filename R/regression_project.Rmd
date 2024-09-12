@@ -1,0 +1,56 @@
+---
+title: "Medical Charge Predictions"
+output: html_document
+date: "2023-08-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Libraries
+```
+
+
+## Load in the data
+```{r}
+df = read.csv("D:/GitHub/Important_Reference_Repo/R/data/insurance.csv", header=TRUE)
+num_cols <- unlist(lapply(df, is.numeric))
+plot(df[,num_cols])
+```
+
+
+```{r}
+round(cor(df[,num_cols]),2)
+```
+
+
+```{r}
+smoker = as.factor(df$smoker)
+sex = as.factor(df$sex)
+region = as.factor(df$region)
+
+boxplot(df$charges ~ smoker, main = "Smoker")
+boxplot(df$charges ~ sex, main = "Sex")
+boxplot(df$charges ~ region, main = "Region")
+```
+
+
+```{r}
+model1 = lm(charges ~. , data =df)
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+
+
+
+
+
+
+
+
+

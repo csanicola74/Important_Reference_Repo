@@ -1,0 +1,1001 @@
+Patient_ID,Age,Gender,BMI,Blood_Pressure_Systolic,Blood_Pressure_Diastolic,Cholesterol,Smoking_Status,Exercise_Frequency,Medical_Condition,Medication_Adherence,Annual_Healthcare_Visits,Total_Healthcare_Cost
+1,21,Female,28.74,129,70,291.2,No,Daily,Diabetes,Fair,10,1662
+2,69,Male,16.05,139,72,327.35,Yes,Rarely,None,Excellent,7,6643
+3,44,Male,22.12,152,66,139.2,No,Often,Hypertension,Excellent,1,7902
+4,24,Male,24.14,123,87,243.87,Yes,Rarely,Asthma,Poor,1,5193
+5,55,Male,21.12,104,69,127.97,No,Daily,Hypertension,Good,8,5192
+6,38,Male,19.02,97,91,100.36,No,Sometimes,Diabetes,Good,5,1513
+7,45,Female,43.49,170,99,330.21,Yes,Sometimes,Heart Disease,Good,3,9502
+8,39,Female,16.44,113,74,296.63,Yes,Daily,Diabetes,Excellent,7,2697
+9,59,Male,30.33,124,96,215.23,No,Sometimes,None,Excellent,5,8752
+10,23,Female,36.7,160,73,154.8,Yes,Sometimes,Heart Disease,Poor,5,5261
+11,53,Male,27.68,107,71,234.24,No,Daily,Diabetes,Fair,8,9598
+12,64,Female,20.12,111,80,213.47,Yes,Often,Asthma,Good,3,1789
+13,47,Male,37.33,99,84,178.82,Yes,Sometimes,Hypertension,Fair,4,6285
+14,37,Female,33.29,156,76,346.86,No,Sometimes,Hypertension,Good,8,3931
+15,63,Male,42.35,177,79,334.07,Yes,Rarely,Asthma,Good,7,3288
+16,39,Female,41.93,175,82,197.12,Yes,Sometimes,None,Good,6,3871
+17,22,Female,32.78,133,91,230.54,No,Never,Diabetes,Fair,6,8893
+18,70,Female,15.58,124,81,273.57,No,Rarely,None,Fair,1,5256
+19,32,Male,42.47,113,85,346.93,No,Sometimes,Asthma,Poor,1,8959
+20,57,Female,35.07,152,86,342.8,No,Sometimes,None,Fair,10,6968
+21,26,Male,29.01,117,79,343.86,No,Sometimes,Heart Disease,Poor,2,4660
+22,67,Male,24.44,108,94,345.9,No,Often,Heart Disease,Poor,7,5056
+23,69,Male,19.2,90,76,167.84,Yes,Sometimes,Heart Disease,Excellent,8,5981
+24,29,Male,18.55,132,67,178.95,No,Daily,None,Poor,2,2646
+25,76,Male,16.22,103,79,317.91,No,Daily,Diabetes,Excellent,7,7044
+26,32,Female,35.3,169,100,101.11,No,Sometimes,Diabetes,Fair,3,3726
+27,72,Male,40.92,154,61,274.73,No,Sometimes,Asthma,Excellent,4,1958
+28,45,Female,24.58,168,69,162.22,No,Never,None,Fair,2,4137
+29,75,Female,39.29,148,86,288.4,No,Sometimes,Diabetes,Poor,3,2993
+30,77,Female,39.75,145,97,313.77,No,Sometimes,Heart Disease,Good,6,5461
+31,79,Female,37.26,123,62,139.36,No,Never,None,Excellent,10,9095
+32,28,Male,43.77,180,89,125.4,Yes,Sometimes,Diabetes,Excellent,8,1999
+33,21,Male,26.45,151,77,246.14,No,Daily,Hypertension,Excellent,7,7331
+34,53,Male,23.91,110,66,336.85,No,Never,Asthma,Fair,4,2553
+35,47,Male,23.56,147,100,196.97,No,Never,Heart Disease,Poor,1,8553
+36,51,Male,35.9,140,70,317.14,Yes,Daily,Hypertension,Poor,8,4709
+37,44,Male,44.49,162,81,144.53,Yes,Sometimes,Heart Disease,Good,3,5379
+38,36,Male,30.09,142,70,251.64,Yes,Never,Heart Disease,Excellent,5,6922
+39,74,Female,22.49,137,91,145.25,Yes,Sometimes,None,Good,8,1258
+40,57,Male,20.44,167,71,175.73,Yes,Daily,Diabetes,Good,6,9305
+41,66,Female,41.54,95,93,294.02,No,Daily,None,Good,9,2952
+42,41,Male,30.75,122,86,230.73,Yes,Rarely,None,Excellent,9,6403
+43,60,Male,41.89,136,98,220.59,Yes,Often,Asthma,Poor,6,1450
+44,64,Female,27.76,165,77,239.11,Yes,Sometimes,Hypertension,Poor,2,3132
+45,63,Male,33.15,131,69,100.55,Yes,Daily,None,Good,7,2286
+46,29,Female,40.45,123,60,197.41,No,Daily,Heart Disease,Good,10,8227
+47,38,Female,43.21,144,63,119.78,Yes,Daily,Heart Disease,Poor,1,5264
+48,27,Male,43.02,116,67,310.32,Yes,Daily,Heart Disease,Good,2,8594
+49,41,Male,43.63,178,82,156.76,No,Rarely,None,Good,4,6334
+50,70,Female,27.75,135,76,229.19,No,Rarely,Diabetes,Fair,4,8344
+51,68,Female,26.04,109,87,299.94,Yes,Rarely,Asthma,Poor,2,8088
+52,25,Female,39.71,169,78,250.4,Yes,Never,Heart Disease,Excellent,1,7987
+53,70,Female,21.42,142,69,117.66,Yes,Rarely,Diabetes,Excellent,1,5890
+54,48,Female,20.86,123,78,326.71,No,Rarely,Diabetes,Excellent,2,1517
+55,56,Male,35.53,149,77,228.51,Yes,Often,Heart Disease,Poor,2,2852
+56,30,Male,31.45,94,69,194.75,No,Often,Hypertension,Fair,10,2637
+57,33,Male,21.16,148,93,303.92,Yes,Often,Hypertension,Excellent,10,1489
+58,60,Female,42.31,166,89,192.9,Yes,Never,Hypertension,Poor,2,1563
+59,64,Female,39.72,92,62,260.99,Yes,Often,Hypertension,Excellent,3,9034
+60,42,Male,27.3,128,78,165.12,No,Sometimes,Diabetes,Good,6,5230
+61,78,Female,36.55,108,70,242.04,No,Never,Hypertension,Good,1,6792
+62,58,Female,21.55,147,61,106.41,Yes,Never,Heart Disease,Fair,9,1204
+63,49,Female,35.62,130,62,100.08,No,Often,Hypertension,Poor,6,9560
+64,44,Male,26.2,166,84,197.21,Yes,Often,Diabetes,Excellent,9,9526
+65,20,Female,17.01,151,73,123.35,No,Often,Hypertension,Poor,8,4052
+66,33,Female,38.65,129,76,127.05,No,Often,Heart Disease,Excellent,5,6014
+67,53,Female,40.72,160,79,305.37,Yes,Never,Heart Disease,Excellent,2,4657
+68,62,Male,18.85,129,63,230.05,Yes,Often,Asthma,Fair,7,1843
+69,70,Male,26.41,173,65,254.11,Yes,Rarely,Asthma,Poor,8,9113
+70,60,Female,40.79,173,96,224.16,Yes,Often,Hypertension,Good,7,7866
+71,34,Female,17.59,160,90,332.3,Yes,Never,Hypertension,Good,10,6626
+72,65,Female,35.47,119,87,152.06,Yes,Rarely,None,Excellent,7,9157
+73,27,Male,28.83,92,78,179.3,Yes,Rarely,Diabetes,Poor,6,8190
+74,68,Female,43.26,105,67,340.64,No,Daily,Asthma,Fair,3,4653
+75,45,Female,22.6,119,100,339.2,Yes,Often,Hypertension,Fair,4,8737
+76,42,Male,34.55,126,94,144.95,Yes,Daily,Diabetes,Poor,5,2147
+77,43,Male,20.39,147,95,127.76,Yes,Daily,Heart Disease,Excellent,10,5604
+78,28,Male,36.33,151,72,130.85,No,Rarely,Heart Disease,Good,10,7414
+79,44,Male,37.58,110,63,183.61,Yes,Daily,None,Fair,10,4478
+80,56,Male,38.71,149,62,115.39,No,Sometimes,None,Good,9,6183
+81,63,Female,42.33,130,62,338.28,Yes,Never,Heart Disease,Poor,7,6025
+82,44,Female,27.42,179,95,173.73,Yes,Often,None,Poor,7,3901
+83,26,Female,37.51,130,93,160.72,No,Sometimes,Diabetes,Fair,2,8509
+84,20,Female,21.22,127,95,180.4,No,Daily,None,Good,5,1299
+85,37,Female,25.57,157,72,167.04,No,Often,Hypertension,Good,9,2645
+86,67,Male,31.45,162,69,195.28,Yes,Daily,Hypertension,Excellent,1,5153
+87,56,Female,18.61,96,64,238.91,No,Rarely,Diabetes,Poor,9,3516
+88,44,Male,23.34,174,89,128.24,Yes,Rarely,Heart Disease,Excellent,6,4640
+89,32,Female,33.82,157,99,140.31,No,Never,None,Excellent,4,1902
+90,54,Male,39.69,145,79,138.99,Yes,Never,None,Poor,1,6452
+91,67,Male,31.74,110,72,188.6,No,Sometimes,None,Excellent,4,8081
+92,70,Male,23.53,159,93,143.51,No,Often,Heart Disease,Excellent,2,5577
+93,28,Male,16.54,127,85,307.99,Yes,Never,Heart Disease,Poor,8,6597
+94,77,Male,36.12,94,83,101.27,No,Rarely,Heart Disease,Poor,6,3829
+95,59,Male,27.61,134,79,277.2,Yes,Daily,Asthma,Good,10,2684
+96,63,Male,29.88,180,74,104.4,No,Often,Diabetes,Good,9,6467
+97,33,Male,26.67,124,64,181.1,Yes,Daily,None,Excellent,6,1800
+98,53,Female,29.53,166,90,341.17,No,Often,Heart Disease,Poor,2,4843
+99,72,Female,15.07,117,83,319.39,No,Daily,Diabetes,Poor,8,1332
+100,68,Female,38.56,174,63,102.07,No,Rarely,Asthma,Excellent,9,9061
+101,31,Female,34.38,141,90,210.04,No,Daily,Heart Disease,Poor,8,1815
+102,73,Male,19.52,123,64,212.8,No,Daily,None,Fair,7,6360
+103,40,Female,24.69,101,63,145.3,No,Never,Asthma,Good,5,5212
+104,46,Male,31.47,113,92,328.89,No,Sometimes,None,Fair,7,4846
+105,28,Male,17.26,106,68,301.65,No,Rarely,Hypertension,Poor,9,8948
+106,62,Female,19.04,134,68,181.11,Yes,Sometimes,None,Poor,9,2583
+107,56,Female,42.61,104,76,255.65,No,Often,Diabetes,Good,1,8522
+108,60,Female,15.85,180,68,319.54,No,Sometimes,Diabetes,Poor,2,9224
+109,47,Female,24.46,118,91,259.71,No,Rarely,Diabetes,Fair,9,1799
+110,23,Male,24.87,94,91,165.26,No,Never,Asthma,Good,7,4206
+111,39,Male,20.03,116,93,236.47,No,Often,Diabetes,Poor,9,4537
+112,44,Male,37.45,113,95,105.99,Yes,Sometimes,Hypertension,Good,7,7955
+113,37,Male,24.57,103,96,301.39,No,Daily,None,Poor,2,7721
+114,78,Female,16.81,167,60,304.92,No,Often,Diabetes,Fair,9,1278
+115,47,Male,25.04,100,96,160.71,No,Never,Heart Disease,Excellent,9,4021
+116,39,Male,33.54,111,64,271.06,No,Sometimes,Heart Disease,Excellent,3,9767
+117,58,Male,28.01,109,69,106.29,Yes,Never,Heart Disease,Poor,4,5012
+118,74,Female,39.75,153,92,181.81,Yes,Daily,Diabetes,Good,8,9529
+119,54,Male,37.42,105,77,136.51,No,Never,Asthma,Fair,2,9694
+120,54,Male,40.56,127,79,228.29,No,Sometimes,Hypertension,Excellent,7,2701
+121,36,Female,40.15,162,75,339.93,No,Often,None,Good,4,3988
+122,34,Male,24.95,169,97,217.32,No,Daily,Hypertension,Good,8,3445
+123,20,Male,20.71,130,61,178.08,Yes,Sometimes,None,Excellent,8,8919
+124,51,Female,32.57,174,89,190.23,No,Sometimes,Diabetes,Poor,5,6343
+125,21,Female,28.58,143,78,271.14,No,Often,Asthma,Excellent,5,2674
+126,60,Male,30.67,142,97,258.69,Yes,Rarely,None,Excellent,8,2379
+127,63,Male,41.01,146,90,308.17,No,Often,Diabetes,Poor,9,3509
+128,27,Female,15.44,91,71,290.87,Yes,Sometimes,Diabetes,Fair,4,3074
+129,73,Female,29.65,143,60,345.15,No,Often,Asthma,Excellent,6,4365
+130,20,Female,22.55,127,68,155.0,No,Rarely,Heart Disease,Excellent,5,7188
+131,43,Female,39.98,153,76,118.95,No,Never,Heart Disease,Poor,2,4556
+132,68,Female,43.81,162,64,282.98,Yes,Sometimes,Hypertension,Good,5,6682
+133,59,Female,29.4,96,74,192.73,No,Rarely,Asthma,Excellent,6,2093
+134,31,Female,42.22,174,69,278.5,No,Sometimes,Diabetes,Excellent,10,7829
+135,40,Male,31.4,159,91,207.49,No,Often,Heart Disease,Poor,5,6420
+136,78,Female,25.67,119,62,110.89,Yes,Often,Asthma,Fair,8,1207
+137,27,Male,31.14,176,66,319.19,No,Sometimes,Asthma,Poor,2,9774
+138,65,Male,28.26,174,78,240.58,Yes,Never,Hypertension,Excellent,4,8571
+139,58,Male,31.81,149,82,203.04,Yes,Often,Diabetes,Good,3,8245
+140,24,Male,24.75,166,85,133.72,No,Rarely,None,Good,7,8565
+141,71,Male,39.17,160,86,241.34,No,Rarely,None,Good,6,1151
+142,60,Female,25.17,157,76,275.24,Yes,Rarely,Hypertension,Poor,1,9242
+143,49,Female,38.76,100,77,242.71,No,Daily,Hypertension,Fair,9,1466
+144,28,Female,23.21,143,61,299.11,No,Never,None,Excellent,4,2539
+145,73,Female,37.47,169,100,296.58,No,Never,Heart Disease,Fair,1,3587
+146,33,Female,21.3,146,95,293.71,Yes,Rarely,Hypertension,Poor,10,4997
+147,49,Female,23.0,110,86,202.05,Yes,Sometimes,Diabetes,Good,7,8816
+148,61,Female,34.22,123,98,181.2,No,Often,Asthma,Poor,8,7612
+149,49,Female,26.76,117,96,227.42,Yes,Rarely,Hypertension,Excellent,4,7195
+150,60,Male,33.58,148,94,325.77,No,Sometimes,Diabetes,Poor,6,5383
+151,73,Female,16.33,96,94,253.7,Yes,Rarely,Diabetes,Excellent,2,4394
+152,49,Male,41.88,108,91,172.81,No,Never,None,Good,3,4960
+153,72,Male,30.34,129,77,157.2,Yes,Daily,Heart Disease,Poor,7,9740
+154,47,Female,21.06,100,97,247.47,Yes,Often,Hypertension,Poor,9,2514
+155,63,Male,20.58,176,84,161.32,Yes,Rarely,Diabetes,Fair,7,8520
+156,79,Female,34.18,131,90,299.78,No,Sometimes,Diabetes,Excellent,1,2365
+157,49,Female,40.18,121,60,342.17,No,Never,Asthma,Fair,6,4255
+158,18,Female,42.94,98,98,115.35,No,Daily,Asthma,Fair,6,5907
+159,57,Female,25.69,163,85,204.47,Yes,Daily,Hypertension,Fair,9,7331
+160,41,Male,42.61,106,76,164.87,Yes,Never,Diabetes,Good,3,4907
+161,54,Female,39.25,132,82,182.6,No,Rarely,Asthma,Fair,10,6513
+162,21,Male,44.66,130,100,256.76,No,Never,None,Excellent,10,5581
+163,35,Female,23.66,149,93,319.97,Yes,Rarely,Hypertension,Good,4,3685
+164,45,Female,33.81,168,93,103.48,No,Often,Diabetes,Poor,7,1118
+165,60,Female,36.18,159,90,344.37,Yes,Sometimes,Diabetes,Poor,7,5614
+166,48,Female,28.07,161,90,155.82,No,Rarely,None,Excellent,9,4353
+167,78,Female,28.8,98,70,236.91,No,Never,None,Excellent,5,1074
+168,69,Male,30.98,131,98,169.35,Yes,Sometimes,Asthma,Good,9,4761
+169,72,Male,33.26,168,89,121.02,No,Daily,Asthma,Poor,4,9739
+170,25,Male,16.91,120,60,258.57,Yes,Sometimes,Hypertension,Fair,1,8007
+171,50,Female,20.5,118,92,304.59,No,Sometimes,Heart Disease,Poor,9,5296
+172,30,Male,19.02,97,65,335.76,No,Sometimes,None,Excellent,4,4104
+173,58,Female,42.6,104,90,138.15,No,Never,Diabetes,Fair,10,2010
+174,25,Male,29.94,160,68,129.95,No,Daily,Hypertension,Poor,5,3008
+175,74,Male,41.54,116,94,191.99,No,Daily,Asthma,Good,3,6837
+176,70,Male,44.66,177,88,132.92,No,Daily,Asthma,Fair,2,1394
+177,40,Male,23.35,143,69,252.15,No,Never,Heart Disease,Good,5,7259
+178,78,Male,32.89,136,95,334.26,Yes,Rarely,Diabetes,Fair,8,4733
+179,62,Female,19.85,138,80,247.33,No,Daily,Asthma,Fair,3,8454
+180,78,Male,29.17,104,97,127.25,No,Often,None,Excellent,8,3653
+181,79,Male,34.41,113,89,266.11,No,Rarely,Hypertension,Fair,9,4870
+182,44,Male,29.66,124,72,186.23,No,Sometimes,Heart Disease,Fair,8,5518
+183,58,Female,44.37,173,72,277.91,No,Often,Hypertension,Poor,5,6298
+184,44,Female,27.92,108,63,215.39,No,Often,Asthma,Good,3,6724
+185,68,Male,19.56,122,72,187.4,Yes,Never,None,Poor,10,8350
+186,55,Male,28.46,94,93,160.48,Yes,Never,None,Fair,10,4183
+187,79,Male,38.22,132,84,284.3,No,Daily,Diabetes,Excellent,10,9446
+188,45,Female,30.53,135,66,233.75,No,Often,Diabetes,Good,3,8745
+189,19,Male,19.08,129,70,184.17,Yes,Often,Diabetes,Fair,6,1098
+190,40,Female,22.8,125,94,163.42,No,Often,Heart Disease,Fair,9,2226
+191,61,Male,15.96,180,95,317.32,No,Often,Diabetes,Fair,4,1153
+192,31,Male,19.21,165,66,307.33,No,Never,Diabetes,Poor,9,1654
+193,64,Female,39.79,90,99,104.73,No,Rarely,Diabetes,Good,6,5217
+194,24,Male,25.68,92,71,225.39,Yes,Never,Heart Disease,Fair,4,2986
+195,68,Male,19.08,139,76,165.37,Yes,Never,Hypertension,Excellent,6,6415
+196,29,Female,15.63,131,87,278.78,Yes,Often,None,Poor,7,5700
+197,72,Female,35.31,131,98,252.01,No,Often,Diabetes,Fair,3,6875
+198,71,Female,25.53,156,97,190.55,Yes,Never,Heart Disease,Poor,7,9990
+199,72,Male,33.59,148,71,291.92,Yes,Rarely,Hypertension,Poor,8,3871
+200,79,Male,38.98,146,69,191.45,No,Daily,Hypertension,Fair,7,8585
+201,72,Female,31.8,158,61,109.06,No,Often,Heart Disease,Good,6,3111
+202,55,Male,36.15,130,100,119.49,Yes,Daily,Heart Disease,Good,1,4492
+203,57,Female,32.22,93,81,148.93,No,Daily,Heart Disease,Good,6,9849
+204,78,Male,15.28,104,60,139.6,No,Never,None,Good,9,1124
+205,32,Male,16.16,107,83,248.12,No,Often,Hypertension,Excellent,6,3805
+206,77,Male,16.12,97,69,121.56,No,Often,Hypertension,Poor,7,8727
+207,36,Female,44.62,173,60,303.05,Yes,Often,Heart Disease,Excellent,8,5821
+208,53,Male,29.18,174,84,139.1,No,Often,Heart Disease,Poor,8,3177
+209,45,Female,24.02,157,86,200.44,No,Never,Diabetes,Good,4,8379
+210,63,Female,36.68,111,90,144.24,Yes,Sometimes,Heart Disease,Excellent,7,8381
+211,69,Female,32.64,164,89,278.75,No,Rarely,Hypertension,Fair,10,6072
+212,68,Female,27.34,98,86,333.6,Yes,Rarely,Diabetes,Fair,5,4763
+213,36,Female,31.82,105,88,323.06,Yes,Daily,Hypertension,Poor,2,8899
+214,48,Female,43.05,149,83,157.09,Yes,Sometimes,Diabetes,Poor,1,4255
+215,59,Female,38.25,115,61,234.67,Yes,Sometimes,None,Poor,4,5477
+216,66,Male,40.77,128,70,182.48,No,Never,Diabetes,Poor,3,7462
+217,53,Male,33.84,139,92,199.95,No,Never,None,Excellent,6,1712
+218,40,Male,39.09,151,80,108.34,Yes,Often,Hypertension,Poor,10,8741
+219,52,Female,41.68,144,98,192.02,No,Rarely,Hypertension,Fair,5,4706
+220,55,Male,26.39,180,83,304.24,No,Often,Hypertension,Excellent,9,3950
+221,27,Female,40.26,147,65,258.1,Yes,Sometimes,Heart Disease,Excellent,6,5843
+222,26,Female,23.9,159,74,115.8,No,Often,None,Poor,1,1701
+223,19,Male,26.98,91,90,146.46,Yes,Never,Diabetes,Fair,2,1625
+224,20,Male,22.05,153,83,201.59,Yes,Often,None,Fair,1,4556
+225,34,Male,42.71,144,73,286.35,Yes,Daily,None,Excellent,5,4722
+226,64,Male,18.0,116,71,133.02,Yes,Rarely,Asthma,Fair,1,2544
+227,37,Male,44.47,180,66,160.2,Yes,Daily,None,Poor,4,5902
+228,35,Female,33.52,145,91,298.53,Yes,Often,Asthma,Good,9,1019
+229,35,Male,20.01,148,99,284.95,No,Sometimes,Diabetes,Excellent,2,1424
+230,48,Male,15.28,147,73,143.83,Yes,Daily,Asthma,Good,5,6338
+231,51,Male,39.33,177,72,206.96,No,Sometimes,Diabetes,Good,9,2949
+232,31,Male,37.46,158,66,168.66,No,Rarely,None,Poor,3,5750
+233,23,Male,17.32,93,97,188.75,No,Rarely,None,Fair,9,2369
+234,47,Male,36.68,147,66,277.25,Yes,Rarely,Diabetes,Good,3,2077
+235,71,Male,40.59,129,100,240.05,No,Daily,Hypertension,Poor,4,3342
+236,71,Male,44.16,158,91,219.33,Yes,Rarely,Heart Disease,Good,5,5878
+237,60,Male,29.09,118,93,133.24,Yes,Rarely,None,Fair,5,7746
+238,75,Male,43.03,107,71,259.39,No,Daily,Asthma,Poor,9,4138
+239,76,Male,44.71,122,88,117.75,No,Sometimes,Diabetes,Excellent,8,6642
+240,67,Female,30.19,131,92,334.01,Yes,Often,Heart Disease,Fair,6,5550
+241,76,Male,21.88,124,64,273.54,No,Daily,Heart Disease,Fair,1,9890
+242,27,Male,41.96,116,85,188.31,No,Often,None,Good,9,5055
+243,32,Female,33.7,109,97,349.58,No,Never,None,Poor,2,6695
+244,72,Female,41.13,126,77,113.38,No,Rarely,Hypertension,Poor,6,4587
+245,68,Female,21.74,148,71,285.21,Yes,Never,None,Poor,4,2268
+246,50,Female,35.91,160,78,159.26,Yes,Often,Diabetes,Excellent,3,7426
+247,45,Female,31.72,138,89,176.28,Yes,Never,Diabetes,Excellent,9,3014
+248,21,Female,16.19,92,65,211.2,Yes,Daily,Asthma,Excellent,9,6929
+249,72,Male,24.49,131,74,255.32,Yes,Sometimes,Hypertension,Poor,3,3700
+250,55,Female,30.84,154,87,291.62,No,Rarely,None,Excellent,1,8197
+251,57,Male,16.06,169,98,177.69,No,Sometimes,Asthma,Fair,10,1076
+252,31,Male,35.17,134,63,228.04,No,Sometimes,Diabetes,Poor,3,9361
+253,50,Male,23.98,129,67,184.95,No,Never,Asthma,Good,3,7914
+254,66,Female,29.39,170,89,254.02,Yes,Rarely,Hypertension,Good,1,4708
+255,45,Female,36.34,92,87,315.03,Yes,Sometimes,Asthma,Fair,2,1282
+256,35,Female,43.2,108,81,337.48,No,Rarely,Hypertension,Excellent,4,2372
+257,62,Female,43.07,171,93,318.71,Yes,Never,None,Excellent,6,9805
+258,28,Male,34.48,170,64,179.47,Yes,Sometimes,Heart Disease,Good,3,4356
+259,48,Male,36.3,161,89,153.3,Yes,Often,Heart Disease,Poor,8,3767
+260,77,Male,41.5,114,64,183.66,Yes,Never,Asthma,Good,2,1523
+261,24,Male,24.81,116,97,209.93,Yes,Daily,None,Excellent,10,7427
+262,79,Male,15.42,159,61,125.79,Yes,Sometimes,Hypertension,Good,7,9710
+263,70,Female,38.28,172,63,268.72,No,Rarely,Hypertension,Good,4,5069
+264,19,Female,35.91,156,78,112.56,Yes,Daily,Hypertension,Fair,1,3620
+265,29,Male,16.79,165,88,261.92,No,Sometimes,None,Excellent,4,8619
+266,35,Female,42.88,142,67,236.83,No,Never,Diabetes,Good,9,1096
+267,49,Female,43.2,106,82,205.06,No,Never,Heart Disease,Good,10,9799
+268,69,Male,40.0,165,70,109.83,No,Sometimes,Asthma,Poor,7,8456
+269,80,Male,29.27,160,73,276.24,Yes,Never,Diabetes,Excellent,6,8508
+270,45,Male,32.2,102,72,257.42,No,Sometimes,None,Poor,5,8604
+271,18,Male,40.45,107,78,262.96,No,Often,Hypertension,Excellent,9,3248
+272,21,Female,23.42,92,89,197.25,No,Sometimes,Diabetes,Fair,7,7518
+273,18,Female,35.18,126,88,209.25,No,Never,Asthma,Fair,8,2942
+274,57,Male,24.36,119,88,132.13,No,Daily,None,Poor,5,5459
+275,64,Male,18.31,122,61,162.37,No,Often,Heart Disease,Good,3,9543
+276,22,Male,26.28,102,95,235.61,No,Often,Diabetes,Excellent,4,6947
+277,36,Male,36.08,141,66,262.83,No,Often,Hypertension,Fair,7,8067
+278,75,Female,37.42,161,86,138.22,Yes,Rarely,None,Fair,8,4794
+279,41,Female,19.37,164,89,308.33,Yes,Never,Asthma,Good,8,6536
+280,30,Male,43.23,145,94,345.21,Yes,Often,None,Excellent,2,5219
+281,63,Male,21.35,142,98,241.25,No,Sometimes,None,Good,8,9193
+282,48,Male,34.87,176,67,189.07,Yes,Often,Hypertension,Poor,10,1972
+283,43,Female,29.93,104,91,135.75,Yes,Rarely,Hypertension,Poor,2,9460
+284,66,Female,42.78,94,61,254.24,Yes,Often,Hypertension,Fair,2,5677
+285,77,Female,38.33,171,87,213.01,Yes,Often,Diabetes,Excellent,10,1208
+286,57,Male,40.18,159,76,254.59,No,Daily,Asthma,Excellent,9,5684
+287,28,Female,42.56,121,68,233.53,No,Rarely,None,Poor,2,9064
+288,62,Male,18.74,122,100,280.75,No,Often,Hypertension,Excellent,8,1529
+289,27,Female,34.76,94,97,154.87,Yes,Never,Heart Disease,Excellent,1,9096
+290,59,Female,29.55,140,76,280.36,No,Daily,Heart Disease,Fair,6,8590
+291,63,Female,41.99,150,76,195.63,Yes,Rarely,Hypertension,Poor,6,8276
+292,23,Male,17.4,163,74,181.01,Yes,Sometimes,Hypertension,Good,8,8703
+293,66,Male,30.9,108,73,157.29,Yes,Rarely,None,Poor,7,2150
+294,27,Female,33.56,162,76,203.18,Yes,Often,Diabetes,Excellent,1,7981
+295,66,Female,43.47,134,68,220.44,Yes,Often,Heart Disease,Good,1,1868
+296,53,Male,33.86,168,84,160.21,No,Daily,None,Excellent,6,7840
+297,62,Male,37.77,136,73,158.19,Yes,Often,None,Good,5,4676
+298,62,Male,18.13,171,95,245.91,Yes,Often,Asthma,Excellent,1,8354
+299,45,Female,34.77,178,71,291.8,No,Never,Asthma,Excellent,4,1849
+300,47,Female,25.87,176,99,329.43,No,Daily,Hypertension,Poor,3,2884
+301,39,Female,22.05,109,70,335.03,Yes,Sometimes,Diabetes,Poor,2,6276
+302,52,Female,23.24,141,67,251.56,No,Daily,Hypertension,Excellent,8,5925
+303,70,Female,38.96,99,87,255.85,No,Sometimes,Diabetes,Good,3,3765
+304,51,Male,38.62,138,81,267.84,No,Often,Hypertension,Fair,8,7736
+305,76,Male,21.58,175,92,192.06,No,Sometimes,Hypertension,Good,1,1219
+306,27,Male,35.8,152,98,214.92,Yes,Never,Hypertension,Fair,6,7845
+307,67,Male,34.84,126,78,236.96,No,Often,None,Excellent,4,6249
+308,43,Male,39.58,154,80,203.65,Yes,Daily,Heart Disease,Fair,7,3124
+309,67,Male,26.19,141,69,176.68,Yes,Daily,Diabetes,Excellent,8,9143
+310,40,Male,24.21,153,77,217.19,No,Often,None,Poor,5,9188
+311,51,Female,38.36,111,94,330.7,Yes,Often,None,Fair,4,7027
+312,60,Male,24.84,90,88,241.58,No,Daily,None,Good,4,4831
+313,57,Male,35.36,130,69,255.77,Yes,Never,Hypertension,Excellent,7,7928
+314,54,Female,18.36,131,67,196.82,Yes,Daily,Diabetes,Good,5,4569
+315,74,Male,41.64,172,71,106.3,No,Often,None,Fair,3,2402
+316,76,Female,25.39,167,98,167.51,No,Sometimes,Asthma,Good,7,7974
+317,79,Female,29.13,156,74,184.19,No,Often,Diabetes,Fair,10,4196
+318,24,Male,40.11,128,68,283.93,Yes,Sometimes,Hypertension,Excellent,6,3029
+319,57,Female,20.51,107,70,169.85,Yes,Never,Heart Disease,Fair,4,8803
+320,59,Male,15.9,160,61,138.83,No,Often,Asthma,Poor,8,4559
+321,59,Male,44.32,130,70,284.47,No,Often,Heart Disease,Excellent,8,8312
+322,48,Female,29.06,126,69,106.69,Yes,Often,Asthma,Fair,4,7913
+323,66,Male,37.85,96,74,165.56,No,Rarely,Diabetes,Excellent,2,9724
+324,23,Female,21.64,176,76,277.49,No,Never,Diabetes,Excellent,5,5910
+325,33,Female,35.19,150,84,280.58,No,Never,Asthma,Good,1,2164
+326,55,Female,25.42,178,82,297.97,No,Never,None,Good,2,5646
+327,31,Male,23.42,103,81,241.61,Yes,Rarely,Diabetes,Poor,1,5461
+328,27,Female,42.01,103,88,335.29,Yes,Sometimes,None,Excellent,8,8566
+329,76,Male,29.44,151,92,316.37,Yes,Never,Diabetes,Good,8,2814
+330,20,Female,16.99,170,60,335.05,Yes,Never,Heart Disease,Fair,2,8608
+331,44,Male,33.0,126,63,282.05,No,Sometimes,None,Fair,3,1922
+332,48,Female,18.87,143,99,186.71,Yes,Sometimes,None,Poor,10,2765
+333,42,Male,38.97,146,86,300.22,Yes,Daily,Asthma,Poor,8,2367
+334,42,Male,43.25,111,68,271.9,No,Sometimes,Heart Disease,Excellent,6,1787
+335,45,Male,37.38,148,95,224.63,Yes,Sometimes,Asthma,Fair,5,1170
+336,36,Female,39.47,168,88,278.11,Yes,Never,Hypertension,Fair,7,3158
+337,80,Female,27.71,152,75,231.63,Yes,Sometimes,Asthma,Poor,3,9321
+338,40,Female,27.58,166,64,298.46,No,Never,Heart Disease,Good,10,6189
+339,43,Female,41.41,112,75,152.65,No,Daily,Hypertension,Good,2,6750
+340,22,Male,43.78,132,61,294.19,No,Never,None,Poor,7,1551
+341,58,Male,32.7,154,98,163.83,No,Daily,Heart Disease,Excellent,7,1227
+342,48,Female,42.24,159,85,145.42,Yes,Often,Heart Disease,Good,7,2736
+343,54,Female,21.91,143,83,339.51,No,Rarely,None,Good,4,9911
+344,21,Female,42.15,94,97,181.0,No,Daily,Hypertension,Good,1,4562
+345,50,Female,29.05,137,94,168.64,Yes,Daily,None,Poor,9,3315
+346,76,Male,24.03,97,82,195.63,No,Often,Diabetes,Poor,4,3627
+347,29,Female,24.97,138,66,119.95,No,Never,Asthma,Fair,1,7972
+348,74,Female,37.55,170,78,110.92,Yes,Often,Hypertension,Poor,2,6555
+349,26,Male,39.79,99,80,185.49,Yes,Sometimes,None,Fair,5,6104
+350,35,Male,18.98,140,68,335.57,No,Rarely,Heart Disease,Fair,9,5507
+351,40,Male,31.65,104,94,135.81,No,Daily,None,Excellent,2,2343
+352,70,Male,34.65,132,81,303.79,Yes,Never,None,Fair,4,5107
+353,65,Male,39.36,166,92,134.16,No,Never,Hypertension,Excellent,2,7567
+354,18,Female,38.46,135,80,340.76,No,Sometimes,Hypertension,Fair,9,6664
+355,44,Male,33.73,96,75,288.77,No,Daily,None,Excellent,7,2125
+356,31,Male,39.95,97,93,161.68,No,Daily,Diabetes,Fair,6,4473
+357,38,Female,19.54,98,66,339.97,No,Rarely,Heart Disease,Fair,6,4756
+358,30,Female,35.91,110,62,258.19,No,Daily,Heart Disease,Excellent,8,3518
+359,61,Female,30.88,104,99,291.49,No,Never,Heart Disease,Good,9,3047
+360,78,Male,16.49,92,70,196.05,No,Sometimes,Heart Disease,Fair,10,6965
+361,22,Female,38.75,134,62,300.29,No,Never,Asthma,Excellent,8,5579
+362,19,Male,44.39,143,95,296.56,No,Often,None,Good,6,9005
+363,73,Male,44.57,120,77,250.09,Yes,Never,Heart Disease,Excellent,8,7401
+364,47,Female,26.89,138,95,289.01,Yes,Daily,Asthma,Poor,6,2249
+365,70,Female,28.62,113,93,295.52,No,Sometimes,Hypertension,Excellent,10,3661
+366,30,Male,18.61,94,91,349.6,No,Never,None,Fair,5,5950
+367,32,Male,25.1,99,63,282.13,No,Rarely,Hypertension,Poor,2,6066
+368,39,Female,39.52,171,63,212.43,Yes,Sometimes,Asthma,Excellent,3,8131
+369,68,Male,18.35,116,91,250.35,Yes,Sometimes,Diabetes,Good,4,3897
+370,28,Female,30.78,112,67,159.03,Yes,Daily,Asthma,Fair,5,5378
+371,19,Female,26.84,134,71,243.83,No,Rarely,None,Excellent,5,1363
+372,34,Male,16.89,165,78,121.54,Yes,Sometimes,None,Excellent,5,5476
+373,55,Male,37.61,143,68,281.8,Yes,Sometimes,Heart Disease,Poor,9,3429
+374,23,Female,23.69,125,74,222.44,No,Daily,Diabetes,Poor,8,8768
+375,29,Male,28.38,161,71,120.66,No,Daily,None,Fair,9,9954
+376,33,Female,34.76,109,92,158.53,No,Rarely,Diabetes,Fair,6,4425
+377,65,Male,30.24,125,95,300.43,No,Daily,None,Fair,1,4015
+378,24,Female,17.89,118,74,310.76,Yes,Sometimes,Heart Disease,Good,10,6058
+379,70,Female,42.84,93,70,169.31,No,Never,Hypertension,Excellent,6,9140
+380,22,Female,18.0,123,95,210.63,No,Often,Hypertension,Excellent,3,6107
+381,73,Male,20.02,90,83,104.44,Yes,Daily,Heart Disease,Good,10,1603
+382,70,Female,28.78,172,83,253.61,No,Daily,Hypertension,Poor,2,4499
+383,61,Male,37.35,167,95,247.56,No,Never,Hypertension,Poor,10,6200
+384,77,Male,44.29,178,91,237.72,No,Never,Diabetes,Poor,9,8691
+385,30,Male,42.03,167,98,137.52,No,Often,Hypertension,Fair,1,6733
+386,32,Female,26.15,98,78,165.27,No,Never,Diabetes,Fair,5,6184
+387,28,Male,20.09,120,77,202.85,No,Often,Diabetes,Excellent,9,2883
+388,64,Female,22.67,161,67,172.24,Yes,Often,Heart Disease,Poor,9,1078
+389,59,Female,17.4,145,87,113.12,No,Sometimes,Heart Disease,Excellent,9,7441
+390,40,Female,32.05,161,82,200.93,No,Often,Asthma,Poor,1,8355
+391,62,Female,36.1,174,63,271.47,Yes,Never,Hypertension,Poor,8,4876
+392,78,Female,37.86,121,60,216.75,No,Never,Asthma,Poor,8,3498
+393,53,Female,38.21,171,91,334.92,No,Daily,Hypertension,Excellent,9,1138
+394,71,Female,40.71,137,70,258.18,No,Daily,Asthma,Excellent,7,5799
+395,38,Male,39.4,147,65,138.89,Yes,Rarely,Hypertension,Excellent,4,9204
+396,70,Male,35.45,166,76,184.44,No,Sometimes,None,Poor,7,7228
+397,50,Male,38.49,168,97,310.47,Yes,Never,None,Poor,6,1924
+398,32,Male,38.01,101,95,300.52,No,Daily,None,Good,4,6207
+399,39,Male,37.86,176,94,205.68,No,Never,Asthma,Fair,8,8010
+400,56,Male,25.82,162,99,208.73,Yes,Rarely,Heart Disease,Excellent,10,8026
+401,24,Female,25.17,127,64,181.39,No,Never,Hypertension,Poor,8,7767
+402,40,Male,21.37,166,65,283.85,No,Daily,Diabetes,Fair,3,7010
+403,26,Female,35.29,99,60,157.75,No,Rarely,Hypertension,Poor,4,2369
+404,21,Male,25.18,116,70,336.65,Yes,Rarely,None,Fair,2,5816
+405,71,Female,19.25,140,65,165.91,No,Never,None,Poor,7,9854
+406,40,Female,15.24,108,89,151.68,No,Rarely,Diabetes,Poor,9,6362
+407,34,Male,31.34,151,85,260.4,Yes,Never,Heart Disease,Fair,5,4474
+408,28,Male,44.48,97,100,311.88,No,Sometimes,Asthma,Excellent,4,7270
+409,29,Male,39.33,145,64,122.35,Yes,Rarely,Hypertension,Poor,9,3388
+410,58,Male,25.71,137,95,238.86,Yes,Sometimes,Hypertension,Good,8,6852
+411,25,Female,37.75,117,68,110.73,No,Rarely,None,Good,5,8509
+412,60,Female,25.83,114,88,157.04,Yes,Often,Hypertension,Fair,7,6998
+413,33,Female,26.54,174,100,202.71,No,Rarely,Asthma,Excellent,6,1165
+414,26,Male,22.09,140,65,306.18,No,Never,Heart Disease,Fair,10,3047
+415,68,Female,21.26,105,75,183.43,Yes,Rarely,Asthma,Poor,9,6535
+416,33,Male,41.15,138,93,236.12,No,Rarely,None,Fair,3,4944
+417,38,Male,30.77,143,65,142.78,Yes,Daily,Hypertension,Poor,9,6566
+418,21,Female,39.58,156,73,264.23,No,Sometimes,Diabetes,Good,7,9323
+419,65,Male,30.1,141,72,344.85,Yes,Sometimes,Heart Disease,Excellent,3,7259
+420,58,Female,37.74,130,98,165.54,No,Rarely,Asthma,Excellent,8,3577
+421,70,Female,44.94,107,88,233.93,No,Often,Diabetes,Excellent,7,3938
+422,63,Male,27.35,140,66,213.48,No,Sometimes,Asthma,Excellent,1,6738
+423,28,Female,23.26,154,89,333.49,Yes,Never,Heart Disease,Fair,3,3189
+424,51,Male,32.39,155,88,227.35,Yes,Sometimes,Heart Disease,Poor,2,6775
+425,49,Female,27.33,91,73,306.94,No,Never,None,Excellent,7,9216
+426,40,Female,28.54,145,81,163.79,Yes,Daily,Asthma,Excellent,8,5355
+427,36,Female,41.51,106,81,292.66,Yes,Often,None,Excellent,5,5380
+428,62,Male,27.44,94,63,164.86,Yes,Sometimes,Diabetes,Poor,5,7544
+429,80,Female,43.32,152,100,118.21,Yes,Never,None,Poor,10,3101
+430,31,Male,21.49,90,84,305.46,Yes,Sometimes,Hypertension,Good,5,3949
+431,78,Male,16.42,179,65,277.39,Yes,Rarely,Asthma,Fair,4,8158
+432,34,Female,21.24,110,69,188.92,No,Never,Hypertension,Good,2,8118
+433,64,Male,22.22,142,81,283.25,Yes,Never,Hypertension,Poor,6,3679
+434,54,Male,39.82,135,76,144.67,No,Rarely,Diabetes,Poor,7,5468
+435,79,Male,16.97,124,97,161.81,Yes,Rarely,Asthma,Fair,9,1483
+436,48,Female,39.88,111,85,176.17,Yes,Sometimes,Diabetes,Good,5,5552
+437,47,Female,17.76,153,89,139.65,No,Never,Heart Disease,Good,5,8689
+438,77,Female,29.43,173,85,176.01,No,Never,None,Excellent,1,8110
+439,68,Female,36.32,92,61,102.64,No,Never,None,Good,3,6263
+440,27,Female,16.48,164,75,214.49,Yes,Often,Hypertension,Excellent,5,4589
+441,52,Male,18.56,106,69,185.45,No,Rarely,Hypertension,Excellent,8,2817
+442,66,Male,29.62,156,75,326.37,No,Daily,Heart Disease,Poor,10,4994
+443,41,Female,24.78,163,99,302.08,Yes,Daily,Asthma,Poor,7,6258
+444,35,Male,27.52,171,79,178.89,No,Never,None,Poor,9,6418
+445,33,Male,28.69,98,94,103.98,Yes,Daily,None,Excellent,10,5362
+446,27,Male,20.26,169,91,297.3,Yes,Sometimes,Diabetes,Good,8,2053
+447,64,Male,23.64,134,60,274.42,No,Daily,Diabetes,Poor,6,2000
+448,44,Male,24.71,166,95,131.25,No,Daily,Hypertension,Good,8,4637
+449,58,Male,31.66,122,100,336.97,No,Rarely,Asthma,Good,4,1944
+450,18,Female,25.52,174,80,121.18,Yes,Often,Hypertension,Excellent,1,9790
+451,37,Female,35.67,108,76,117.04,Yes,Never,None,Excellent,7,9780
+452,22,Female,28.22,148,64,278.7,No,Sometimes,None,Excellent,7,5423
+453,78,Male,43.61,152,77,306.8,Yes,Never,Asthma,Fair,8,2783
+454,28,Male,29.46,97,79,245.64,Yes,Daily,Hypertension,Poor,8,1841
+455,29,Female,27.7,125,90,150.34,Yes,Never,Asthma,Fair,2,3444
+456,72,Female,16.89,156,91,166.16,No,Daily,Hypertension,Good,7,3334
+457,69,Male,18.94,128,80,331.69,Yes,Daily,Hypertension,Poor,2,5812
+458,65,Male,34.92,136,86,241.39,Yes,Rarely,Hypertension,Fair,7,4136
+459,70,Male,15.0,134,79,265.38,Yes,Rarely,Diabetes,Good,2,6951
+460,48,Male,38.79,129,91,208.49,No,Sometimes,Asthma,Good,1,2673
+461,25,Female,37.83,109,97,336.0,No,Daily,None,Excellent,1,1692
+462,78,Female,22.42,95,75,213.34,Yes,Rarely,Asthma,Excellent,1,1876
+463,25,Female,22.66,166,95,329.62,No,Often,None,Excellent,3,5472
+464,20,Male,16.6,126,75,248.34,No,Rarely,Heart Disease,Excellent,10,8420
+465,49,Female,15.67,159,99,296.49,No,Daily,Asthma,Fair,1,3904
+466,21,Male,17.07,118,81,199.88,Yes,Rarely,Hypertension,Excellent,7,6964
+467,22,Male,42.54,107,79,127.99,Yes,Often,Hypertension,Poor,9,1041
+468,63,Male,38.02,123,85,238.52,Yes,Daily,Asthma,Good,9,1666
+469,40,Female,28.98,173,97,209.62,No,Daily,Heart Disease,Poor,8,9335
+470,66,Male,32.39,99,70,301.66,Yes,Rarely,Asthma,Poor,1,3818
+471,25,Female,23.88,124,62,280.35,Yes,Never,Heart Disease,Poor,6,4785
+472,41,Male,19.72,145,70,167.78,Yes,Daily,Heart Disease,Fair,5,3207
+473,44,Male,22.47,112,83,209.59,No,Never,Heart Disease,Fair,6,3608
+474,73,Female,15.95,180,79,273.03,Yes,Rarely,None,Excellent,2,6408
+475,60,Male,29.78,112,93,102.38,Yes,Rarely,Diabetes,Good,6,9600
+476,73,Male,39.16,102,82,349.31,No,Often,Hypertension,Fair,6,7988
+477,31,Female,32.74,171,64,145.14,Yes,Daily,Diabetes,Good,10,1778
+478,44,Female,15.11,103,67,340.26,Yes,Daily,Diabetes,Fair,2,1254
+479,30,Female,43.68,169,95,143.87,No,Often,Hypertension,Excellent,5,2267
+480,35,Male,22.58,110,90,316.15,Yes,Rarely,Asthma,Fair,4,4500
+481,71,Male,24.07,125,100,265.34,No,Often,Asthma,Poor,10,2118
+482,76,Female,25.4,164,94,236.04,No,Sometimes,None,Fair,5,2641
+483,36,Male,28.71,119,66,331.03,No,Sometimes,Heart Disease,Good,6,7530
+484,73,Male,42.01,127,81,118.34,No,Rarely,Diabetes,Fair,4,7187
+485,40,Male,36.67,166,75,131.44,Yes,Sometimes,Asthma,Fair,6,3360
+486,30,Female,29.45,172,83,252.35,No,Rarely,None,Excellent,3,7066
+487,44,Male,31.63,165,94,334.74,No,Rarely,Diabetes,Fair,6,2077
+488,20,Female,40.7,93,64,106.03,Yes,Never,Heart Disease,Poor,6,5056
+489,57,Female,43.32,180,98,148.45,No,Never,None,Excellent,7,5810
+490,68,Male,19.81,127,64,263.22,No,Sometimes,None,Good,6,6181
+491,45,Male,28.61,143,72,333.34,Yes,Sometimes,Heart Disease,Good,2,5720
+492,45,Male,40.88,119,79,140.33,No,Sometimes,Diabetes,Good,9,4943
+493,79,Female,22.08,150,83,205.21,Yes,Daily,Diabetes,Fair,4,5568
+494,21,Male,23.32,115,80,215.28,Yes,Often,Hypertension,Poor,3,2705
+495,59,Female,22.55,98,97,293.7,Yes,Daily,Diabetes,Good,4,6864
+496,33,Female,21.73,129,76,154.2,No,Often,None,Poor,8,2048
+497,58,Female,41.02,165,67,323.19,No,Daily,Asthma,Excellent,8,3697
+498,70,Female,16.02,118,96,322.41,Yes,Rarely,Diabetes,Good,2,8602
+499,64,Male,17.41,126,73,289.76,Yes,Never,None,Fair,2,3051
+500,75,Female,19.28,160,94,107.47,Yes,Daily,None,Good,1,6849
+501,75,Female,23.13,135,97,240.03,Yes,Often,Diabetes,Poor,1,4299
+502,40,Male,22.51,103,97,209.24,No,Rarely,Asthma,Good,7,6066
+503,34,Male,19.47,164,95,125.66,No,Sometimes,Asthma,Good,4,4662
+504,75,Male,41.08,112,66,255.37,No,Never,None,Fair,9,7520
+505,70,Female,33.69,112,91,199.67,No,Never,None,Good,9,6832
+506,29,Female,15.36,141,92,149.87,Yes,Daily,Asthma,Poor,8,3609
+507,27,Female,36.49,180,69,270.3,Yes,Often,Hypertension,Poor,10,6366
+508,80,Male,22.27,140,87,317.73,Yes,Never,Diabetes,Poor,9,3728
+509,78,Male,27.15,166,76,274.34,No,Daily,Diabetes,Poor,4,7575
+510,33,Female,40.49,121,93,343.79,No,Often,Diabetes,Good,3,7675
+511,63,Male,21.41,172,81,218.04,No,Never,Heart Disease,Poor,4,7195
+512,39,Male,15.95,126,63,113.62,Yes,Often,Hypertension,Poor,2,6600
+513,32,Male,39.74,110,100,143.63,No,Daily,Asthma,Poor,3,7298
+514,71,Female,17.65,168,79,118.42,Yes,Sometimes,Asthma,Excellent,6,8174
+515,79,Female,35.16,150,96,236.57,No,Often,Hypertension,Good,5,4685
+516,26,Female,27.92,156,91,305.18,Yes,Rarely,Asthma,Poor,4,9900
+517,44,Female,37.64,127,75,161.41,Yes,Sometimes,Asthma,Good,9,9255
+518,75,Female,35.41,95,60,182.47,No,Daily,Hypertension,Poor,3,6807
+519,25,Male,17.36,177,81,226.74,Yes,Sometimes,Diabetes,Poor,4,6923
+520,76,Female,32.39,142,80,184.66,Yes,Never,Asthma,Excellent,9,7966
+521,71,Female,37.08,118,93,118.22,Yes,Daily,Hypertension,Fair,7,3932
+522,53,Female,16.46,108,60,333.74,No,Never,None,Excellent,8,4126
+523,70,Male,22.16,113,76,274.14,No,Rarely,None,Excellent,1,8296
+524,72,Male,23.23,179,89,135.25,No,Never,Diabetes,Good,2,8662
+525,29,Male,39.69,92,70,156.51,No,Never,Hypertension,Poor,9,3024
+526,78,Female,30.51,178,86,125.09,No,Sometimes,Asthma,Fair,1,9755
+527,50,Female,27.88,174,82,199.76,No,Sometimes,Diabetes,Good,8,8345
+528,47,Male,41.82,175,69,240.27,No,Daily,Diabetes,Good,1,9012
+529,77,Male,25.59,151,71,246.59,No,Rarely,Diabetes,Excellent,4,4547
+530,68,Female,30.56,177,92,329.85,Yes,Often,Diabetes,Good,9,2149
+531,80,Male,28.68,136,88,116.67,No,Never,Asthma,Excellent,4,7106
+532,58,Male,27.62,174,100,126.94,No,Sometimes,Asthma,Fair,6,2133
+533,54,Male,30.4,151,76,287.49,Yes,Never,Asthma,Good,2,4789
+534,24,Male,19.55,175,90,307.75,Yes,Rarely,Asthma,Good,6,1648
+535,42,Male,21.22,115,64,156.81,Yes,Never,None,Excellent,6,6759
+536,72,Male,16.59,118,97,139.78,Yes,Never,Heart Disease,Fair,8,9679
+537,31,Female,28.4,136,65,195.28,No,Daily,Asthma,Poor,9,1860
+538,66,Male,23.54,156,91,111.23,Yes,Rarely,Diabetes,Fair,7,2870
+539,31,Female,16.1,108,67,180.83,No,Often,Diabetes,Excellent,9,2860
+540,64,Male,18.48,159,79,129.12,Yes,Rarely,Hypertension,Good,4,3953
+541,77,Female,29.13,162,62,285.54,Yes,Rarely,None,Good,9,6814
+542,59,Male,23.55,147,93,268.44,Yes,Sometimes,Asthma,Poor,9,7449
+543,79,Male,16.7,106,94,138.49,Yes,Sometimes,Hypertension,Poor,5,7568
+544,45,Male,37.55,92,63,190.99,Yes,Daily,Asthma,Good,1,6018
+545,70,Female,18.6,161,68,304.36,Yes,Often,None,Fair,3,6755
+546,62,Male,41.59,142,99,306.7,Yes,Often,Asthma,Poor,5,5928
+547,50,Male,30.33,164,92,226.96,No,Often,Diabetes,Good,4,9820
+548,23,Male,17.58,179,66,195.99,No,Daily,Diabetes,Good,6,5627
+549,59,Male,36.17,109,84,149.64,No,Daily,None,Poor,7,4380
+550,19,Male,23.13,163,73,207.83,Yes,Never,Diabetes,Fair,10,9084
+551,53,Male,32.05,125,84,173.14,No,Rarely,Hypertension,Fair,10,6900
+552,18,Male,34.03,179,68,217.63,No,Daily,Diabetes,Fair,9,9289
+553,23,Female,25.93,155,74,161.69,Yes,Daily,Hypertension,Excellent,2,4439
+554,53,Female,32.19,132,68,114.25,Yes,Daily,Heart Disease,Poor,8,6637
+555,60,Male,32.06,107,68,130.71,No,Daily,Diabetes,Good,3,9566
+556,66,Female,39.88,94,81,343.12,No,Never,Hypertension,Excellent,10,9773
+557,31,Female,37.78,173,68,230.17,Yes,Often,Hypertension,Good,9,6832
+558,30,Female,15.29,155,63,181.9,No,Never,Heart Disease,Poor,9,2227
+559,71,Female,43.45,104,66,236.03,Yes,Rarely,Asthma,Fair,2,2230
+560,20,Female,37.26,131,94,161.46,Yes,Often,Heart Disease,Good,2,9495
+561,71,Male,26.44,146,68,243.56,No,Often,Diabetes,Good,6,4620
+562,34,Male,30.25,117,79,109.7,No,Daily,None,Fair,1,7577
+563,20,Male,39.49,93,97,120.96,Yes,Sometimes,Diabetes,Good,1,4346
+564,31,Male,31.12,123,88,143.9,Yes,Sometimes,None,Good,7,6012
+565,74,Male,31.01,179,86,198.52,Yes,Daily,Asthma,Excellent,10,4102
+566,65,Male,30.82,132,74,150.89,No,Daily,Hypertension,Excellent,5,1084
+567,28,Female,21.71,154,91,149.07,No,Rarely,Asthma,Poor,1,2278
+568,62,Female,29.86,110,64,347.2,Yes,Sometimes,Heart Disease,Good,4,1010
+569,31,Female,43.02,165,91,107.39,No,Rarely,None,Excellent,4,6696
+570,77,Female,15.94,130,63,280.41,No,Sometimes,Asthma,Good,6,1986
+571,71,Female,44.8,94,75,298.67,Yes,Never,Hypertension,Poor,1,2322
+572,48,Male,39.04,109,93,333.07,No,Never,Asthma,Good,8,9959
+573,58,Male,34.53,115,72,158.16,No,Rarely,None,Poor,3,4719
+574,28,Male,22.18,130,65,280.01,No,Daily,None,Fair,4,2048
+575,19,Male,19.73,127,76,192.22,Yes,Often,Heart Disease,Poor,1,1708
+576,23,Female,34.23,96,62,202.29,No,Daily,None,Fair,3,4040
+577,43,Male,35.97,98,64,221.96,No,Sometimes,Diabetes,Excellent,2,4213
+578,18,Female,39.73,97,90,296.36,No,Never,None,Poor,6,5543
+579,36,Female,42.88,143,64,171.02,Yes,Rarely,None,Excellent,5,1753
+580,60,Female,33.55,99,94,311.38,No,Never,Asthma,Good,8,1993
+581,71,Male,28.48,150,80,267.66,Yes,Often,None,Poor,3,4580
+582,20,Female,42.96,114,71,166.19,Yes,Never,Heart Disease,Fair,10,2798
+583,74,Male,41.05,162,68,223.65,No,Sometimes,None,Poor,3,7313
+584,68,Female,32.39,104,72,150.25,Yes,Daily,Asthma,Good,4,7773
+585,53,Male,18.96,155,82,303.04,Yes,Rarely,Diabetes,Poor,8,7160
+586,63,Male,22.1,98,71,308.69,No,Rarely,Heart Disease,Poor,2,4490
+587,67,Male,44.62,140,82,114.86,Yes,Sometimes,None,Fair,3,9757
+588,24,Female,23.67,148,61,186.99,No,Often,None,Fair,9,3338
+589,38,Male,17.49,176,96,298.03,Yes,Often,None,Excellent,5,1917
+590,64,Male,38.95,145,80,284.95,Yes,Rarely,Asthma,Fair,8,4547
+591,63,Female,40.96,100,74,244.21,No,Daily,Hypertension,Good,10,5753
+592,67,Female,31.26,103,81,245.35,Yes,Rarely,Heart Disease,Good,9,8886
+593,47,Male,33.45,167,73,151.54,No,Rarely,Asthma,Poor,2,9721
+594,65,Female,23.39,119,99,245.05,No,Sometimes,Diabetes,Poor,4,6863
+595,42,Female,19.25,129,72,159.0,Yes,Often,Asthma,Fair,6,2770
+596,74,Male,38.44,146,81,320.18,No,Rarely,Asthma,Poor,7,1511
+597,33,Female,17.39,128,84,228.66,Yes,Daily,Heart Disease,Fair,8,5166
+598,25,Female,27.41,113,61,298.99,Yes,Often,Diabetes,Fair,8,3318
+599,46,Female,27.87,149,83,164.56,No,Daily,Hypertension,Poor,4,3511
+600,78,Female,31.34,167,86,183.01,No,Sometimes,Diabetes,Poor,6,1484
+601,50,Male,36.53,166,79,314.19,Yes,Sometimes,Hypertension,Good,6,7590
+602,39,Female,17.48,168,71,177.78,No,Never,Heart Disease,Fair,9,1122
+603,43,Male,25.47,169,76,206.89,No,Often,Diabetes,Good,5,8657
+604,56,Male,41.65,170,81,120.55,No,Daily,Heart Disease,Fair,6,7264
+605,29,Male,26.1,141,69,154.44,No,Sometimes,Asthma,Poor,4,5213
+606,32,Female,19.96,135,89,260.55,Yes,Rarely,Heart Disease,Fair,2,9117
+607,29,Male,42.49,142,84,305.95,Yes,Never,Diabetes,Good,6,1043
+608,64,Female,37.29,155,72,261.9,Yes,Sometimes,None,Excellent,2,9524
+609,70,Male,27.12,146,88,293.73,No,Often,Asthma,Good,4,7646
+610,79,Female,30.65,179,91,195.6,Yes,Daily,Heart Disease,Excellent,2,1303
+611,52,Male,31.98,147,62,199.23,No,Sometimes,Hypertension,Excellent,3,8475
+612,68,Female,23.63,161,94,186.03,Yes,Rarely,Hypertension,Fair,6,9884
+613,51,Male,32.55,162,100,343.98,No,Sometimes,Diabetes,Good,5,4544
+614,29,Male,41.85,161,67,229.01,No,Rarely,None,Poor,6,4835
+615,35,Female,23.26,163,82,206.15,Yes,Daily,Diabetes,Excellent,3,3458
+616,61,Female,42.1,149,93,139.63,Yes,Often,Hypertension,Fair,3,8844
+617,67,Male,37.76,96,90,307.68,Yes,Daily,Asthma,Poor,3,1216
+618,77,Male,43.96,135,89,101.1,No,Never,None,Good,5,5286
+619,55,Male,26.06,115,89,193.58,Yes,Sometimes,Hypertension,Good,9,9028
+620,35,Male,26.32,107,88,292.18,Yes,Often,None,Good,7,3853
+621,20,Male,20.07,180,95,273.64,Yes,Daily,Heart Disease,Fair,2,7996
+622,26,Male,16.57,157,74,287.74,Yes,Never,Asthma,Excellent,5,5995
+623,61,Male,43.83,179,84,334.35,Yes,Rarely,None,Fair,1,2365
+624,39,Female,29.93,134,71,161.1,Yes,Never,Hypertension,Good,8,5610
+625,52,Female,32.11,116,80,158.85,No,Rarely,Asthma,Good,1,4475
+626,34,Female,24.33,127,79,145.81,Yes,Sometimes,None,Excellent,6,3047
+627,28,Male,42.77,130,85,311.51,No,Sometimes,Heart Disease,Excellent,10,3626
+628,58,Male,33.6,138,90,154.27,Yes,Sometimes,Heart Disease,Poor,8,3335
+629,57,Female,24.61,165,69,258.52,Yes,Rarely,Asthma,Good,2,4457
+630,79,Male,35.16,156,60,316.89,No,Often,None,Fair,6,8511
+631,71,Male,19.65,104,79,318.56,Yes,Rarely,None,Excellent,2,9965
+632,45,Female,22.16,127,61,184.03,No,Daily,Diabetes,Good,10,6786
+633,34,Female,28.27,174,91,314.51,Yes,Daily,Heart Disease,Excellent,10,8868
+634,43,Male,43.15,169,71,150.71,Yes,Often,Asthma,Poor,1,1687
+635,71,Male,35.34,150,63,156.82,Yes,Sometimes,Hypertension,Excellent,3,4007
+636,30,Female,27.35,107,83,218.38,No,Daily,Asthma,Good,10,6842
+637,69,Male,28.56,122,68,147.06,Yes,Sometimes,Diabetes,Fair,1,4099
+638,22,Female,24.35,94,62,174.27,Yes,Often,None,Good,2,5144
+639,53,Female,41.18,136,64,310.11,Yes,Sometimes,Asthma,Good,6,5108
+640,33,Male,26.42,134,93,302.08,No,Sometimes,None,Good,8,7579
+641,70,Female,18.56,163,80,300.48,No,Rarely,None,Fair,5,4360
+642,31,Male,17.85,114,62,343.8,Yes,Never,Hypertension,Excellent,4,9164
+643,49,Male,29.85,142,100,324.03,Yes,Often,Diabetes,Fair,10,1275
+644,31,Female,33.24,112,75,133.82,No,Often,Asthma,Fair,7,8871
+645,72,Male,38.95,100,85,112.05,Yes,Never,Diabetes,Excellent,8,2672
+646,75,Male,43.32,125,92,148.13,Yes,Daily,Heart Disease,Excellent,8,6771
+647,78,Male,28.28,151,67,159.37,Yes,Daily,Asthma,Fair,6,1161
+648,19,Male,15.48,154,82,348.91,Yes,Never,Heart Disease,Poor,9,5130
+649,58,Female,34.07,101,80,290.76,Yes,Daily,None,Good,9,6874
+650,33,Female,27.93,93,64,244.38,Yes,Never,Hypertension,Good,8,5684
+651,39,Male,25.47,124,87,297.69,Yes,Sometimes,Asthma,Fair,9,9699
+652,75,Female,19.28,130,94,257.75,Yes,Daily,Hypertension,Good,7,3369
+653,47,Female,19.42,112,91,335.67,No,Rarely,Heart Disease,Fair,8,3941
+654,49,Female,41.02,167,98,242.18,Yes,Daily,Hypertension,Fair,1,5631
+655,36,Male,17.25,178,84,132.39,Yes,Rarely,Hypertension,Poor,1,7181
+656,74,Female,33.67,97,93,259.31,No,Sometimes,Diabetes,Good,5,2271
+657,19,Female,32.59,116,61,212.75,Yes,Rarely,Asthma,Good,5,8226
+658,60,Female,31.28,141,85,158.4,Yes,Rarely,Hypertension,Poor,2,7754
+659,39,Male,15.33,143,69,286.67,Yes,Daily,Asthma,Fair,4,1213
+660,58,Female,41.28,109,74,204.85,No,Never,Hypertension,Fair,7,8780
+661,20,Male,15.13,128,87,241.17,No,Rarely,Diabetes,Excellent,9,6358
+662,33,Male,22.79,102,90,161.61,No,Rarely,Heart Disease,Poor,5,3146
+663,47,Male,15.88,167,61,178.72,Yes,Daily,Diabetes,Poor,6,1270
+664,44,Female,24.98,166,93,200.12,Yes,Daily,None,Excellent,4,3903
+665,59,Male,38.62,125,63,179.36,No,Daily,Heart Disease,Fair,7,8562
+666,51,Male,41.09,151,69,133.11,No,Sometimes,Diabetes,Fair,8,2893
+667,45,Female,23.36,110,74,165.54,Yes,Often,Diabetes,Fair,9,7012
+668,75,Female,17.22,158,60,208.45,No,Daily,Asthma,Excellent,6,7880
+669,61,Male,19.29,125,71,267.01,Yes,Rarely,Heart Disease,Fair,9,4069
+670,69,Male,31.74,91,78,226.95,No,Often,Asthma,Excellent,7,5962
+671,76,Male,41.63,115,97,153.37,No,Never,Diabetes,Poor,1,1886
+672,27,Female,44.93,121,64,101.49,Yes,Daily,Diabetes,Fair,3,3532
+673,21,Male,39.3,122,63,347.19,No,Never,Diabetes,Good,8,8077
+674,60,Female,43.58,144,70,184.23,No,Sometimes,Asthma,Good,9,8882
+675,26,Male,24.43,99,100,108.62,Yes,Often,Hypertension,Good,6,5049
+676,53,Female,41.3,161,90,278.97,Yes,Sometimes,Diabetes,Good,2,4741
+677,41,Female,32.35,117,74,312.42,Yes,Never,Diabetes,Good,9,3505
+678,52,Male,17.36,138,62,289.9,Yes,Never,Asthma,Poor,2,1431
+679,24,Female,43.98,114,76,151.06,No,Often,Asthma,Good,1,8236
+680,37,Male,43.12,151,79,271.12,No,Sometimes,Heart Disease,Good,5,2485
+681,60,Male,26.52,167,60,235.44,No,Never,Asthma,Poor,9,3062
+682,29,Male,42.57,170,85,259.18,No,Sometimes,Diabetes,Good,3,8999
+683,62,Male,28.37,166,98,155.86,No,Rarely,Hypertension,Poor,1,9773
+684,33,Female,23.64,171,88,231.84,No,Daily,Asthma,Fair,7,1574
+685,56,Male,42.03,177,68,121.38,Yes,Rarely,Heart Disease,Poor,2,6450
+686,35,Male,15.36,163,80,203.97,Yes,Daily,Hypertension,Poor,4,1815
+687,66,Female,32.79,161,84,254.55,Yes,Daily,Hypertension,Poor,4,2903
+688,66,Female,17.25,161,79,330.79,No,Never,Asthma,Excellent,8,1107
+689,38,Female,20.92,167,61,155.15,Yes,Daily,Hypertension,Fair,3,6717
+690,69,Female,32.69,151,100,131.46,No,Often,Diabetes,Excellent,6,2550
+691,32,Female,37.56,166,82,119.21,Yes,Often,Diabetes,Excellent,4,8102
+692,45,Male,22.04,122,66,119.47,No,Daily,Hypertension,Poor,7,8727
+693,30,Female,31.07,168,77,112.21,Yes,Sometimes,Heart Disease,Excellent,5,9961
+694,65,Male,18.92,166,94,208.48,No,Rarely,Diabetes,Poor,9,6817
+695,56,Female,26.15,124,97,151.86,No,Often,Asthma,Poor,8,4645
+696,70,Female,36.28,97,96,208.15,Yes,Rarely,Heart Disease,Good,8,5608
+697,49,Male,41.04,129,66,269.61,Yes,Never,Asthma,Good,10,4278
+698,24,Female,15.9,114,76,239.24,Yes,Daily,Heart Disease,Fair,1,5115
+699,36,Female,31.82,129,90,162.61,No,Never,Diabetes,Good,9,1736
+700,28,Male,37.38,176,60,109.2,No,Never,Hypertension,Fair,8,3608
+701,44,Female,15.7,164,84,172.23,No,Often,Heart Disease,Excellent,2,4896
+702,62,Male,17.0,142,69,120.97,Yes,Daily,Hypertension,Poor,2,6074
+703,39,Female,21.14,117,73,288.08,No,Often,Diabetes,Poor,7,6729
+704,53,Female,43.77,114,67,200.34,Yes,Often,Heart Disease,Good,4,2871
+705,76,Female,43.3,154,78,337.22,Yes,Rarely,None,Poor,9,4879
+706,37,Male,33.43,101,77,318.92,No,Sometimes,Hypertension,Good,9,3010
+707,75,Male,29.29,121,98,258.99,No,Sometimes,Hypertension,Fair,2,6623
+708,39,Male,40.22,139,84,318.96,Yes,Sometimes,None,Poor,9,3964
+709,54,Female,29.27,91,71,262.62,Yes,Rarely,Hypertension,Excellent,5,8587
+710,25,Male,39.99,177,65,225.29,Yes,Sometimes,Asthma,Good,1,8868
+711,34,Male,18.3,124,60,155.12,Yes,Rarely,Asthma,Excellent,2,7112
+712,69,Male,44.49,138,93,204.85,No,Never,Asthma,Good,6,8991
+713,44,Female,19.61,148,79,344.61,Yes,Never,Hypertension,Good,7,2754
+714,72,Female,22.58,170,87,295.04,No,Daily,None,Good,2,8709
+715,67,Male,35.07,133,70,251.49,Yes,Never,Hypertension,Fair,7,1190
+716,21,Male,23.46,157,76,250.51,No,Sometimes,Asthma,Fair,8,6781
+717,55,Male,25.26,135,100,191.54,No,Rarely,None,Good,5,7785
+718,77,Female,40.06,178,69,220.15,No,Daily,Hypertension,Fair,5,5379
+719,70,Male,34.22,153,75,139.56,Yes,Sometimes,None,Poor,5,5551
+720,20,Male,37.19,120,69,248.33,Yes,Never,Hypertension,Good,10,1013
+721,21,Male,29.86,144,98,317.33,No,Daily,Asthma,Fair,1,2883
+722,45,Male,42.26,139,75,234.71,No,Never,Diabetes,Fair,7,9758
+723,42,Male,44.02,141,74,126.13,No,Daily,Hypertension,Excellent,6,7050
+724,34,Female,19.67,137,98,219.68,Yes,Sometimes,Hypertension,Good,8,3521
+725,73,Female,22.47,122,63,190.08,No,Daily,Asthma,Good,5,3367
+726,59,Male,43.88,173,99,108.88,No,Daily,Asthma,Good,5,2330
+727,61,Female,15.08,121,77,247.33,No,Daily,None,Excellent,5,6111
+728,50,Female,30.4,142,76,200.43,No,Daily,Heart Disease,Fair,2,6475
+729,48,Female,21.42,98,63,106.26,Yes,Often,Heart Disease,Excellent,10,2561
+730,24,Female,24.09,156,99,186.44,No,Never,Hypertension,Fair,2,5916
+731,48,Male,35.65,140,70,103.66,No,Rarely,None,Excellent,8,3270
+732,48,Female,28.91,94,94,332.85,Yes,Daily,Diabetes,Poor,6,8029
+733,27,Male,37.53,94,74,222.6,No,Often,Diabetes,Fair,3,7672
+734,39,Female,40.91,151,72,255.94,Yes,Rarely,None,Excellent,8,7457
+735,47,Female,22.95,122,67,281.74,No,Rarely,Diabetes,Excellent,6,1190
+736,38,Female,38.68,113,82,206.87,No,Rarely,Heart Disease,Fair,2,1626
+737,56,Female,42.41,105,87,194.94,Yes,Never,Asthma,Excellent,8,6338
+738,62,Male,24.95,101,75,198.98,Yes,Sometimes,Asthma,Poor,5,3346
+739,70,Female,21.72,176,96,348.33,Yes,Often,Heart Disease,Excellent,7,8780
+740,35,Female,41.68,175,70,277.83,No,Sometimes,Heart Disease,Poor,3,8208
+741,45,Female,27.65,177,65,321.19,Yes,Daily,Diabetes,Excellent,6,4995
+742,43,Female,41.45,157,73,300.47,Yes,Sometimes,Heart Disease,Good,7,1928
+743,79,Female,21.09,117,67,218.66,No,Rarely,Diabetes,Excellent,1,3745
+744,39,Female,28.82,109,90,268.76,Yes,Daily,Asthma,Poor,2,7231
+745,23,Male,39.28,123,95,343.77,No,Daily,None,Excellent,7,9246
+746,35,Male,25.78,104,65,342.1,No,Often,Diabetes,Fair,7,2420
+747,67,Male,33.58,117,84,227.07,No,Never,Asthma,Excellent,4,4974
+748,24,Female,30.44,131,84,127.72,No,Never,Hypertension,Good,3,8762
+749,19,Female,24.91,171,74,157.79,No,Often,Diabetes,Fair,5,7140
+750,30,Female,37.96,140,96,193.97,No,Sometimes,None,Fair,9,1780
+751,25,Male,42.59,155,63,182.51,No,Rarely,Hypertension,Excellent,4,5030
+752,33,Female,29.32,96,83,193.55,Yes,Never,Hypertension,Poor,6,8479
+753,57,Male,22.31,131,67,227.76,Yes,Never,Asthma,Poor,6,9454
+754,80,Male,37.2,109,86,283.91,No,Sometimes,Diabetes,Excellent,9,2155
+755,79,Male,28.66,153,74,232.21,Yes,Daily,Asthma,Excellent,4,8600
+756,75,Male,40.01,110,65,127.14,Yes,Often,None,Excellent,5,1768
+757,61,Female,36.37,132,95,120.11,No,Rarely,Diabetes,Excellent,7,4356
+758,64,Male,41.82,113,84,281.13,No,Daily,None,Excellent,7,5622
+759,71,Male,15.85,114,66,249.01,No,Sometimes,Asthma,Fair,6,3105
+760,54,Male,42.91,175,69,159.74,Yes,Never,Asthma,Good,5,8680
+761,76,Female,41.06,108,81,130.04,No,Daily,Diabetes,Fair,3,8966
+762,48,Female,32.27,167,77,256.28,No,Often,Diabetes,Fair,10,2548
+763,18,Female,31.14,137,82,256.48,No,Often,Asthma,Excellent,5,5126
+764,62,Female,34.15,115,75,130.51,No,Daily,Heart Disease,Poor,6,9850
+765,76,Male,18.49,92,86,107.42,No,Rarely,None,Fair,5,2190
+766,19,Male,30.71,171,83,209.75,Yes,Often,None,Good,1,3998
+767,62,Male,16.71,109,64,164.02,No,Daily,Heart Disease,Fair,2,6002
+768,33,Male,43.31,141,89,287.24,Yes,Daily,Diabetes,Poor,10,9170
+769,76,Male,37.42,128,65,323.94,No,Often,None,Poor,1,6438
+770,44,Female,42.64,178,61,192.78,No,Often,None,Excellent,2,7207
+771,63,Male,33.81,180,96,120.57,No,Daily,Asthma,Good,6,3390
+772,80,Male,19.15,110,87,317.75,Yes,Never,Asthma,Fair,8,9178
+773,39,Male,33.66,107,93,274.31,No,Sometimes,None,Good,3,2474
+774,41,Female,16.86,104,88,296.88,No,Never,Asthma,Good,6,7044
+775,80,Female,26.79,122,87,125.96,Yes,Sometimes,None,Good,1,7291
+776,70,Male,31.9,170,74,293.65,No,Rarely,Heart Disease,Fair,2,1841
+777,49,Female,15.29,127,67,139.22,No,Daily,Diabetes,Poor,1,2028
+778,25,Female,23.62,118,74,328.58,Yes,Sometimes,Hypertension,Good,3,1387
+779,60,Male,15.7,167,99,318.6,No,Never,Hypertension,Good,9,6733
+780,71,Male,26.95,128,85,131.41,No,Daily,Hypertension,Poor,4,6646
+781,36,Male,19.83,95,84,200.15,No,Daily,Hypertension,Excellent,5,7955
+782,34,Female,26.42,150,83,232.05,No,Often,None,Excellent,1,2259
+783,73,Male,29.19,107,69,193.22,Yes,Daily,Hypertension,Excellent,8,2844
+784,71,Male,35.35,151,95,137.53,No,Rarely,Heart Disease,Excellent,4,6627
+785,61,Female,33.15,140,80,261.16,No,Often,Heart Disease,Excellent,4,7585
+786,38,Female,25.13,136,84,110.7,No,Never,Hypertension,Good,7,6302
+787,75,Female,34.39,95,60,300.95,Yes,Daily,None,Good,9,9089
+788,34,Male,36.2,132,76,340.93,No,Rarely,None,Excellent,9,5634
+789,67,Female,28.74,157,97,318.5,Yes,Often,Hypertension,Good,4,5693
+790,62,Male,17.79,178,73,333.54,Yes,Often,Asthma,Good,9,8465
+791,57,Male,32.56,165,85,238.91,Yes,Often,Heart Disease,Fair,4,1350
+792,49,Female,26.14,165,87,305.12,No,Sometimes,None,Good,1,8145
+793,54,Female,21.51,172,64,100.9,Yes,Never,Asthma,Fair,3,7139
+794,49,Female,16.46,103,65,273.6,No,Never,None,Good,4,7704
+795,34,Female,43.15,140,85,326.64,No,Never,Hypertension,Fair,8,2631
+796,23,Female,30.27,95,93,298.3,Yes,Often,Asthma,Fair,10,4780
+797,35,Male,42.05,91,67,204.45,Yes,Often,Heart Disease,Fair,1,4609
+798,63,Female,26.14,122,81,146.84,No,Sometimes,Diabetes,Poor,9,9796
+799,49,Female,42.46,170,94,243.24,No,Rarely,Heart Disease,Good,9,2328
+800,55,Male,20.92,159,60,288.59,Yes,Daily,Diabetes,Fair,4,3868
+801,21,Female,40.85,146,80,205.99,No,Daily,Heart Disease,Fair,5,3083
+802,35,Male,26.45,132,74,188.05,Yes,Never,Heart Disease,Good,8,3170
+803,38,Female,15.51,176,73,349.95,No,Daily,Asthma,Good,5,6774
+804,79,Female,44.47,148,84,290.57,No,Never,None,Fair,5,3304
+805,58,Male,20.08,134,75,270.24,Yes,Never,None,Poor,7,2639
+806,47,Male,30.91,173,64,273.55,Yes,Often,Heart Disease,Poor,4,4398
+807,44,Female,36.85,134,93,220.39,Yes,Daily,Hypertension,Fair,6,6899
+808,76,Male,33.49,100,70,151.75,Yes,Often,Diabetes,Good,1,9935
+809,80,Female,24.81,149,79,165.28,Yes,Often,Heart Disease,Excellent,7,5428
+810,39,Female,18.51,121,68,243.99,Yes,Rarely,Asthma,Fair,3,7071
+811,28,Male,15.31,119,70,323.13,Yes,Sometimes,None,Excellent,5,9361
+812,72,Female,40.16,162,99,129.95,No,Often,None,Poor,5,9777
+813,31,Female,24.82,102,70,310.9,No,Daily,None,Fair,4,2005
+814,63,Male,32.24,174,90,128.42,Yes,Never,None,Fair,7,4065
+815,30,Male,22.2,176,81,292.31,No,Never,Hypertension,Poor,6,6709
+816,53,Female,27.88,119,63,133.54,No,Daily,Heart Disease,Excellent,7,8969
+817,60,Male,33.36,141,90,295.16,No,Rarely,Asthma,Poor,6,1799
+818,19,Female,24.22,119,63,276.04,No,Daily,Diabetes,Fair,5,9143
+819,34,Female,41.77,109,87,203.61,No,Daily,Asthma,Good,10,6823
+820,29,Male,37.63,166,69,120.92,Yes,Rarely,Hypertension,Good,4,4110
+821,62,Male,42.6,177,74,257.39,Yes,Sometimes,None,Good,3,7444
+822,40,Female,23.38,104,63,192.1,No,Daily,Hypertension,Excellent,9,8714
+823,70,Female,38.78,122,93,250.06,Yes,Often,Heart Disease,Fair,3,2676
+824,21,Male,16.19,106,65,141.4,Yes,Daily,None,Good,4,3699
+825,36,Male,15.3,111,90,136.48,No,Daily,Heart Disease,Good,5,1449
+826,77,Male,44.71,152,68,309.49,No,Daily,Heart Disease,Poor,4,6569
+827,70,Female,23.09,137,80,123.63,No,Daily,Asthma,Poor,10,1211
+828,73,Female,21.48,156,73,276.66,No,Often,Diabetes,Fair,3,7829
+829,67,Male,27.41,116,78,305.41,Yes,Never,Heart Disease,Poor,1,6539
+830,27,Female,30.73,145,76,232.24,Yes,Rarely,Heart Disease,Poor,7,6811
+831,65,Male,38.21,99,84,192.78,Yes,Often,None,Good,4,7224
+832,31,Male,26.21,175,73,139.88,No,Never,Diabetes,Excellent,1,1771
+833,49,Male,44.12,124,70,214.13,No,Never,Diabetes,Good,9,3446
+834,59,Male,24.15,132,98,308.44,No,Daily,Hypertension,Fair,5,8134
+835,60,Female,36.64,108,96,144.23,Yes,Sometimes,Diabetes,Poor,8,4246
+836,31,Male,22.38,133,72,232.77,No,Often,Heart Disease,Fair,3,6040
+837,48,Female,28.99,128,71,242.78,No,Often,Diabetes,Poor,7,3438
+838,57,Female,34.18,169,88,274.51,Yes,Never,Asthma,Poor,1,4432
+839,21,Female,40.58,141,75,133.25,Yes,Sometimes,Hypertension,Excellent,8,6264
+840,72,Male,32.02,173,60,280.08,No,Sometimes,Hypertension,Excellent,7,1657
+841,33,Male,44.08,180,63,313.19,Yes,Sometimes,Hypertension,Excellent,6,3272
+842,55,Female,26.91,147,94,336.33,No,Sometimes,Asthma,Fair,5,5499
+843,79,Male,28.67,105,93,321.97,Yes,Rarely,None,Poor,7,5479
+844,53,Male,19.61,178,64,244.26,Yes,Daily,Asthma,Good,2,1313
+845,63,Male,32.33,171,98,218.63,Yes,Often,None,Good,6,5720
+846,27,Male,44.2,123,85,110.52,Yes,Rarely,Asthma,Fair,6,8998
+847,60,Female,17.65,140,66,190.7,No,Sometimes,Asthma,Fair,2,7505
+848,29,Male,32.41,109,93,306.39,No,Sometimes,Diabetes,Good,8,8072
+849,21,Male,30.93,176,70,124.99,Yes,Daily,Asthma,Fair,2,9866
+850,52,Male,34.81,106,93,126.38,No,Sometimes,Asthma,Good,3,7098
+851,42,Male,18.52,92,63,332.42,No,Rarely,Asthma,Fair,4,9708
+852,59,Female,18.95,131,89,184.9,Yes,Often,Heart Disease,Excellent,8,1047
+853,61,Female,25.84,117,81,228.57,Yes,Daily,Heart Disease,Fair,10,3858
+854,77,Male,43.92,162,78,266.65,Yes,Sometimes,None,Good,6,5180
+855,24,Male,41.07,111,67,171.29,Yes,Sometimes,Diabetes,Excellent,8,8651
+856,54,Male,42.58,108,79,344.65,No,Never,Asthma,Excellent,3,3565
+857,47,Female,27.2,141,97,119.72,Yes,Sometimes,Heart Disease,Excellent,6,1310
+858,54,Female,29.34,162,66,301.82,No,Never,None,Fair,9,1542
+859,26,Male,29.74,124,67,235.42,Yes,Often,None,Excellent,8,1582
+860,26,Female,28.24,160,70,160.12,Yes,Rarely,Diabetes,Poor,7,9697
+861,42,Female,28.62,125,99,204.63,No,Never,Heart Disease,Poor,4,6168
+862,25,Male,20.5,159,87,170.59,No,Often,Hypertension,Poor,3,2448
+863,63,Female,16.91,120,98,210.42,No,Sometimes,None,Poor,7,2533
+864,42,Female,25.19,152,99,199.99,No,Daily,None,Fair,8,6448
+865,31,Male,35.84,124,88,329.62,Yes,Sometimes,Heart Disease,Excellent,8,5789
+866,75,Female,27.94,134,97,145.33,No,Often,Asthma,Excellent,6,9845
+867,70,Male,27.2,134,85,174.13,No,Often,Asthma,Excellent,2,2753
+868,47,Male,28.04,161,66,190.17,Yes,Daily,Heart Disease,Good,6,2861
+869,40,Male,20.65,132,60,280.01,No,Often,Hypertension,Good,6,1907
+870,33,Male,44.54,114,66,271.33,No,Rarely,None,Excellent,4,9931
+871,59,Female,36.94,97,84,283.24,No,Often,Asthma,Fair,4,9442
+872,27,Female,29.01,137,95,164.73,No,Sometimes,Diabetes,Good,6,1553
+873,44,Female,43.51,115,88,238.65,Yes,Often,Heart Disease,Excellent,2,1859
+874,25,Male,35.83,168,96,338.99,No,Daily,Hypertension,Poor,8,2892
+875,60,Female,36.91,147,70,274.19,Yes,Rarely,Heart Disease,Fair,10,2935
+876,79,Female,21.25,135,84,211.31,No,Rarely,Hypertension,Good,2,9991
+877,18,Male,25.88,106,85,236.39,Yes,Sometimes,Diabetes,Fair,3,2075
+878,27,Female,22.73,144,88,150.64,No,Daily,Heart Disease,Excellent,10,2052
+879,75,Male,27.33,146,84,300.23,No,Daily,Heart Disease,Good,7,3315
+880,50,Male,34.05,141,81,243.87,Yes,Never,Heart Disease,Good,1,2297
+881,63,Male,35.14,175,94,349.93,No,Sometimes,Asthma,Fair,2,6064
+882,58,Female,38.26,114,91,267.86,Yes,Rarely,Diabetes,Fair,10,4183
+883,70,Male,25.13,145,87,206.8,Yes,Often,None,Fair,2,9527
+884,72,Female,22.15,111,97,178.5,No,Sometimes,Heart Disease,Good,9,7425
+885,52,Female,38.58,161,61,224.2,No,Daily,None,Fair,4,2137
+886,71,Female,16.8,147,71,236.06,No,Sometimes,Heart Disease,Poor,10,9339
+887,36,Male,34.22,176,93,151.67,No,Sometimes,None,Good,6,6117
+888,46,Male,35.84,174,60,150.86,Yes,Rarely,Asthma,Good,2,1194
+889,42,Female,27.12,135,67,267.36,No,Often,Asthma,Fair,2,5119
+890,53,Female,18.02,155,65,174.17,Yes,Never,Asthma,Fair,8,4073
+891,33,Female,44.79,93,70,187.97,Yes,Sometimes,Asthma,Excellent,5,5445
+892,35,Male,43.51,113,66,323.24,No,Never,Hypertension,Fair,2,6299
+893,41,Male,42.01,108,77,122.2,No,Never,Heart Disease,Excellent,5,2023
+894,39,Female,40.86,100,72,252.55,No,Never,Diabetes,Fair,10,1915
+895,40,Male,25.02,99,61,183.13,Yes,Often,Asthma,Poor,7,7648
+896,78,Female,25.91,147,81,297.0,Yes,Often,None,Poor,9,5974
+897,39,Male,15.86,178,92,291.53,No,Never,Asthma,Fair,4,9260
+898,46,Female,44.67,170,74,329.41,No,Sometimes,Hypertension,Excellent,9,6024
+899,19,Male,33.68,160,94,324.01,Yes,Rarely,Heart Disease,Good,1,1144
+900,34,Female,24.36,155,74,273.24,Yes,Sometimes,Diabetes,Poor,2,9935
+901,48,Female,26.48,179,75,226.52,No,Often,Asthma,Excellent,2,2318
+902,72,Male,23.27,156,86,307.32,Yes,Sometimes,Asthma,Excellent,7,2849
+903,75,Female,39.13,176,76,135.76,Yes,Sometimes,Asthma,Excellent,8,8420
+904,62,Female,44.48,123,98,258.53,Yes,Never,Diabetes,Poor,6,5748
+905,20,Female,38.0,146,82,348.3,No,Sometimes,Asthma,Fair,2,3795
+906,63,Male,37.9,159,63,187.31,No,Often,Diabetes,Good,7,9251
+907,76,Female,30.26,171,99,209.64,No,Rarely,Asthma,Poor,9,8464
+908,67,Male,44.28,137,72,291.64,Yes,Never,Asthma,Fair,7,5104
+909,53,Male,36.37,132,61,305.29,No,Rarely,Diabetes,Excellent,5,9577
+910,59,Male,21.18,153,72,345.22,No,Never,None,Poor,10,5169
+911,27,Female,37.48,98,94,167.82,No,Rarely,None,Good,6,6302
+912,76,Male,23.85,145,85,338.88,No,Sometimes,Diabetes,Fair,3,4718
+913,43,Male,30.7,128,100,123.86,Yes,Never,Heart Disease,Excellent,1,1526
+914,58,Female,41.39,115,78,205.19,Yes,Daily,None,Good,4,6505
+915,76,Female,30.13,117,63,282.46,Yes,Never,Asthma,Excellent,5,4398
+916,66,Male,42.55,111,61,313.88,Yes,Often,Asthma,Poor,9,8063
+917,22,Female,35.75,167,69,139.37,No,Rarely,Heart Disease,Fair,4,7767
+918,72,Male,40.35,92,64,308.47,No,Daily,Asthma,Fair,8,6245
+919,18,Female,23.13,178,83,215.7,Yes,Never,Diabetes,Poor,1,1627
+920,80,Male,19.68,100,79,196.86,No,Rarely,Asthma,Fair,4,8484
+921,60,Male,28.1,138,74,160.04,Yes,Sometimes,Heart Disease,Poor,6,3137
+922,22,Male,33.73,161,62,327.71,Yes,Daily,Diabetes,Fair,3,8017
+923,59,Female,43.01,95,66,228.53,Yes,Never,Hypertension,Poor,8,6329
+924,32,Female,35.95,168,80,280.17,No,Never,Hypertension,Good,4,7190
+925,18,Female,25.49,152,81,120.19,Yes,Daily,Diabetes,Poor,10,1397
+926,32,Male,28.36,171,80,347.98,No,Never,Hypertension,Excellent,3,4346
+927,48,Female,19.52,110,76,109.85,No,Rarely,Hypertension,Good,6,4570
+928,35,Female,31.27,123,86,323.16,No,Daily,Diabetes,Good,1,1800
+929,69,Female,37.6,159,72,323.88,No,Never,Diabetes,Poor,2,7606
+930,65,Male,29.71,172,100,110.28,No,Daily,Diabetes,Excellent,10,6162
+931,76,Male,19.52,93,77,131.65,No,Daily,None,Poor,8,7508
+932,33,Male,18.33,146,80,146.58,Yes,Daily,Hypertension,Fair,7,2149
+933,36,Male,21.73,179,92,235.75,No,Never,Asthma,Good,3,8744
+934,55,Male,16.81,103,91,171.33,No,Never,Diabetes,Poor,3,7197
+935,19,Male,26.22,172,100,183.86,Yes,Daily,None,Excellent,8,4010
+936,66,Female,35.37,101,79,100.39,No,Often,Heart Disease,Fair,2,3154
+937,29,Female,36.25,98,76,279.32,Yes,Sometimes,Asthma,Good,10,8937
+938,31,Male,15.14,94,74,286.11,No,Often,Heart Disease,Excellent,1,3712
+939,25,Female,17.62,154,83,140.88,Yes,Rarely,Hypertension,Good,4,6772
+940,31,Male,34.96,109,81,324.3,No,Daily,None,Poor,4,2598
+941,77,Male,26.73,134,64,114.47,No,Never,Asthma,Good,7,7911
+942,59,Female,19.34,150,66,233.71,Yes,Sometimes,Heart Disease,Excellent,10,2611
+943,47,Female,25.24,179,96,285.27,Yes,Daily,Diabetes,Good,4,9419
+944,32,Female,17.21,175,98,234.94,Yes,Often,Asthma,Fair,10,2476
+945,47,Male,43.06,139,100,253.49,No,Often,Hypertension,Good,10,4928
+946,72,Male,20.23,154,91,160.92,No,Daily,Diabetes,Excellent,6,5464
+947,22,Male,22.43,180,71,252.27,Yes,Daily,Diabetes,Poor,6,4563
+948,70,Female,32.89,147,90,317.23,No,Rarely,Heart Disease,Good,1,9586
+949,40,Male,38.63,145,79,141.95,No,Never,Heart Disease,Poor,6,8214
+950,54,Female,37.02,123,85,306.76,Yes,Never,Diabetes,Excellent,9,5326
+951,34,Male,40.68,150,97,294.46,Yes,Rarely,Asthma,Excellent,7,7736
+952,46,Male,17.12,160,93,119.67,Yes,Sometimes,None,Poor,6,6597
+953,48,Male,17.03,161,65,107.52,Yes,Rarely,None,Poor,5,3979
+954,26,Male,25.93,142,77,288.9,No,Rarely,Asthma,Good,10,2805
+955,31,Female,15.67,162,82,133.91,Yes,Often,Diabetes,Fair,7,7743
+956,75,Female,32.61,142,81,131.64,Yes,Rarely,None,Good,10,9372
+957,32,Male,30.51,157,68,234.03,No,Often,None,Good,2,6680
+958,52,Female,25.11,134,68,124.16,No,Daily,Heart Disease,Good,10,8936
+959,18,Male,39.48,119,62,177.26,Yes,Sometimes,Hypertension,Excellent,3,1884
+960,24,Female,40.29,110,73,183.59,No,Often,None,Fair,3,7255
+961,60,Female,25.78,136,60,331.13,Yes,Daily,Asthma,Good,6,1801
+962,40,Female,25.98,129,90,262.2,No,Never,Hypertension,Excellent,9,3371
+963,57,Male,32.77,151,83,139.88,No,Never,Asthma,Poor,10,4903
+964,70,Male,17.15,126,81,168.35,No,Sometimes,Diabetes,Fair,3,8001
+965,66,Female,34.16,107,100,314.54,Yes,Sometimes,Asthma,Excellent,10,7425
+966,26,Male,36.58,169,80,343.25,No,Never,Diabetes,Fair,10,7077
+967,67,Male,21.9,110,68,170.14,No,Often,Asthma,Good,4,4191
+968,43,Female,18.25,99,100,222.8,No,Never,Hypertension,Poor,5,1331
+969,31,Male,22.26,104,82,285.87,Yes,Rarely,Hypertension,Fair,10,3808
+970,37,Male,39.17,144,62,147.82,Yes,Never,Asthma,Fair,8,6934
+971,60,Female,29.01,127,68,217.3,Yes,Often,Asthma,Good,8,2799
+972,67,Male,22.21,144,90,227.09,No,Rarely,None,Excellent,9,5288
+973,49,Male,32.27,146,74,177.31,No,Rarely,Asthma,Good,1,6892
+974,18,Male,31.74,124,64,101.71,No,Never,Diabetes,Poor,10,8982
+975,65,Female,21.86,136,94,287.26,No,Often,Heart Disease,Excellent,9,3538
+976,59,Female,44.12,145,78,183.28,Yes,Daily,Asthma,Good,5,2295
+977,59,Female,24.16,164,89,284.07,No,Never,Asthma,Excellent,1,4653
+978,47,Female,37.51,165,66,269.72,Yes,Never,Asthma,Good,5,6699
+979,20,Male,17.67,128,64,325.26,Yes,Sometimes,None,Poor,3,4457
+980,79,Male,33.36,134,85,242.34,No,Often,Hypertension,Excellent,7,3131
+981,30,Male,43.9,90,90,211.81,No,Sometimes,Hypertension,Poor,7,5085
+982,29,Male,31.24,141,64,277.41,Yes,Sometimes,Diabetes,Poor,1,9205
+983,42,Male,26.77,170,78,275.81,Yes,Sometimes,None,Good,10,5323
+984,45,Female,25.61,120,73,199.85,No,Rarely,Hypertension,Poor,1,8745
+985,69,Male,33.73,149,70,273.99,No,Never,Heart Disease,Excellent,9,4955
+986,54,Female,33.84,157,90,102.2,No,Often,Asthma,Poor,7,7964
+987,54,Male,19.69,161,60,335.08,Yes,Rarely,Diabetes,Poor,1,6625
+988,59,Female,36.54,153,77,127.73,Yes,Daily,None,Excellent,2,6553
+989,18,Male,22.52,90,71,230.95,Yes,Sometimes,Hypertension,Excellent,10,9714
+990,40,Male,39.76,134,80,338.45,No,Daily,None,Excellent,6,9035
+991,79,Female,37.76,94,80,138.39,Yes,Sometimes,Diabetes,Fair,6,4943
+992,76,Female,19.42,133,60,266.56,Yes,Daily,Asthma,Poor,5,5516
+993,32,Female,38.76,117,63,119.03,Yes,Never,Asthma,Fair,3,1031
+994,36,Male,34.78,174,97,333.34,Yes,Daily,Hypertension,Poor,3,5272
+995,21,Female,33.13,139,89,315.79,Yes,Rarely,Heart Disease,Fair,6,9876
+996,33,Male,34.69,174,75,183.84,No,Rarely,Diabetes,Fair,5,2168
+997,51,Male,22.73,121,97,305.47,Yes,Sometimes,None,Excellent,4,1996
+998,44,Male,23.88,171,79,153.65,Yes,Sometimes,Asthma,Fair,3,1000
+999,60,Female,33.76,137,70,148.44,No,Never,Heart Disease,Poor,4,4400
+1000,25,Male,33.12,165,80,216.45,Yes,Rarely,Hypertension,Good,7,8036
